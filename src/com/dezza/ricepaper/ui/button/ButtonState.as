@@ -17,8 +17,7 @@ package com.dezza.ricepaper.ui.button
 
 		public static const OFF_SELECTED : String = "offSelected";
 
-		public static const ON_DISABLED : String = "onDisabled";
+		public static const DISABLED : String = "disabled";
 
-		public static const OFF_DISABLED : String = "offDisabled";
 	}
 }

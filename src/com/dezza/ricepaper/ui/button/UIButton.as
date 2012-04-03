@@ -4,6 +4,7 @@ package com.dezza.ricepaper.ui.button
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.geom.Rectangle;
 
 	/**
 	 * @author derek
@@ -87,47 +88,54 @@ package com.dezza.ricepaper.ui.button
 		}
 
 
+		/**
+		 * @inheritDoc
+		 */
+		public function get mouseStateLocked() : Boolean
+		{
+			return _mouseStateLocked;
+		}
+
+
+		/**
+		 * @inheritDoc
+		 */
+		public function set mouseStateLocked(locked : Boolean) : void
+		{
+			_mouseStateLocked = locked;
+			if ( !locked )
+			{
+				setMouseState(_unlockedMouseState);
+			}
+			else
+			{
+				_unlockedMouseState = _mouseState;
+			}
+		}
+
+
+		public function addAutoHitArea() : void
+		{
+			var hit : Sprite = new Sprite();
+			addChild(hit);
+			var contentRect : Rectangle = content.getBounds(this);
+			with( hit.graphics )
+			{
+				beginFill(0x32FFFF, 0.3);
+				drawRect(contentRect.x - 1, contentRect.y - 1, contentRect.width + 2, contentRect.height + 2);
+				endFill;
+			}
+			hit.visible = false;
+			hitArea = hit;
+		}
+
+
 		public function destroy() : void
 		{
 			_content = null;
 		}
 
 
-		// public function get textField() : TextField
-		// {
-		//			//  labelContainer.label by convention
-		//
-		// if (content.labelContainer )
-		// {
-		// return content.labelContainer.label;
-		// }
-		//
-		// return null;
-		// }
-		//
-		//
-		// public function get text() : String
-		// {
-		// if ( textField )
-		// {
-		// return textField.text;
-		// }
-		//
-		// return null;
-		// }
-		//
-		//
-		// public function set text(text : String) : void
-		// {
-		// if ( textField )
-		// {
-		// textField.text = text;
-		// }
-		// else
-		// {
-		// throw new IllegalOperationError("UIButton does not contain a labelContainer.label textField instance");
-		// }
-		// }
 		protected function initMouse() : void
 		{
 			addEventListener(MouseEvent.ROLL_OVER, onRollOver);
@@ -172,15 +180,7 @@ package com.dezza.ricepaper.ui.button
 
 		protected function renderState() : void
 		{
-			// should be one of the possible ButtonState values
-			var frame : String = _mouseState;
-
-			if ( !enabled )
-			{
-				frame += "Disabled";
-			}
-
-			content.gotoAndStop(frame);
+			content.gotoAndStop(enabled ? _mouseState : ButtonState.DISABLED);
 		}
 
 
@@ -194,19 +194,5 @@ package com.dezza.ricepaper.ui.button
 		{
 			setMouseState(ButtonState.OFF);
 		}
-		// public function addHitArea() : void
-		// {
-		// var hit : Sprite = new Sprite();
-		// addChild(hit);
-		// var contentRect : Rectangle = content.getBounds(this);
-		// with( hit.graphics )
-		// {
-		// beginFill(0x32FFFF, 0.3);
-		// drawRect(contentRect.x - 1, contentRect.y - 1, contentRect.width + 2, contentRect.height + 2);
-		// endFill;
-		// }
-		// hit.visible = false;
-		// hitArea = hit;
-		// }
 	}
 }

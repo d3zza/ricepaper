@@ -73,54 +73,67 @@ package com.dezza.ricepaper.ui
 
 			assertFalse("button return false state", button.enabled);
 
-			assertEquals("content on incorrect frame", ButtonState.OFF_DISABLED, asset.frame);
+			assertEquals("content on incorrect frame", ButtonState.DISABLED, asset.frame);
 		}
-		
-		
+
+
 		[Test]
 		public function onRollOver() : void
 		{
-			button.dispatchEvent( new MouseEvent(MouseEvent.ROLL_OVER) );
+			button.dispatchEvent(new MouseEvent(MouseEvent.ROLL_OVER));
 
 			assertEquals("content on incorrect frame", ButtonState.ON, asset.frame);
 		}
-		
-		
+
+
 		[Test]
 		public function onRollOut() : void
 		{
-			button.dispatchEvent( new MouseEvent(MouseEvent.ROLL_OVER) );
-			
-			button.dispatchEvent( new MouseEvent(MouseEvent.ROLL_OUT) );
+			button.dispatchEvent(new MouseEvent(MouseEvent.ROLL_OVER));
+
+			button.dispatchEvent(new MouseEvent(MouseEvent.ROLL_OUT));
 
 			assertEquals("content on incorrect frame", ButtonState.OFF, asset.frame);
 		}
-		
-		
+
+
 		[Test]
 		public function onRollOverDisabled() : void
 		{
 			button.enabled = false;
-			
-			button.dispatchEvent( new MouseEvent(MouseEvent.ROLL_OVER) );
 
-			assertEquals("content on incorrect frame", ButtonState.ON_DISABLED, asset.frame);
+			button.dispatchEvent(new MouseEvent(MouseEvent.ROLL_OVER));
+
+			assertEquals("content on incorrect frame", ButtonState.DISABLED, asset.frame);
 		}
-		
-		
+
+
 		[Test]
 		public function onRollOutDisabled() : void
 		{
 			button.enabled = false;
-			
-			button.dispatchEvent( new MouseEvent(MouseEvent.ROLL_OVER) );
-			
-			button.dispatchEvent( new MouseEvent(MouseEvent.ROLL_OUT) );
 
-			assertEquals("content on incorrect frame", ButtonState.OFF_DISABLED, asset.frame);
-		
+			button.dispatchEvent(new MouseEvent(MouseEvent.ROLL_OVER));
+
+			button.dispatchEvent(new MouseEvent(MouseEvent.ROLL_OUT));
+
+			assertEquals("content on incorrect frame", ButtonState.DISABLED, asset.frame);
 		}
-		
-		
+
+
+		[Test]
+		public function onRollOverMouseStateLocked() : void
+		{
+			button.mouseStateLocked = true;
+
+			button.dispatchEvent(new MouseEvent(MouseEvent.ROLL_OVER));
+			
+			assertEquals("content on incorrect frame", ButtonState.OFF, asset.frame);
+			
+			button.mouseStateLocked = false;
+			
+			assertEquals("content on incorrect frame", ButtonState.ON, asset.frame);
+		}
+
 	}
 }
