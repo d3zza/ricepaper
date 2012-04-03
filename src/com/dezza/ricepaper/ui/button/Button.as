@@ -2,13 +2,14 @@ package com.dezza.ricepaper.ui.button
 {
 
 	import com.dezza.ricepaper.ui.core.Enableable;
+	import com.dezza.ricepaper.ui.core.Highlightable;
 
 	import flash.events.IEventDispatcher;
 
 	/**
 	 * @author derek
 	 */
-	public interface Button extends IEventDispatcher, Enableable /*, Highlightable*/
+	public interface Button extends IEventDispatcher, Enableable , Highlightable
 	{
 		/**
 		 * get whether or not the mouse state is currently locked

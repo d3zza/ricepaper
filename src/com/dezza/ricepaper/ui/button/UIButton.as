@@ -114,6 +114,24 @@ package com.dezza.ricepaper.ui.button
 		}
 
 
+		/**
+		 * get the button's on/off state
+		 */
+		public function get highlighted() : Boolean
+		{
+			return _mouseState == ButtonState.ON;
+		}
+
+
+		/**
+		 * set the button's on/off state
+		 */
+		public function set highlighted(highlighted : Boolean) : void
+		{
+			setMouseState(highlighted ? ButtonState.ON : ButtonState.OFF);
+		}
+
+
 		public function addAutoHitArea() : void
 		{
 			var hit : Sprite = new Sprite();
@@ -129,10 +147,15 @@ package com.dezza.ricepaper.ui.button
 			hitArea = hit;
 		}
 
-
+		/**
+		 * @inheritDoc
+		 */
 		public function destroy() : void
 		{
 			_content = null;
+			
+			removeEventListener(MouseEvent.ROLL_OVER, onRollOver);
+			removeEventListener(MouseEvent.ROLL_OUT, onRollOut);
 		}
 
 
