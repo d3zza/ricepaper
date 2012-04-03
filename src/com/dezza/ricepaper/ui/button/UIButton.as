@@ -1,105 +1,125 @@
-package com.dezza.ricepaper.ui.button {
-	import flash.display.DisplayObject;
+package com.dezza.ui.button {
+
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
+	import flash.errors.IllegalOperationError;
 	import flash.events.MouseEvent;
-	import flash.geom.ColorTransform;
 	import flash.geom.Rectangle;
+	import flash.text.TextField;
 
 	/**
 	 * @author derek
 	 */
-	public class UIButton extends Sprite {
+	public class UIButton extends Sprite implements Button {
 
-		public static var 
-			GREYED_OUT_COLOR:ColorTransform,
-			NORMAL_COLOR:ColorTransform;
-					
 		private var _id:String;
+
+		private var _content:MovieClip;
 		
-		private var _content : DisplayObject;
-		
-		private var _useTimeLineStates : Boolean;
-		
-		public function UIButton( content : DisplayObject, wrapContent:Boolean = false, useTimeLineStates:Boolean = false, id:String = "" ) {
-			if( content && wrapContent) {
-				// move this to where content is and position content at 0,0
-				x = content.x;
-				y = content.y;
-				content.x = 0;
-				content.y = 0;
-				if( content.parent ) content.parent.addChild( this );
-			}
-			
-			if( content ){
+		public function UIButton(content:MovieClip, id:String = null, wrapContent:Boolean = true) {
+
+			if (content) {
+				
+				if (wrapContent) {
+					
+					x = content.x;
+					y = content.y;
+					content.x = 0;
+					content.y = 0;
+					
+					if (content.parent) {
+						
+						content.parent.addChildAt(this, content.parent.getChildIndex( content ) );
+					}
+				}
+				
 				addChild(content);
+
 				_content = content;
-			} else {
-				_content = this;
 			}
-			
+			else {
+				
+				throw new ArgumentError("UIButton content is undefined");
+			}
+
 			_id = id;
-			_useTimeLineStates = useTimeLineStates;
-			
+
 			init();
 		}
-		
-		protected function init():void {
-			addEventListener(MouseEvent.ROLL_OVER, onRollOver);
-			addEventListener(MouseEvent.ROLL_OUT, onRollOut);
-			buttonMode = true;
-			mouseChildren = false;
-			
-			if( !GREYED_OUT_COLOR ){
-				GREYED_OUT_COLOR = new ColorTransform();
-				GREYED_OUT_COLOR.color = 0x666666;
-				GREYED_OUT_COLOR.redMultiplier = 0.3;
-				GREYED_OUT_COLOR.blueMultiplier = 0.3;
-				GREYED_OUT_COLOR.greenMultiplier = 0.3;
-			}
-			
-			if( !NORMAL_COLOR ) NORMAL_COLOR = new ColorTransform();
-		}
-		
+
+
 		public function get id():String {
+			
 			return _id;
 		}
 		
-		public function get content():DisplayObject {
+		public function get content() : MovieClip {
+			
 			return _content;
 		}
-
-		public function set enabled( b:Boolean ):void {
-			mouseEnabled = b;
-			setGreyedOut( !b );
-		}
-
-		public function get enabled() : Boolean {
+		
+		public function get enabled():Boolean {
+			
 			return mouseEnabled;
 		}
-		
-		public function setGreyedOut( b : Boolean ) : void {
-			transform.colorTransform = b ? GREYED_OUT_COLOR : NORMAL_COLOR;							
+
+
+		public function set enabled(b:Boolean):void {
+			
+			mouseEnabled = b;
+			
+			var label:String = b ? "_up" : "_disabled";
+			
+			// TODO fix me need to work with FrameLabel objs
+//			if( _content.currentLabels.indexOf( label ) != -1 ){
+//				_content.gotoAndStop( label );	
+//			}
 		}
 		
-		protected function onRollOver(event : MouseEvent) : void {
-			if (_useTimeLineStates) {
-				if ( !(_content is MovieClip) ) return;
-				( _content as MovieClip ).gotoAndStop("_over");
+		
+		public function get textField():TextField {
+			
+			// labelContainer.label by convention
+			
+			if (content.labelContainer ) {
+				
+				return content.labelContainer.label;
+			}
+			
+			return null;
+		}
+		
+		
+		public function get text():String {
+
+			
+			if ( textField ) {
+				
+				return textField.text;
+			}
+			
+			return null;
+		}
+		
+		
+		public function set text(text:String):void {
+			
+			if ( textField ) {
+				
+				textField.text = text;
+			}
+			else {
+				
+				throw new IllegalOperationError("UIButton does not contain a labelContainer.label textField instance");
 			}
 		}
 		
-		protected function onRollOut(event : MouseEvent) : void {
-			if (_useTimeLineStates) {
-				if ( !(_content is MovieClip) ) return;
-				( _content as MovieClip ).gotoAndStop("_up");
-			}
-		}
 		
-		public function addHitArea() : void {
-			var hit : Sprite = new Sprite();
+		public function addHitArea():void {
+			
+			var hit:Sprite = new Sprite();
 			addChild(hit);
-			var contentRect : Rectangle = content.getBounds(this);
+			var contentRect:Rectangle = content.getBounds(this);
 			with( hit.graphics ) {
 				beginFill(0x32FFFF, 0.3);
 				drawRect(contentRect.x - 1, contentRect.y - 1, contentRect.width + 2, contentRect.height + 2);
@@ -109,5 +129,26 @@ package com.dezza.ricepaper.ui.button {
 			hitArea = hit;
 		}
 		
+		
+		protected function init():void {
+			
+			addEventListener(MouseEvent.ROLL_OVER, onRollOver);
+			addEventListener(MouseEvent.ROLL_OUT, onRollOut);
+			
+			buttonMode = true;
+			mouseChildren = false;
+
+			enabled = true;
+		}
+
+
+		protected function onRollOver(event:MouseEvent):void {
+			content.gotoAndStop("_over");
+		}
+
+
+		protected function onRollOut(event:MouseEvent):void {
+			content.gotoAndStop("_up");
+		}
 	}
 }

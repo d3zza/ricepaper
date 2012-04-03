@@ -1,6 +1,6 @@
-package com.dezza.ricepaper.ui.button {
-	import com.dezza.ricepaper.ui.event.RepeaterButtonEvent;
-	import flash.display.DisplayObject;
+package com.dezza.ui.button {
+
+	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
@@ -9,21 +9,6 @@ package com.dezza.ricepaper.ui.button {
 	 * @author derek
 	 */
 	public class RepeaterButton extends UIButton {
-
-		/**
-		 * current mouse state i.e. "up","over","down"
-		 */
-		protected var _mouseState : String;
-		
-		/**
-		 * whether or not the mouse state is currently locked
-		 */
-		protected var _mouseStateLocked : Boolean;
-		
-		/**
-		 * mouse state to apply to mouse when unlocked
-		 */
-		protected var _unlockedMouseState : String;
 
 		/**
 		 * whether or not the button is currently enabled
@@ -55,8 +40,13 @@ package com.dezza.ricepaper.ui.button {
 		 */
 		protected var _repeatTimer : Timer;
 		
-		public function RepeaterButton(content : DisplayObject, wrapContent : Boolean = false, useTimeLineStates : Boolean = false, id : String = "") {
-			super(content, wrapContent, useTimeLineStates, id);
+		/**
+		 * number of repeat events fired since mouse was pressed
+		 */
+		protected var _repeatCount : uint = 0;
+		
+		public function RepeaterButton(content : MovieClip, id : String = null, wrapContent : Boolean = true) {
+			super(content, id, wrapContent );
 		}
 		
 		override protected function init():void {
@@ -96,7 +86,8 @@ package com.dezza.ricepaper.ui.button {
 				_repeatTimer.delay = _repeatDelay;
 				_repeatTimer.start();
 			}
-			dispatchEvent( new RepeaterButtonEvent( RepeaterButtonEvent.BUTTON_DOWN, true ) );			
+			_repeatCount = 0;		
+			dispatchEvent( new RepeaterButtonEvent( RepeaterButtonEvent.BUTTON_DOWN, true ) );
 		}
 		
 		/**
@@ -105,6 +96,7 @@ package com.dezza.ricepaper.ui.button {
 		protected function buttonDown(event:TimerEvent):void {
 			if (!_autoRepeat) { endPress(); return; }
 			if (_repeatTimer.currentCount == 1) _repeatTimer.delay = _repeatInterval;
+			_repeatCount++;
 			dispatchEvent( new RepeaterButtonEvent( RepeaterButtonEvent.BUTTON_DOWN, true ) );	
 		}
 		
@@ -150,6 +142,10 @@ package com.dezza.ricepaper.ui.button {
 			return _autoRepeat;
 		}
 
+		public function get repeatCount():uint {
+			return _repeatCount;
+		}
+		
 		/**
 		 * @private
 		 */

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" id="0" name="UITests" package="com.dezza.ricepaper.ui" skipped="0" tests="1" time="0.0">
+      <testcase classname="com.dezza.ricepaper.ui::UITests" name="constructr" status="success" time="0.000" />
+
+  </testsuite>
+  <testsuite errors="0" failures="0" id="1" name="DisplayListUtilTests" package="com.dezza.ricepaper.ui.util" skipped="0" tests="5" time="0.0">
+      <testcase classname="com.dezza.ricepaper.ui.util::DisplayListUtilTests" name="targetReturned" status="success" time="0.000" />
+
+      <testcase classname="com.dezza.ricepaper.ui.util::DisplayListUtilTests" name="contentPosition" status="success" time="0.000" />
+
+      <testcase classname="com.dezza.ricepaper.ui.util::DisplayListUtilTests" name="isAddedToChildsParent" status="success" time="0.000" />
+
+      <testcase classname="com.dezza.ricepaper.ui.util::DisplayListUtilTests" name="childAdded" status="success" time="0.000" />
+
+      <testcase classname="com.dezza.ricepaper.ui.util::DisplayListUtilTests" name="targetPosition" status="success" time="0.000" />
+
+  </testsuite>
+</testsuites>

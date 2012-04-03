@@ -1,4 +1,4 @@
-package com.dezza.ricepaper.ui.event {
+package com.dezza.ui.button {
 	import flash.events.Event;
 
 	/**
@@ -6,14 +6,10 @@ package com.dezza.ricepaper.ui.event {
 	 */
 	public class RepeaterButtonEvent extends Event {
 		
-		public static const BUTTON_DOWN:String = "RepeaterButtonEvent.BUTTON_DOWN";
+		public static const BUTTON_DOWN:String = "buttonDown";
 		
 		public function RepeaterButtonEvent(type : String, bubbles : Boolean = false, cancelable : Boolean = false) {
 			super(type, bubbles, cancelable);
-		}
-		
-		override public function clone():Event {
-			return new RepeaterButtonEvent( type, bubbles, cancelable );
 		}
 	}
 }

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<testsuite name="com.dezza.ricepaper.ui.UITests" tests="1" failures="0" errors="0" skipped="0" time="0.0">
+  <testcase classname="com.dezza.ricepaper.ui::UITests" name="constructr" time="0.000" status="success"/>
+</testsuite>
