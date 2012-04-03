@@ -2,7 +2,7 @@ package ui
 {
 
 	import flash.utils.setTimeout;
-	import com.dezza.ricepaper.ui.button.UIButton;
+	import com.dezza.ricepaper.ui.button.Button;
 
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
@@ -12,9 +12,9 @@ package ui
 	 */
 	public class UIButtonPlayground extends MovieClip
 	{
-		private var leftBtn : UIButton;
+		private var leftBtn : Button;
 
-		private var rightBtn : UIButton;
+		private var rightBtn : Button;
 
 		private var textArea : PG_TextArea;
 		
@@ -22,18 +22,18 @@ package ui
 		
 		private var leftClicked : int = 0;
 
-		private var irregBtn : UIButton;
+		private var irregBtn : Button;
 		
 		public function UIButtonPlayground()
 		{
-			leftBtn = new UIButton(new PG_UIButtonAsset());
+			leftBtn = new Button(new PG_UIButtonAsset());
 			leftBtn.x = 100;
 			leftBtn.y = 100;
 
 			leftBtn.addEventListener(MouseEvent.CLICK, onClick);
 			addChild(leftBtn);
 
-			rightBtn = new UIButton(new PG_UIButtonAsset());
+			rightBtn = new Button(new PG_UIButtonAsset());
 			rightBtn.x = 400;
 			rightBtn.y = 100;
 
@@ -49,10 +49,15 @@ package ui
 			
 			textArea.tf.text = "L = 0, R = 0";
 			
-			irregBtn = new UIButton(new PG_UIButtonAssetNoBG());
-			irregBtn.x = 100;
-			irregBtn.y = 300;
-			irregBtn.addAutoHitArea();
+			var btnAsset:MovieClip = new PG_UIButtonAssetNoBG();
+			btnAsset.x = 150;
+			btnAsset.y = 200;
+			btnAsset.scaleX = 2;
+			btnAsset.scaleY = 2;
+			btnAsset.rotation = 45;
+			
+			irregBtn = new Button( btnAsset );
+			irregBtn.addAutoHitArea( true );
 		
 			addChild( irregBtn );
 		}
@@ -77,7 +82,7 @@ package ui
 		}
 		
 		
-		private function reenableBtn( target:UIButton ):void 
+		private function reenableBtn( target:Button ):void 
 		{
 			target.enabled = true;
 		}

@@ -9,7 +9,7 @@ package com.dezza.ricepaper.ui.mock
 	/**
 	 * @author derek
 	 */
-	public class MockUIButtonAsset extends MovieClip
+	public class MockButtonAsset extends MovieClip
 	{
 
 		private var labelContainer : Sprite;
@@ -18,7 +18,7 @@ package com.dezza.ricepaper.ui.mock
 
 		private var _frame : Object = ButtonState.OFF;
 
-		public function MockUIButtonAsset()
+		public function MockButtonAsset()
 		{
 			addChildren();
 		}

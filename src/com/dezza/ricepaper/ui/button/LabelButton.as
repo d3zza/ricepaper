@@ -3,14 +3,14 @@ package com.dezza.ricepaper.ui.button
 
 	import flash.text.TextField;
 
-	import com.dezza.ricepaper.ui.button.UIButton;
+	import com.dezza.ricepaper.ui.button.Button;
 
 	import flash.display.MovieClip;
 
 	/**
 	 * @author derek
 	 */
-	public class LabelButton extends UIButton implements LabelledButton
+	public class LabelButton extends Button implements ILabelButton
 	{
 		protected var _textField : TextField;
 

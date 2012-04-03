@@ -6,8 +6,8 @@ package com.dezza.ricepaper.ui
 	import flash.display.DisplayObjectContainer;
 
 	import com.dezza.ricepaper.ui.button.ButtonState;
-	import com.dezza.ricepaper.ui.button.UIButton;
-	import com.dezza.ricepaper.ui.mock.MockUIButtonAsset;
+	import com.dezza.ricepaper.ui.button.Button;
+	import com.dezza.ricepaper.ui.mock.MockButtonAsset;
 
 	import org.flexunit.asserts.assertEquals;
 	import org.flexunit.asserts.assertFalse;
@@ -17,20 +17,20 @@ package com.dezza.ricepaper.ui
 	/**
 	 * @author derek
 	 */
-	public class UIButtonTests
+	public class ButtonTests
 	{
 		private var parent : DisplayObjectContainer;
 
-		private var asset : MockUIButtonAsset;
+		private var asset : MockButtonAsset;
 
-		private var button : UIButton;
+		private var button : Button;
 
 		[Before]
 		public function runBeforeEachTest() : void
 		{
 			parent = new Sprite();
 
-			asset = new MockUIButtonAsset();
+			asset = new MockButtonAsset();
 
 			asset.x = 97;
 
@@ -38,7 +38,7 @@ package com.dezza.ricepaper.ui
 
 			parent.addChild(asset);
 
-			button = new UIButton(asset);
+			button = new Button(asset);
 		}
 
 
