@@ -1,7 +1,7 @@
 package com.dezza.ricepaper
 {
 
-	import com.dezza.ricepaper.ui.UITests;
+	import com.dezza.ricepaper.ui.UIButtonTests;
 
 	/**
 	 * @author dezza
@@ -11,6 +11,6 @@ package com.dezza.ricepaper
 	public class RicePaperTestSuite
 	{
 
-		public var uiTests : UITests;
+		public var uiTests : UIButtonTests;
 	}
 }

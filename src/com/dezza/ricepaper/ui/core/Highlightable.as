@@ -6,9 +6,19 @@ package com.dezza.ricepaper.ui.core
 	public interface Highlightable
 	{
 
+		/**
+		 * get highlighted
+		 * 
+		 * @return Boolean
+		 */
 		function get highlighted() : Boolean;
 
 
-		function set highlighted(b : Boolean) : void;
+		/**
+		 * set highlighted
+		 * 
+		 * @param highlighted Boolean
+		 */
+		function set highlighted(highlighted : Boolean) : void;
 	}
 }
