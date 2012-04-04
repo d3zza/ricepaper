@@ -14,7 +14,7 @@ package com.dezza.ricepaper.ui.mock
 
 		private var labelContainer : Sprite;
 
-		private var label : TextField;
+		public var label : TextField;
 
 		private var _frame : Object = ButtonState.OFF;
 

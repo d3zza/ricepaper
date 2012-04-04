@@ -1,0 +1,850 @@
+<asdoc build="asd3_0_b2_1">
+   <link rel="stylesheet" href="style.css" type="text/css"/>
+   <packages>
+      <asPackage name="com.dezza.ricepaper.ui.button">
+         <classes>
+            <asClass name="ButtonState" type="class" fullname="com.dezza.ricepaper.ui.button:ButtonState" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.button" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek
+  
+  constants for button states 
+  
+  button assets should use these values as frame labels for a particular state</author>
+               <asAncestors/>
+               <fields>
+                  <field name="DISABLED" fullname="com.dezza.ricepaper.ui.button:ButtonState/DISABLED" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="disabled">
+                     <versions/>
+                  </field>
+                  <field name="OFF" fullname="com.dezza.ricepaper.ui.button:ButtonState/OFF" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="off">
+                     <versions/>
+                  </field>
+                  <field name="OFF_SELECTED" fullname="com.dezza.ricepaper.ui.button:ButtonState/OFF_SELECTED" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="offSelected">
+                     <versions/>
+                  </field>
+                  <field name="ON" fullname="com.dezza.ricepaper.ui.button:ButtonState/ON" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="on">
+                     <versions/>
+                  </field>
+                  <field name="ON_SELECTED" fullname="com.dezza.ricepaper.ui.button:ButtonState/ON_SELECTED" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="onSelected">
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="LabelButton" type="class" fullname="com.dezza.ricepaper.ui.button:LabelButton" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.button" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="Button" fullName="com.dezza.ricepaper.ui.button:Button" packageName="com.dezza.ricepaper.ui.button" relativePath="Button.html"/>
+                     <fields>
+                        <field name="_mouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:_mouseState" accessLevel="protected" type="String" isConst="false" isStatic="false">
+                           <shortDescription><![CDATA[
+   current mouse state i.e.]]></shortDescription>
+                        </field>
+                        <field name="_mouseStateLocked" fullname="com.dezza.ricepaper.ui.button:Button/protected:_mouseStateLocked" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
+                           <shortDescription><![CDATA[
+   whether or not the mouse state is currently locked
+   ]]></shortDescription>
+                        </field>
+                        <field name="_unlockedMouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:_unlockedMouseState" accessLevel="protected" type="String" isConst="false" isStatic="false">
+                           <shortDescription><![CDATA[
+   mouse state to apply to mouse when unlocked
+   ]]></shortDescription>
+                        </field>
+                        <field name="highlighted" fullname="com.dezza.ricepaper.ui.button:Button/highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get the button's on/off state
+   ]]></shortDescription>
+                        </field>
+                        <field name="mouseStateLocked" fullname="com.dezza.ricepaper.ui.button:Button/mouseStateLocked/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   
+   get whether or not the mouse state is currently locked
+   
+   ]]></shortDescription>
+                        </field>
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.button:Button/enabled/set" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   
+   
+   set enabled
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                     <methods>
+                        <method name="addAutoHitArea" fullname="com.dezza.ricepaper.ui.button:Button/addAutoHitArea" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="debug" type="Boolean" default="false"/>
+                           </params>
+                        </method>
+                        <method name="destroy" fullname="com.dezza.ricepaper.ui.button:Button/destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="true" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   
+   
+   make control available for GC
+   ]]></shortDescription>
+                        </method>
+                        <method name="initMouse" fullname="com.dezza.ricepaper.ui.button:Button/protected:initMouse" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                        <method name="onRollOut" fullname="com.dezza.ricepaper.ui.button:Button/protected:onRollOut" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="event" type="flash.events:MouseEvent"/>
+                           </params>
+                        </method>
+                        <method name="onRollOver" fullname="com.dezza.ricepaper.ui.button:Button/protected:onRollOver" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="event" type="flash.events:MouseEvent"/>
+                           </params>
+                        </method>
+                        <method name="renderState" fullname="com.dezza.ricepaper.ui.button:Button/protected:renderState" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                        <method name="setMouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:setMouseState" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   set the current mouse state
+   
+   mouseState can be either
+   
+   ButtonState.OFF representing mouse off button
+   
+   or 
+   
+   ButtonState.ON representing mouse on (or over) button
+   
+   ]]></shortDescription>
+                           <params>
+                              <param name="mouseState" type="String"/>
+                           </params>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="UIControl" fullName="com.dezza.ricepaper.ui.core:UIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/UIControl.html"/>
+                     <fields>
+                        <field name="_content" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_content" accessLevel="protected" type="flash.display:MovieClip" isConst="false" isStatic="false">
+                           <shortDescription><![CDATA[
+   content asset MovieClip 
+   ]]></shortDescription>
+                        </field>
+                        <field name="_enabled" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_enabled" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
+                           <shortDescription><![CDATA[
+   whether or not the control is currently enabled
+   ]]></shortDescription>
+                        </field>
+                        <field name="content" fullname="com.dezza.ricepaper.ui.core:UIControl/content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   
+   get the content asset
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.display.Sprite" fullName="flash.display.Sprite" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <asImplements>
+                  <asAncestor>
+                     <classRef name="ILabelButton" fullName="com.dezza.ricepaper.ui.button:ILabelButton" packageName="com.dezza.ricepaper.ui.button" relativePath="ILabelButton.html"/>
+                  </asAncestor>
+               </asImplements>
+               <constructors>
+                  <constructor name="LabelButton" fullname="com.dezza.ricepaper.ui.button:LabelButton/LabelButton" accessLevel="public" result_type="*" inheritDoc="false">
+                     <versions/>
+                     <result type="*"/>
+                     <params>
+                        <param name="content" type="flash.display:MovieClip"/>
+                        <param name="textField" type="flash.text:TextField"/>
+                     </params>
+                  </constructor>
+               </constructors>
+               <fields>
+                  <field name="_textField" fullname="com.dezza.ricepaper.ui.button:LabelButton/protected:_textField" accessLevel="protected" type="flash.text:TextField" isConst="false" isStatic="false">
+                     <versions/>
+                  </field>
+                  <field name="text" fullname="com.dezza.ricepaper.ui.button:LabelButton/text/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="textField" fullname="com.dezza.ricepaper.ui.button:LabelButton/textField/get" accessLevel="public" isConst="false" isStatic="false" type="flash.text:TextField" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="IButton" type="interface" fullname="com.dezza.ricepaper.ui.button:IButton" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.button" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <implementers>
+                  <classRef name="Button" fullName="com.dezza.ricepaper.ui.button:Button" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/Button.html"/>
+               </implementers>
+               <asDecendants>
+                  <classRef name="ILabelButton" fullName="com.dezza.ricepaper.ui.button:ILabelButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/ILabelButton.html"/>
+               </asDecendants>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
+                     <fields>
+                        <field name="content" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get the content asset
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                     <methods>
+                        <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   make control available for GC
+   ]]></shortDescription>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="Enableable" fullName="com.dezza.ricepaper.ui.core:Enableable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Enableable.html"/>
+                     <fields>
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get enabled
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="Highlightable" fullName="com.dezza.ricepaper.ui.core:Highlightable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Highlightable.html"/>
+                     <fields>
+                        <field name="highlighted" fullname="com.dezza.ricepaper.ui.core:Highlightable/com.dezza.ricepaper.ui.core:Highlightable:highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get highlighted
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+               </asAncestors>
+               <fields>
+                  <field name="mouseStateLocked" fullname="com.dezza.ricepaper.ui.button:IButton/com.dezza.ricepaper.ui.button:IButton:mouseStateLocked/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get whether or not the mouse state is currently locked
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get whether or not the mouse state is currently locked
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="ILabelButton" type="interface" fullname="com.dezza.ricepaper.ui.button:ILabelButton" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.button" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <implementers>
+                  <classRef name="LabelButton" fullName="com.dezza.ricepaper.ui.button:LabelButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/LabelButton.html"/>
+               </implementers>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="IButton" fullName="com.dezza.ricepaper.ui.button:IButton" packageName="com.dezza.ricepaper.ui.button" relativePath="IButton.html"/>
+                     <fields>
+                        <field name="mouseStateLocked" fullname="com.dezza.ricepaper.ui.button:IButton/com.dezza.ricepaper.ui.button:IButton:mouseStateLocked/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get whether or not the mouse state is currently locked
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
+                     <fields>
+                        <field name="content" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get the content asset
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                     <methods>
+                        <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   make control available for GC
+   ]]></shortDescription>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="Enableable" fullName="com.dezza.ricepaper.ui.core:Enableable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Enableable.html"/>
+                     <fields>
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get enabled
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="Highlightable" fullName="com.dezza.ricepaper.ui.core:Highlightable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Highlightable.html"/>
+                     <fields>
+                        <field name="highlighted" fullname="com.dezza.ricepaper.ui.core:Highlightable/com.dezza.ricepaper.ui.core:Highlightable:highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get highlighted
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="Label" fullName="com.dezza.ricepaper.ui.core:Label" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Label.html"/>
+                     <fields>
+                        <field name="text" fullname="com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:text/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get label text
+   
+   ]]></shortDescription>
+                        </field>
+                        <field name="textField" fullname="com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:textField/get" accessLevel="public" isConst="false" isStatic="false" type="flash.text:TextField" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get textfield
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+               </asAncestors>
+            </asClass>
+            <asClass name="Button" type="class" fullname="com.dezza.ricepaper.ui.button:Button" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.button" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asDecendants>
+                  <classRef name="LabelButton" fullName="com.dezza.ricepaper.ui.button:LabelButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/LabelButton.html"/>
+               </asDecendants>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="UIControl" fullName="com.dezza.ricepaper.ui.core:UIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/UIControl.html"/>
+                     <fields>
+                        <field name="_content" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_content" accessLevel="protected" type="flash.display:MovieClip" isConst="false" isStatic="false">
+                           <shortDescription><![CDATA[
+   content asset MovieClip 
+   ]]></shortDescription>
+                        </field>
+                        <field name="_enabled" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_enabled" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
+                           <shortDescription><![CDATA[
+   whether or not the control is currently enabled
+   ]]></shortDescription>
+                        </field>
+                        <field name="content" fullname="com.dezza.ricepaper.ui.core:UIControl/content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   
+   get the content asset
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.display.Sprite" fullName="flash.display.Sprite" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <asImplements>
+                  <asAncestor>
+                     <classRef name="IButton" fullName="com.dezza.ricepaper.ui.button:IButton" packageName="com.dezza.ricepaper.ui.button" relativePath="IButton.html"/>
+                  </asAncestor>
+               </asImplements>
+               <constructors>
+                  <constructor name="Button" fullname="com.dezza.ricepaper.ui.button:Button/Button" accessLevel="public" result_type="*" inheritDoc="false">
+                     <versions/>
+                     <result type="*"/>
+                     <params>
+                        <param name="content" type="flash.display:MovieClip"/>
+                     </params>
+                  </constructor>
+               </constructors>
+               <methods>
+                  <method name="addAutoHitArea" fullname="com.dezza.ricepaper.ui.button:Button/addAutoHitArea" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="debug" type="Boolean" default="false"/>
+                     </params>
+                  </method>
+                  <method name="destroy" fullname="com.dezza.ricepaper.ui.button:Button/destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="true" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   
+   
+   make control available for GC
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   
+   make control available for GC
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+                  <method name="initMouse" fullname="com.dezza.ricepaper.ui.button:Button/protected:initMouse" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+                  <method name="onRollOut" fullname="com.dezza.ricepaper.ui.button:Button/protected:onRollOut" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="event" type="flash.events:MouseEvent"/>
+                     </params>
+                  </method>
+                  <method name="onRollOver" fullname="com.dezza.ricepaper.ui.button:Button/protected:onRollOver" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="event" type="flash.events:MouseEvent"/>
+                     </params>
+                  </method>
+                  <method name="renderState" fullname="com.dezza.ricepaper.ui.button:Button/protected:renderState" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+                  <method name="setMouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:setMouseState" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   set the current mouse state
+   
+   mouseState can be either
+   
+   ButtonState.OFF representing mouse off button
+   
+   or 
+   
+   ButtonState.ON representing mouse on (or over) button
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   set the current mouse state
+   
+   mouseState can be either
+   
+   ButtonState.OFF representing mouse off button
+   
+   or 
+   
+   ButtonState.ON representing mouse on (or over) button
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="mouseState" type="String">
+                           <description><![CDATA[String representing mouse state
+   
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="_mouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:_mouseState" accessLevel="protected" type="String" isConst="false" isStatic="false">
+                     <description><![CDATA[
+   current mouse state i.e. "off","on"
+   ]]></description>
+                     <shortDescription><![CDATA[
+   current mouse state i.e.]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="_mouseStateLocked" fullname="com.dezza.ricepaper.ui.button:Button/protected:_mouseStateLocked" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
+                     <description><![CDATA[
+   whether or not the mouse state is currently locked
+   ]]></description>
+                     <shortDescription><![CDATA[
+   whether or not the mouse state is currently locked
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="_unlockedMouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:_unlockedMouseState" accessLevel="protected" type="String" isConst="false" isStatic="false">
+                     <description><![CDATA[
+   mouse state to apply to mouse when unlocked
+   ]]></description>
+                     <shortDescription><![CDATA[
+   mouse state to apply to mouse when unlocked
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="highlighted" fullname="com.dezza.ricepaper.ui.button:Button/highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get the button's on/off state
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get the button's on/off state
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="mouseStateLocked" fullname="com.dezza.ricepaper.ui.button:Button/mouseStateLocked/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   
+   get whether or not the mouse state is currently locked
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   get whether or not the mouse state is currently locked
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="enabled" fullname="com.dezza.ricepaper.ui.button:Button/enabled/set" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="write">
+                     <description><![CDATA[
+   
+   
+   set enabled
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   
+   set enabled
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <customs>
+                        <param><![CDATA[enabled Boolean
+   ]]></param>
+                     </customs>
+                  </field>
+               </fields>
+            </asClass>
+         </classes>
+      </asPackage>
+      <asPackage name="com.dezza.ricepaper.ui.core">
+         <classes>
+            <asClass name="Highlightable" type="interface" fullname="com.dezza.ricepaper.ui.core:Highlightable" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asDecendants>
+                  <classRef name="IButton" fullName="com.dezza.ricepaper.ui.button:IButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/IButton.html"/>
+               </asDecendants>
+               <asAncestors/>
+               <fields>
+                  <field name="highlighted" fullname="com.dezza.ricepaper.ui.core:Highlightable/com.dezza.ricepaper.ui.core:Highlightable:highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get highlighted
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get highlighted
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="UIControl" type="class" fullname="com.dezza.ricepaper.ui.core:UIControl" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  UIControl
+  Class Description.
+    ]]></description>
+               <shortDescription><![CDATA[
+  UIControl
+  Class Description.]]></shortDescription>
+               <versions/>
+               <author>Derek McKenna</author>
+               <customs>
+                  <since><![CDATA[Feb 15, 2009
+  ]]></since>
+               </customs>
+               <asDecendants>
+                  <classRef name="Button" fullName="com.dezza.ricepaper.ui.button:Button" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/Button.html"/>
+               </asDecendants>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="flash.display.Sprite" fullName="flash.display.Sprite" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <asImplements>
+                  <asAncestor>
+                     <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="IUIControl.html"/>
+                     <methods>
+                        <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   make control available for GC
+   ]]></shortDescription>
+                        </method>
+                     </methods>
+                  </asAncestor>
+               </asImplements>
+               <constructors>
+                  <constructor name="UIControl" fullname="com.dezza.ricepaper.ui.core:UIControl/UIControl" accessLevel="public" result_type="*" inheritDoc="false">
+                     <description><![CDATA[
+   Constructor
+   
+   <p>if content is already attached to a parent the UIControl 
+   will attach itself in place and add the asset as it's child</p>
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Constructor
+   
+   <p>if content is already attached to a parent the UIControl 
+   will attach itself in place and add the asset as it's child</p>
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="*"/>
+                     <params>
+                        <param name="content" type="flash.display:MovieClip">
+                           <description><![CDATA[MovieClip 
+   ]]></description>
+                        </param>
+                     </params>
+                  </constructor>
+               </constructors>
+               <methods>
+                  <method name="destroy" fullname="com.dezza.ricepaper.ui.core:UIControl/destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   
+   make control available for GC
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   make control available for GC
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="_content" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_content" accessLevel="protected" type="flash.display:MovieClip" isConst="false" isStatic="false">
+                     <description><![CDATA[
+   content asset MovieClip 
+   ]]></description>
+                     <shortDescription><![CDATA[
+   content asset MovieClip 
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="_enabled" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_enabled" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
+                     <description><![CDATA[
+   whether or not the control is currently enabled
+   ]]></description>
+                     <shortDescription><![CDATA[
+   whether or not the control is currently enabled
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="content" fullname="com.dezza.ricepaper.ui.core:UIControl/content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   
+   get the content asset
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   get the content asset
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="enabled" fullname="com.dezza.ricepaper.ui.core:UIControl/enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   
+   get enabled
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   get enabled
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="Label" type="interface" fullname="com.dezza.ricepaper.ui.core:Label" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asDecendants>
+                  <classRef name="ILabelButton" fullName="com.dezza.ricepaper.ui.button:ILabelButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/ILabelButton.html"/>
+               </asDecendants>
+               <asAncestors/>
+               <fields>
+                  <field name="text" fullname="com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:text/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get label text
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get label text
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="textField" fullname="com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:textField/get" accessLevel="public" isConst="false" isStatic="false" type="flash.text:TextField" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   get textfield
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get textfield
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="IUIControl" type="interface" fullname="com.dezza.ricepaper.ui.core:IUIControl" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <implementers>
+                  <classRef name="UIControl" fullName="com.dezza.ricepaper.ui.core:UIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/UIControl.html"/>
+               </implementers>
+               <asDecendants>
+                  <classRef name="IButton" fullName="com.dezza.ricepaper.ui.button:IButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/IButton.html"/>
+               </asDecendants>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="Enableable" fullName="com.dezza.ricepaper.ui.core:Enableable" packageName="com.dezza.ricepaper.ui.core" relativePath="Enableable.html"/>
+                     <fields>
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get enabled
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+               </asAncestors>
+               <methods>
+                  <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   make control available for GC
+   ]]></description>
+                     <shortDescription><![CDATA[
+   make control available for GC
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="content" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   get the content asset
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get the content asset
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="Enableable" type="interface" fullname="com.dezza.ricepaper.ui.core:Enableable" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asDecendants>
+                  <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
+               </asDecendants>
+               <asAncestors/>
+               <fields>
+                  <field name="enabled" fullname="com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get enabled
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get enabled
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="Selectable" type="interface" fullname="com.dezza.ricepaper.ui.core:Selectable" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asAncestors/>
+               <fields>
+                  <field name="selected" fullname="com.dezza.ricepaper.ui.core:Selectable/com.dezza.ricepaper.ui.core:Selectable:selected/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get selected
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get selected
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+         </classes>
+      </asPackage>
+      <asPackage name="com.dezza.ricepaper.examples">
+         <classes>
+            <asClass name="RicePaperUIMain" type="class" fullname="com.dezza.ricepaper.examples:RicePaperUIMain" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.examples" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>dezza</author>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="flash.display.MovieClip" fullName="flash.display.MovieClip" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <constructors>
+                  <constructor name="RicePaperUIMain" fullname="com.dezza.ricepaper.examples:RicePaperUIMain/RicePaperUIMain" accessLevel="public" result_type="*" inheritDoc="false">
+                     <versions/>
+                     <result type="*"/>
+                  </constructor>
+               </constructors>
+            </asClass>
+         </classes>
+      </asPackage>
+   </packages>
+</asdoc>

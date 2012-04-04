@@ -108,7 +108,7 @@
       <arg line="-source-path ${main.src.loc}"/>
       <arg line="-output ${doc.loc}"/>
       <arg value="-keep-xml=true"/>
-      <arg value="-lenient=true"/>
+      <!-- <arg value="-lenient=true"/> -->
       <arg line="-window-title 'RicePaper ${ricepaper.ver.num}'"/>
       <arg line="-main-title 'RicePaper ${ricepaper.ver.num}'"/>
       <arg line="-footer 'RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: ${docgen.time}'"/>

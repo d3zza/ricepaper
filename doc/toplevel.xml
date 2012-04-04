@@ -1,0 +1,357 @@
+<asdoc>
+
+<interfaceRec name='Selectable' fullname='com.dezza.ricepaper.ui.core:Selectable' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/core/Selectable.as' namespace='com.dezza.ricepaper.ui.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  ]]></author>
+</interfaceRec>
+<method name='selected' fullname='com.dezza.ricepaper.ui.core:Selectable/com.dezza.ricepaper.ui.core:Selectable:selected/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+   get selected
+   
+   ]]></description>
+<return><![CDATA[Boolean
+   ]]></return>
+</method>
+<method name='selected' fullname='com.dezza.ricepaper.ui.core:Selectable/com.dezza.ricepaper.ui.core:Selectable:selected/set' isStatic='false' isFinal='false' isOverride='false'  param_names='selected' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   set selected
+   
+   ]]></description>
+<param><![CDATA[selected Boolean
+   ]]></param>
+</method>
+<interfaceRec name='Enableable' fullname='com.dezza.ricepaper.ui.core:Enableable' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/core/Enableable.as' namespace='com.dezza.ricepaper.ui.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  ]]></author>
+</interfaceRec>
+<method name='enabled' fullname='com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+   get enabled
+   
+   ]]></description>
+<return><![CDATA[Boolean true if enabled
+   ]]></return>
+</method>
+<method name='enabled' fullname='com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/set' isStatic='false' isFinal='false' isOverride='false'  param_names='enabled' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   set enabled
+   
+   ]]></description>
+<param><![CDATA[enabled Boolean
+   ]]></param>
+</method>
+<interfaceRec name='Highlightable' fullname='com.dezza.ricepaper.ui.core:Highlightable' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/core/Highlightable.as' namespace='com.dezza.ricepaper.ui.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  ]]></author>
+</interfaceRec>
+<method name='highlighted' fullname='com.dezza.ricepaper.ui.core:Highlightable/com.dezza.ricepaper.ui.core:Highlightable:highlighted/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+   get highlighted
+   
+   ]]></description>
+<return><![CDATA[Boolean
+   ]]></return>
+</method>
+<method name='highlighted' fullname='com.dezza.ricepaper.ui.core:Highlightable/com.dezza.ricepaper.ui.core:Highlightable:highlighted/set' isStatic='false' isFinal='false' isOverride='false'  param_names='highlighted' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   set highlighted
+   
+   ]]></description>
+<param><![CDATA[highlighted Boolean
+   ]]></param>
+</method>
+<interfaceRec name='Label' fullname='com.dezza.ricepaper.ui.core:Label' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/core/Label.as' namespace='com.dezza.ricepaper.ui.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  ]]></author>
+</interfaceRec>
+<method name='text' fullname='com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:text/get' isStatic='false' isFinal='false' isOverride='false'  result_type='String'>
+<description><![CDATA[
+   get label text
+   
+   ]]></description>
+<return><![CDATA[String
+   ]]></return>
+</method>
+<method name='textField' fullname='com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:textField/get' isStatic='false' isFinal='false' isOverride='false'  result_type='flash.text:TextField'>
+<description><![CDATA[
+   get textfield
+   
+   ]]></description>
+<return><![CDATA[TextField
+   ]]></return>
+</method>
+<method name='text' fullname='com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:text/set' isStatic='false' isFinal='false' isOverride='false'  param_names='text' param_types='String' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   set label text
+   
+   ]]></description>
+<param><![CDATA[text String
+   ]]></param>
+</method>
+<interfaceRec name='IUIControl' fullname='com.dezza.ricepaper.ui.core:IUIControl' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/core/IUIControl.as' namespace='com.dezza.ricepaper.ui.core' access='public' baseClasses='flash.events:IEventDispatcher;com.dezza.ricepaper.ui.core:Enableable' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  ]]></author>
+</interfaceRec>
+<method name='destroy' fullname='com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+   make control available for GC
+   ]]></description>
+</method>
+<method name='content' fullname='com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:content/get' isStatic='false' isFinal='false' isOverride='false'  result_type='flash.display:MovieClip'>
+<description><![CDATA[
+   get the content asset
+   
+   ]]></description>
+<return><![CDATA[MovieClip
+   ]]></return>
+</method>
+<classRec name='UIControl' fullname='com.dezza.ricepaper.ui.core:UIControl' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/core/UIControl.as' namespace='com.dezza.ricepaper.ui.core' access='public' baseclass='flash.display:Sprite' interfaces='com.dezza.ricepaper.ui.core:IUIControl' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  UIControl
+  Class Description.
+    ]]></description>
+<author><![CDATA[Derek McKenna
+  ]]></author>
+<version><![CDATA[1.0
+  ]]></version>
+<since><![CDATA[Feb 15, 2009
+  ]]></since>
+</classRec>
+<method name='UIControl' fullname='com.dezza.ricepaper.ui.core:UIControl/UIControl' isStatic='false' isFinal='false' isOverride='false'  param_names='content' param_types='flash.display:MovieClip' param_defaults='undefined' result_type='*'>
+<description><![CDATA[
+   Constructor
+   
+   <p>if content is already attached to a parent the UIControl 
+   will attach itself in place and add the asset as it's child</p>
+   
+   ]]></description>
+<param><![CDATA[content MovieClip 
+   ]]></param>
+</method>
+<method name='destroy' fullname='com.dezza.ricepaper.ui.core:UIControl/destroy' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+   
+   make control available for GC
+   ]]></description>
+</method>
+<method name='content' fullname='com.dezza.ricepaper.ui.core:UIControl/content/get' isStatic='false' isFinal='false' isOverride='false'  result_type='flash.display:MovieClip'>
+<description><![CDATA[
+   
+   get the content asset
+   
+   ]]></description>
+<return><![CDATA[MovieClip
+   ]]></return>
+</method>
+<method name='enabled' fullname='com.dezza.ricepaper.ui.core:UIControl/enabled/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+   
+   get enabled
+   
+   ]]></description>
+<return><![CDATA[Boolean true if enabled
+   ]]></return>
+</method>
+<method name='enabled' fullname='com.dezza.ricepaper.ui.core:UIControl/enabled/set' isStatic='false' isFinal='false' isOverride='false'  param_names='enabled' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   
+   set enabled
+   
+   ]]></description>
+<param><![CDATA[enabled Boolean
+   ]]></param>
+</method>
+<field name='_content' fullname='com.dezza.ricepaper.ui.core:UIControl/protected:_content' type='flash.display:MovieClip' isStatic='false' isConst='false' >
+<description><![CDATA[
+   content asset MovieClip 
+   ]]></description>
+</field>
+<field name='_enabled' fullname='com.dezza.ricepaper.ui.core:UIControl/protected:_enabled' type='Boolean' isStatic='false' isConst='false' >
+<description><![CDATA[
+   whether or not the control is currently enabled
+   ]]></description>
+</field>
+<classRec name='ButtonState' fullname='com.dezza.ricepaper.ui.button:ButtonState' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/button/ButtonState.as' namespace='com.dezza.ricepaper.ui.button' access='public' baseclass='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  
+  constants for button states 
+  
+  button assets should use these values as frame labels for a particular state
+  ]]></author>
+</classRec>
+<field name='DISABLED' fullname='com.dezza.ricepaper.ui.button:ButtonState/DISABLED' type='String' isStatic='true' isConst='true' defaultValue='disabled' >
+</field>
+<field name='OFF' fullname='com.dezza.ricepaper.ui.button:ButtonState/OFF' type='String' isStatic='true' isConst='true' defaultValue='off' >
+</field>
+<field name='OFF_SELECTED' fullname='com.dezza.ricepaper.ui.button:ButtonState/OFF_SELECTED' type='String' isStatic='true' isConst='true' defaultValue='offSelected' >
+</field>
+<field name='ON' fullname='com.dezza.ricepaper.ui.button:ButtonState/ON' type='String' isStatic='true' isConst='true' defaultValue='on' >
+</field>
+<field name='ON_SELECTED' fullname='com.dezza.ricepaper.ui.button:ButtonState/ON_SELECTED' type='String' isStatic='true' isConst='true' defaultValue='onSelected' >
+</field>
+<interfaceRec name='IButton' fullname='com.dezza.ricepaper.ui.button:IButton' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/button/IButton.as' namespace='com.dezza.ricepaper.ui.button' access='public' baseClasses='com.dezza.ricepaper.ui.core:IUIControl;com.dezza.ricepaper.ui.core:Highlightable' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  ]]></author>
+</interfaceRec>
+<method name='mouseStateLocked' fullname='com.dezza.ricepaper.ui.button:IButton/com.dezza.ricepaper.ui.button:IButton:mouseStateLocked/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+   get whether or not the mouse state is currently locked
+   
+   ]]></description>
+<return><![CDATA[Boolean
+   ]]></return>
+</method>
+<method name='mouseStateLocked' fullname='com.dezza.ricepaper.ui.button:IButton/com.dezza.ricepaper.ui.button:IButton:mouseStateLocked/set' isStatic='false' isFinal='false' isOverride='false'  param_names='locked' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   set the mouse state to be locked
+   
+   when the mouse state is locked attempts to set the mouseState will have no immediate effect,
+   but will be remembered and applied if and when the mouseState is unlocked
+   
+   ]]></description>
+<param><![CDATA[locked Boolean
+   ]]></param>
+</method>
+<interfaceRec name='ILabelButton' fullname='com.dezza.ricepaper.ui.button:ILabelButton' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/button/ILabelButton.as' namespace='com.dezza.ricepaper.ui.button' access='public' baseClasses='com.dezza.ricepaper.ui.button:IButton;com.dezza.ricepaper.ui.core:Label' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  ]]></author>
+</interfaceRec>
+<classRec name='Button' fullname='com.dezza.ricepaper.ui.button:Button' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/button/Button.as' namespace='com.dezza.ricepaper.ui.button' access='public' baseclass='com.dezza.ricepaper.ui.core:UIControl' interfaces='com.dezza.ricepaper.ui.button:IButton' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  ]]></author>
+</classRec>
+<method name='Button' fullname='com.dezza.ricepaper.ui.button:Button/Button' isStatic='false' isFinal='false' isOverride='false'  param_names='content' param_types='flash.display:MovieClip' param_defaults='undefined' result_type='*'>
+</method>
+<method name='addAutoHitArea' fullname='com.dezza.ricepaper.ui.button:Button/addAutoHitArea' isStatic='false' isFinal='false' isOverride='false'  param_names='debug' param_types='Boolean' param_defaults='false' result_type='void'>
+</method>
+<method name='destroy' fullname='com.dezza.ricepaper.ui.button:Button/destroy' isStatic='false' isFinal='false' isOverride='true'  result_type='void'>
+<description><![CDATA[
+   
+   
+   make control available for GC
+   ]]></description>
+</method>
+<method name='initMouse' fullname='com.dezza.ricepaper.ui.button:Button/protected:initMouse' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+</method>
+<method name='onRollOut' fullname='com.dezza.ricepaper.ui.button:Button/protected:onRollOut' isStatic='false' isFinal='false' isOverride='false'  param_names='event' param_types='flash.events:MouseEvent' param_defaults='undefined' result_type='void'>
+</method>
+<method name='onRollOver' fullname='com.dezza.ricepaper.ui.button:Button/protected:onRollOver' isStatic='false' isFinal='false' isOverride='false'  param_names='event' param_types='flash.events:MouseEvent' param_defaults='undefined' result_type='void'>
+</method>
+<method name='renderState' fullname='com.dezza.ricepaper.ui.button:Button/protected:renderState' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+</method>
+<method name='setMouseState' fullname='com.dezza.ricepaper.ui.button:Button/protected:setMouseState' isStatic='false' isFinal='false' isOverride='false'  param_names='mouseState' param_types='String' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   set the current mouse state
+   
+   mouseState can be either
+   
+   ButtonState.OFF representing mouse off button
+   
+   or 
+   
+   ButtonState.ON representing mouse on (or over) button
+   
+   ]]></description>
+<param><![CDATA[mouseState String representing mouse state
+   
+   ]]></param>
+</method>
+<method name='highlighted' fullname='com.dezza.ricepaper.ui.button:Button/highlighted/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+   get the button's on/off state
+   ]]></description>
+</method>
+<method name='mouseStateLocked' fullname='com.dezza.ricepaper.ui.button:Button/mouseStateLocked/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+   
+   get whether or not the mouse state is currently locked
+   
+   ]]></description>
+<return><![CDATA[Boolean
+   ]]></return>
+</method>
+<method name='enabled' fullname='com.dezza.ricepaper.ui.button:Button/enabled/set' isStatic='false' isFinal='false' isOverride='true'  param_names='enabled' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   
+   
+   set enabled
+   
+   ]]></description>
+<param><![CDATA[enabled Boolean
+   ]]></param>
+</method>
+<method name='highlighted' fullname='com.dezza.ricepaper.ui.button:Button/highlighted/set' isStatic='false' isFinal='false' isOverride='false'  param_names='highlighted' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   set the button's on/off state
+   ]]></description>
+</method>
+<method name='mouseStateLocked' fullname='com.dezza.ricepaper.ui.button:Button/mouseStateLocked/set' isStatic='false' isFinal='false' isOverride='false'  param_names='locked' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+   
+   set the mouse state to be locked
+   
+   when the mouse state is locked attempts to set the mouseState will have no immediate effect,
+   but will be remembered and applied if and when the mouseState is unlocked
+   
+   ]]></description>
+<param><![CDATA[locked Boolean
+   ]]></param>
+</method>
+<field name='_mouseState' fullname='com.dezza.ricepaper.ui.button:Button/protected:_mouseState' type='String' isStatic='false' isConst='false' >
+<description><![CDATA[
+   current mouse state i.e. "off","on"
+   ]]></description>
+</field>
+<field name='_mouseStateLocked' fullname='com.dezza.ricepaper.ui.button:Button/protected:_mouseStateLocked' type='Boolean' isStatic='false' isConst='false' >
+<description><![CDATA[
+   whether or not the mouse state is currently locked
+   ]]></description>
+</field>
+<field name='_unlockedMouseState' fullname='com.dezza.ricepaper.ui.button:Button/protected:_unlockedMouseState' type='String' isStatic='false' isConst='false' >
+<description><![CDATA[
+   mouse state to apply to mouse when unlocked
+   ]]></description>
+</field>
+<classRec name='LabelButton' fullname='com.dezza.ricepaper.ui.button:LabelButton' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/ui/button/LabelButton.as' namespace='com.dezza.ricepaper.ui.button' access='public' baseclass='com.dezza.ricepaper.ui.button:Button' interfaces='com.dezza.ricepaper.ui.button:ILabelButton' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[derek
+  ]]></author>
+</classRec>
+<method name='LabelButton' fullname='com.dezza.ricepaper.ui.button:LabelButton/LabelButton' isStatic='false' isFinal='false' isOverride='false'  param_names='content;textField' param_types='flash.display:MovieClip;flash.text:TextField' param_defaults='undefined;undefined' result_type='*'>
+</method>
+<method name='text' fullname='com.dezza.ricepaper.ui.button:LabelButton/text/get' isStatic='false' isFinal='false' isOverride='false'  result_type='String'>
+</method>
+<method name='textField' fullname='com.dezza.ricepaper.ui.button:LabelButton/textField/get' isStatic='false' isFinal='false' isOverride='false'  result_type='flash.text:TextField'>
+</method>
+<method name='text' fullname='com.dezza.ricepaper.ui.button:LabelButton/text/set' isStatic='false' isFinal='false' isOverride='false'  param_names='text' param_types='String' param_defaults='undefined' result_type='void'>
+</method>
+<field name='_textField' fullname='com.dezza.ricepaper.ui.button:LabelButton/protected:_textField' type='flash.text:TextField' isStatic='false' isConst='false' >
+</field>
+<classRec name='RicePaperUIMain' fullname='com.dezza.ricepaper.examples:RicePaperUIMain' sourcefile='/Users/derek/Documents/work/libraries/as3/ricepaper.dezza.com/src/com/dezza/ricepaper/examples/RicePaperUIMain.as' namespace='com.dezza.ricepaper.examples' access='public' baseclass='flash.display:MovieClip' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+  ]]></description>
+<author><![CDATA[dezza
+  ]]></author>
+</classRec>
+<method name='RicePaperUIMain' fullname='com.dezza.ricepaper.examples:RicePaperUIMain/RicePaperUIMain' isStatic='false' isFinal='false' isOverride='false'  result_type='*'>
+</method>
+</asdoc>

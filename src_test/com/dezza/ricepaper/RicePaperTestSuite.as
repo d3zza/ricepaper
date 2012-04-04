@@ -2,6 +2,7 @@ package com.dezza.ricepaper
 {
 
 	import com.dezza.ricepaper.ui.ButtonTests;
+	import com.dezza.ricepaper.ui.LabelButtonTests;
 
 	/**
 	 * @author dezza
@@ -11,6 +12,8 @@ package com.dezza.ricepaper
 	public class RicePaperTestSuite
 	{
 
-		public var uiTests : ButtonTests;
+		public var buttonTests : ButtonTests;
+		
+		public var labelButtonTests : LabelButtonTests;
 	}
 }
