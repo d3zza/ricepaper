@@ -1,40 +1,40 @@
-package com.dezza.ricepaper.ui
+package com.dezza.ricepaper.ui.dragger
 {
 
-	import flash.events.MouseEvent;
-	import flash.display.Sprite;
-	import flash.display.DisplayObjectContainer;
-
-	import com.dezza.ricepaper.ui.button.ButtonState;
-	import com.dezza.ricepaper.ui.button.Button;
+	import flash.display.MovieClip;
+	import com.dezza.ricepaper.ui.mock.MockDraggerAsset;
 	import com.dezza.ricepaper.ui.mock.MockButtonAsset;
-
+	import flash.display.DisplayObjectContainer;
+	import flash.display.Sprite;
+	import flash.events.MouseEvent;
 	import org.flexunit.asserts.assertEquals;
 	import org.flexunit.asserts.assertFalse;
 	import org.flexunit.asserts.assertNotNull;
 	import org.flexunit.asserts.assertTrue;
 
+
+
 	/**
 	 * @author derek
 	 */
-	public class ButtonTests
+	public class DraggerTests
 	{
 		private var parent : DisplayObjectContainer;
 
-		private var asset : MockButtonAsset;
+		private var asset : MovieClip;
 
-		private var button : Button;
+		private var dragger : IDragger;
 
 		[Before]
 		public function runBeforeEachTest() : void
 		{
 			parent = new Sprite();
 
-			asset = new MockButtonAsset();
+			asset = new MovieClip();
 
-			asset.x = 97;
+			asset.x = 14;
 
-			asset.y = 56;
+			asset.y = 32;
 
 			parent.addChild(asset);
 

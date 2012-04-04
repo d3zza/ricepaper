@@ -2,12 +2,11 @@ package com.dezza.ricepaper.ui.core
 {
 
 	import flash.display.MovieClip;
-	import flash.events.IEventDispatcher;
 
 	/**
 	 * @author derek
 	 */
-	public interface IUIControl extends IEventDispatcher, Enableable
+	public interface IUIControl extends IDisplayObject, Enableable
 	{
 		/**
 		 * get the content asset

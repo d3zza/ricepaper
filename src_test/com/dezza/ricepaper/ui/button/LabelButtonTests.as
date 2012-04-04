@@ -1,15 +1,14 @@
-package com.dezza.ricepaper.ui
+package com.dezza.ricepaper.ui.button
 {
 
-	import com.dezza.ricepaper.ui.button.LabelButton;
 	import com.dezza.ricepaper.ui.mock.MockButtonAsset;
-
+	import flash.display.DisplayObjectContainer;
+	import flash.display.Sprite;
 	import org.flexunit.asserts.assertEquals;
 	import org.flexunit.asserts.assertNotNull;
 	import org.flexunit.asserts.assertTrue;
 
-	import flash.display.DisplayObjectContainer;
-	import flash.display.Sprite;
+
 
 	/**
 	 * @author derek

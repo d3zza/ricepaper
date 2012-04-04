@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" id="0" name="ButtonTests" package="com.dezza.ricepaper.ui" skipped="0" tests="8" time="0.0">
-      <testcase classname="com.dezza.ricepaper.ui::ButtonTests" name="onRollOutDisabled" status="success" time="0.000" />
+  <testsuite errors="0" failures="0" id="0" name="ButtonTests" package="com.dezza.ricepaper.ui.button" skipped="0" tests="8" time="0.0">
+      <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="disable" status="success" time="0.000" />
 
-      <testcase classname="com.dezza.ricepaper.ui::ButtonTests" name="content" status="success" time="0.000" />
+      <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOver" status="success" time="0.000" />
 
-      <testcase classname="com.dezza.ricepaper.ui::ButtonTests" name="onRollOverDisabled" status="success" time="0.000" />
+      <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOverMouseStateLocked" status="success" time="0.000" />
 
-      <testcase classname="com.dezza.ricepaper.ui::ButtonTests" name="onRollOut" status="success" time="0.000" />
+      <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOverDisabled" status="success" time="0.000" />
 
-      <testcase classname="com.dezza.ricepaper.ui::ButtonTests" name="onRollOverMouseStateLocked" status="success" time="0.000" />
+      <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOutDisabled" status="success" time="0.000" />
 
-      <testcase classname="com.dezza.ricepaper.ui::ButtonTests" name="disable" status="success" time="0.000" />
+      <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOut" status="success" time="0.000" />
 
-      <testcase classname="com.dezza.ricepaper.ui::ButtonTests" name="onRollOver" status="success" time="0.000" />
+      <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="content" status="success" time="0.000" />
 
-      <testcase classname="com.dezza.ricepaper.ui::ButtonTests" name="constructr" status="success" time="0.000" />
+      <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="constructr" status="success" time="0.000" />
 
   </testsuite>
-  <testsuite errors="0" failures="0" id="1" name="LabelButtonTests" package="com.dezza.ricepaper.ui" skipped="0" tests="2" time="0.0">
-      <testcase classname="com.dezza.ricepaper.ui::LabelButtonTests" name="text" status="success" time="0.000" />
+  <testsuite errors="0" failures="0" id="1" name="LabelButtonTests" package="com.dezza.ricepaper.ui.button" skipped="0" tests="2" time="0.0">
+      <testcase classname="com.dezza.ricepaper.ui.button::LabelButtonTests" name="text" status="success" time="0.000" />
 
-      <testcase classname="com.dezza.ricepaper.ui::LabelButtonTests" name="constructr" status="success" time="0.000" />
+      <testcase classname="com.dezza.ricepaper.ui.button::LabelButtonTests" name="constructr" status="success" time="0.000" />
+
+  </testsuite>
+  <testsuite errors="0" failures="2" id="2" name="UIControlTests" package="com.dezza.ricepaper.ui.core" skipped="0" tests="3" time="0.0">
+      <testcase classname="com.dezza.ricepaper.ui.core::UIControlTests" name="disable" status="failure" time="0.000">
+          <failure message="content on incorrect frame - expected:&lt;disabled&gt; but was:&lt;off&gt;" type="com.dezza.ricepaper.ui.core::UIControlTests.disable"><![CDATA[]]></failure>
+
+      </testcase>
+
+      <testcase classname="com.dezza.ricepaper.ui.core::UIControlTests" name="content" status="success" time="0.000" />
+
+      <testcase classname="com.dezza.ricepaper.ui.core::UIControlTests" name="constructr" status="failure" time="0.000">
+          <failure message="button not enabled after creation - expected true but was false" type="com.dezza.ricepaper.ui.core::UIControlTests.constructr"><![CDATA[]]></failure>
+
+      </testcase>
 
   </testsuite>
 </testsuites>

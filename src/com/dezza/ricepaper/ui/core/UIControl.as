@@ -1,6 +1,7 @@
 package com.dezza.ricepaper.ui.core
 {
 
+	import flash.display.DisplayObject;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 
@@ -22,7 +23,7 @@ package com.dezza.ricepaper.ui.core
 		/**
 		 * whether or not the control is currently enabled
 		 */
-		protected var _enabled : Boolean;
+		private var _enabled : Boolean;
 
 		/**
 		 * Constructor
@@ -60,8 +61,16 @@ package com.dezza.ricepaper.ui.core
 		}
 
 
+		public function asDisplayObject() : DisplayObject
+		{
+			return this;
+		}
+
+
 		/**
 		 * @inheritDoc
+		 * 
+		 * // TODO not really sure this should be public
 		 */
 		public function get content() : MovieClip
 		{
