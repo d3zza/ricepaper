@@ -1,13 +1,13 @@
 package com.dezza.ricepaper.ui.button
 {
 
-	import com.dezza.ricepaper.ui.core.Highlightable;
+	import com.dezza.ricepaper.ui.core.IHighlightable;
 	import com.dezza.ricepaper.ui.core.IUIControl;
 
 	/**
 	 * @author derek
 	 */
-	public interface IButton extends IUIControl , Highlightable
+	public interface IButton extends IUIControl , IHighlightable
 	{
 		/**
 		 * get whether or not the mouse state is currently locked

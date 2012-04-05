@@ -5,7 +5,7 @@ package com.dezza.ricepaper.ui.core
 	/**
 	 * @author derek
 	 */
-	public interface Label
+	public interface ILabel
 	{
 
 		/**

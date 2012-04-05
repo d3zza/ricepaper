@@ -16,9 +16,9 @@ package com.dezza.ricepaper.ui.dragger
 	{
 		function setDragRect( rect : Rectangle ) : void;
 
-		function addDraggerListener( listener : DraggerListener ) : void;
+		function addDraggerListener( listener : IDraggerListener ) : void;
 
-		function removeDraggerListener( listener : DraggerListener ) : void;
+		function removeDraggerListener( listener : IDraggerListener ) : void;
 
 		function startDragging( ) : void;
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<testsuite name="com.dezza.ricepaper.ui.slider.SliderTests" tests="4" failures="0" errors="0" skipped="0" time="0.0">
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="defaultAxis" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="constructr" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="startingPercent" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="startingPosition" time="0.000" status="success"/>
+</testsuite>

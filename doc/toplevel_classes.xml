@@ -1,39 +1,580 @@
 <asdoc build="asd3_0_b2_1">
    <link rel="stylesheet" href="style.css" type="text/css"/>
    <packages>
-      <asPackage name="com.dezza.ricepaper.ui.button">
+      <asPackage name="com.dezza.ricepaper.ui.core">
          <classes>
-            <asClass name="ButtonState" type="class" fullname="com.dezza.ricepaper.ui.button:ButtonState" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.button" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+            <asClass name="IDisplayObject" type="interface" fullname="com.dezza.ricepaper.ui.core:IDisplayObject" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
                <description><![CDATA[
   ]]></description>
                <shortDescription><![CDATA[
   ]]></shortDescription>
                <versions/>
-               <author>derek
-  
-  constants for button states 
-  
-  button assets should use these values as frame labels for a particular state</author>
-               <asAncestors/>
+               <author>derek</author>
+               <asDecendants>
+                  <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
+               </asDecendants>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.display.IBitmapDrawable" fullName="flash.display.IBitmapDrawable" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <methods>
+                  <method name="getBounds" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getBounds" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="flash.geom:Rectangle"/>
+                     <params>
+                        <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                     </params>
+                  </method>
+                  <method name="getRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getRect" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="flash.geom:Rectangle"/>
+                     <params>
+                        <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                     </params>
+                  </method>
+                  <method name="globalToLocal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:globalToLocal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="flash.geom:Point"/>
+                     <params>
+                        <param name="point" type="flash.geom:Point"/>
+                     </params>
+                  </method>
+                  <method name="hitTestObject" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestObject" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="Boolean"/>
+                     <params>
+                        <param name="obj" type="flash.display:DisplayObject"/>
+                     </params>
+                  </method>
+                  <method name="hitTestPoint" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestPoint" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="Boolean"/>
+                     <params>
+                        <param name="x" type="Number"/>
+                        <param name="y" type="Number"/>
+                        <param name="shapeFlag" type="Boolean" default="false"/>
+                     </params>
+                  </method>
+                  <method name="localToGlobal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:localToGlobal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="flash.geom:Point"/>
+                     <params>
+                        <param name="point" type="flash.geom:Point"/>
+                     </params>
+                  </method>
+               </methods>
                <fields>
-                  <field name="DISABLED" fullname="com.dezza.ricepaper.ui.button:ButtonState/DISABLED" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="disabled">
+                  <field name="accessibilityProperties" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:accessibilityProperties/get" accessLevel="public" isConst="false" isStatic="false" type="flash.accessibility:AccessibilityProperties" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   Workaround to provide a DisplayObject interface
+   
+   <p>Vote for Adobe to improve AS3 by adding a DisplayObject interface here:<br/>
+   <a href='http://bugs.adobe.com/jira/browse/ASL-45' >http://bugs.adobe.com/jira/browse/ASL-45</a></p>
+   
+   <p>This allows us to work with implentations as assuming they are DisplayObjects.
+   Please note that there is no guarantee that they actually are. It's up to implementations
+   to ensure they inherit from DisplayObject</p>
+   
+   <p>Furthermore, you will still have to cast implementations to DisplayObject to add them to
+   other DisplayObjectContainers</p>
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Workaround to provide a DisplayObject interface
+   
+   <p>Vote for Adobe to improve AS3 by adding a DisplayObject interface here:<br/>
+   <a href='http://bugs.adobe.com/jira/browse/ASL-45' >http://bugs.adobe.com/jira/browse/ASL-45</a></p>
+   
+   <p>This allows us to work with implentations as assuming they are DisplayObjects.]]></shortDescription>
                      <versions/>
                   </field>
-                  <field name="OFF" fullname="com.dezza.ricepaper.ui.button:ButtonState/OFF" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="off">
+                  <field name="alpha" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:alpha/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
                      <versions/>
                   </field>
-                  <field name="OFF_SELECTED" fullname="com.dezza.ricepaper.ui.button:ButtonState/OFF_SELECTED" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="offSelected">
+                  <field name="blendMode" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:blendMode/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false" only="read-write">
                      <versions/>
                   </field>
-                  <field name="ON" fullname="com.dezza.ricepaper.ui.button:ButtonState/ON" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="on">
+                  <field name="cacheAsBitmap" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:cacheAsBitmap/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
                      <versions/>
                   </field>
-                  <field name="ON_SELECTED" fullname="com.dezza.ricepaper.ui.button:ButtonState/ON_SELECTED" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="onSelected">
+                  <field name="filters" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:filters/get" accessLevel="public" isConst="false" isStatic="false" type="Array" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="height" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:height/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="loaderInfo" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:loaderInfo/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:LoaderInfo" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+                  <field name="mask" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mask/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="mouseX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+                  <field name="mouseY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+                  <field name="name" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:name/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="opaqueBackground" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:opaqueBackground/get" accessLevel="public" isConst="false" isStatic="false" type="Object" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="parent" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:parent/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObjectContainer" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+                  <field name="root" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:root/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+                  <field name="rotation" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:rotation/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="scale9Grid" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scale9Grid/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="scaleX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="scaleY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="scrollRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scrollRect/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="stage" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:stage/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:Stage" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+                  <field name="transform" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:transform/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Transform" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="visible" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:visible/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="width" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:width/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="x" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:x/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+                  <field name="y" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:y/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
                      <versions/>
                   </field>
                </fields>
             </asClass>
-            <asClass name="LabelButton" type="class" fullname="com.dezza.ricepaper.ui.button:LabelButton" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.button" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+            <asClass name="ISelectable" type="interface" fullname="com.dezza.ricepaper.ui.core:ISelectable" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asAncestors/>
+               <fields>
+                  <field name="selected" fullname="com.dezza.ricepaper.ui.core:ISelectable/com.dezza.ricepaper.ui.core:ISelectable:selected/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get selected
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get selected
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="ILabel" type="interface" fullname="com.dezza.ricepaper.ui.core:ILabel" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asDecendants>
+                  <classRef name="ILabelButton" fullName="com.dezza.ricepaper.ui.button:ILabelButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/ILabelButton.html"/>
+               </asDecendants>
+               <asAncestors/>
+               <fields>
+                  <field name="text" fullname="com.dezza.ricepaper.ui.core:ILabel/com.dezza.ricepaper.ui.core:ILabel:text/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get label text
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get label text
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="textField" fullname="com.dezza.ricepaper.ui.core:ILabel/com.dezza.ricepaper.ui.core:ILabel:textField/get" accessLevel="public" isConst="false" isStatic="false" type="flash.text:TextField" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   get textfield
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get textfield
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="UIControl" type="class" fullname="com.dezza.ricepaper.ui.core:UIControl" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  UIControl
+  
+  Abstract Superclass for UIControls
+  
+  <p>UIControls are intended to be AS3 UI components that contain
+  a visual asset and some code to control the interaction</p>
+  
+  <p>assets can either be already attached to some parent, which 
+  may be convenient if creating layouts in the Flash IDE, or can
+  be supplied as a new unattached instance.</p>
+  
+  <p>The UIControl is a display object too, so it will attach the 
+  asset content and then (if the child was already attached)
+  add itself in place of the asset.</p>
+  
+  <p>This gives us the best of both worlds; visual assets that are
+  free of any code references, but code assets that are part of the
+  display list and can access stage properties, display list events
+  etc.</p>
+    ]]></description>
+               <shortDescription><![CDATA[
+  UIControl
+  
+  Abstract Superclass for UIControls
+  
+  <p>UIControls are intended to be AS3 UI components that contain
+  a visual asset and some code to control the interaction</p>
+  
+  <p>assets can either be already attached to some parent, which 
+  may be convenient if creating layouts in the Flash IDE, or can
+  be supplied as a new unattached instance.</p>
+  
+  <p>The UIControl is a display object too, so it will attach the 
+  asset content and then (if the child was already attached)
+  add itself in place of the asset.</p>
+  
+  <p>This gives us the best of both worlds; visual assets that are
+  free of any code references, but code assets that are part of the
+  display list and can access stage properties, display list events
+  etc.</p>
+    ]]></shortDescription>
+               <versions/>
+               <author>Derek McKenna</author>
+               <customs>
+                  <since><![CDATA[Feb 15, 2009
+  ]]></since>
+               </customs>
+               <asDecendants>
+                  <classRef name="Button" fullName="com.dezza.ricepaper.ui.button:Button" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/Button.html"/>
+                  <classRef name="Dragger" fullName="com.dezza.ricepaper.ui.dragger:Dragger" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/Dragger.html"/>
+               </asDecendants>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="flash.display.Sprite" fullName="flash.display.Sprite" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <asImplements>
+                  <asAncestor>
+                     <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="IUIControl.html"/>
+                     <methods>
+                        <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   make control available for GC
+   ]]></shortDescription>
+                        </method>
+                     </methods>
+                  </asAncestor>
+               </asImplements>
+               <constructors>
+                  <constructor name="UIControl" fullname="com.dezza.ricepaper.ui.core:UIControl/UIControl" accessLevel="public" result_type="*" inheritDoc="false">
+                     <description><![CDATA[
+   Constructor
+   
+   <p>if content is already attached to a parent the UIControl 
+   will attach itself in place and add the asset as it's child</p>
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Constructor
+   
+   <p>if content is already attached to a parent the UIControl 
+   will attach itself in place and add the asset as it's child</p>
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="*"/>
+                     <params>
+                        <param name="content" type="flash.display:MovieClip">
+                           <description><![CDATA[MovieClip 
+   ]]></description>
+                        </param>
+                     </params>
+                  </constructor>
+               </constructors>
+               <methods>
+                  <method name="asDisplayObject" fullname="com.dezza.ricepaper.ui.core:UIControl/asDisplayObject" accessLevel="public" result_type="flash.display:DisplayObject" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="flash.display:DisplayObject"/>
+                  </method>
+                  <method name="destroy" fullname="com.dezza.ricepaper.ui.core:UIControl/destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   
+   make control available for GC
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   make control available for GC
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="asset" fullname="com.dezza.ricepaper.ui.core:UIControl/asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   
+   get the content asset
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   get the content asset
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="enabled" fullname="com.dezza.ricepaper.ui.core:UIControl/enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   
+   get enabled
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   get enabled
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="IEnableable" type="interface" fullname="com.dezza.ricepaper.ui.core:IEnableable" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asDecendants>
+                  <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
+               </asDecendants>
+               <asAncestors/>
+               <fields>
+                  <field name="enabled" fullname="com.dezza.ricepaper.ui.core:IEnableable/com.dezza.ricepaper.ui.core:IEnableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get enabled
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get enabled
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="IUIControl" type="interface" fullname="com.dezza.ricepaper.ui.core:IUIControl" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <implementers>
+                  <classRef name="UIControl" fullName="com.dezza.ricepaper.ui.core:UIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/UIControl.html"/>
+               </implementers>
+               <asDecendants>
+                  <classRef name="IDragger" fullName="com.dezza.ricepaper.ui.dragger:IDragger" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/IDragger.html"/>
+                  <classRef name="IButton" fullName="com.dezza.ricepaper.ui.button:IButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/IButton.html"/>
+               </asDecendants>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="IDisplayObject" fullName="com.dezza.ricepaper.ui.core:IDisplayObject" packageName="com.dezza.ricepaper.ui.core" relativePath="IDisplayObject.html"/>
+                     <fields>
+                        <field name="accessibilityProperties" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:accessibilityProperties/get" accessLevel="public" isConst="false" isStatic="false" type="flash.accessibility:AccessibilityProperties" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   Workaround to provide a DisplayObject interface
+   
+   <p>Vote for Adobe to improve AS3 by adding a DisplayObject interface here:<br/>
+   <a href='http://bugs.adobe.com/jira/browse/ASL-45' >http://bugs.adobe.com/jira/browse/ASL-45</a></p>
+   
+   <p>This allows us to work with implentations as assuming they are DisplayObjects.]]></shortDescription>
+                        </field>
+                        <field name="alpha" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:alpha/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="blendMode" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:blendMode/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="cacheAsBitmap" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:cacheAsBitmap/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="filters" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:filters/get" accessLevel="public" isConst="false" isStatic="false" type="Array" inheritDoc="false"/>
+                        <field name="height" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:height/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="loaderInfo" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:loaderInfo/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:LoaderInfo" inheritDoc="false"/>
+                        <field name="mask" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mask/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="mouseX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="mouseY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="name" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:name/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="opaqueBackground" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:opaqueBackground/get" accessLevel="public" isConst="false" isStatic="false" type="Object" inheritDoc="false"/>
+                        <field name="parent" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:parent/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObjectContainer" inheritDoc="false"/>
+                        <field name="root" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:root/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="rotation" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:rotation/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scale9Grid" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scale9Grid/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="scaleX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scaleY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scrollRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scrollRect/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="stage" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:stage/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:Stage" inheritDoc="false"/>
+                        <field name="transform" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:transform/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Transform" inheritDoc="false"/>
+                        <field name="visible" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:visible/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="width" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:width/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="x" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:x/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="y" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:y/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                     </fields>
+                     <methods>
+                        <method name="getBounds" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getBounds" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="getRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getRect" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="globalToLocal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:globalToLocal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                        <method name="hitTestObject" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestObject" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="obj" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="hitTestPoint" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestPoint" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="x" type="Number"/>
+                              <param name="y" type="Number"/>
+                              <param name="shapeFlag" type="Boolean" default="false"/>
+                           </params>
+                        </method>
+                        <method name="localToGlobal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:localToGlobal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.display.IBitmapDrawable" fullName="flash.display.IBitmapDrawable" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="IEnableable" fullName="com.dezza.ricepaper.ui.core:IEnableable" packageName="com.dezza.ricepaper.ui.core" relativePath="IEnableable.html"/>
+                     <fields>
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:IEnableable/com.dezza.ricepaper.ui.core:IEnableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get enabled
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+               </asAncestors>
+               <methods>
+                  <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   make control available for GC
+   ]]></description>
+                     <shortDescription><![CDATA[
+   make control available for GC
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="asset" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   get the content asset
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get the content asset
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="IHighlightable" type="interface" fullname="com.dezza.ricepaper.ui.core:IHighlightable" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asDecendants>
+                  <classRef name="IButton" fullName="com.dezza.ricepaper.ui.button:IButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/IButton.html"/>
+               </asDecendants>
+               <asAncestors/>
+               <fields>
+                  <field name="highlighted" fullname="com.dezza.ricepaper.ui.core:IHighlightable/com.dezza.ricepaper.ui.core:IHighlightable:highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get highlighted
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get highlighted
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+         </classes>
+      </asPackage>
+      <asPackage name="com.dezza.ricepaper.examples">
+         <classes>
+            <asClass name="RicePaperUIMain" type="class" fullname="com.dezza.ricepaper.examples:RicePaperUIMain" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.examples" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>dezza</author>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="flash.display.MovieClip" fullName="flash.display.MovieClip" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <constructors>
+                  <constructor name="RicePaperUIMain" fullname="com.dezza.ricepaper.examples:RicePaperUIMain/RicePaperUIMain" accessLevel="public" result_type="*" inheritDoc="false">
+                     <versions/>
+                     <result type="*"/>
+                  </constructor>
+               </constructors>
+            </asClass>
+         </classes>
+      </asPackage>
+      <asPackage name="com.dezza.ricepaper.ui.slider">
+         <classes>
+            <asClass name="Slider" type="class" fullname="com.dezza.ricepaper.ui.slider:Slider" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.slider" path="" relativePath="../" href="" taghref="" inheritDoc="false">
                <description><![CDATA[
   ]]></description>
                <shortDescription><![CDATA[
@@ -42,25 +583,915 @@
                <author>derek</author>
                <asAncestors>
                   <asAncestor>
+                     <classRef name="Dragger" fullName="com.dezza.ricepaper.ui.dragger:Dragger" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/Dragger.html"/>
+                     <fields>
+                        <field name="isDragging" fullname="com.dezza.ricepaper.ui.dragger:Dragger/isDragging/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   ]]></shortDescription>
+                        </field>
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.dragger:Dragger/enabled/set" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   
+   
+   set enabled
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                     <methods>
+                        <method name="addDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:Dragger/addDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   add a listener to all Dragger events
+   
+   ]]></shortDescription>
+                           <params>
+                              <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                                 <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/IDraggerListener.html"/>
+                              </param>
+                           </params>
+                        </method>
+                        <method name="destroy" fullname="com.dezza.ricepaper.ui.dragger:Dragger/destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="true" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   
+   
+   make control available for GC
+   ]]></shortDescription>
+                        </method>
+                        <method name="removeDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:Dragger/removeDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   remove a listener from all Dragger events
+   
+   ]]></shortDescription>
+                           <params>
+                              <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                                 <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/IDraggerListener.html"/>
+                              </param>
+                           </params>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="UIControl" fullName="com.dezza.ricepaper.ui.core:UIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/UIControl.html"/>
+                     <fields>
+                        <field name="asset" fullname="com.dezza.ricepaper.ui.core:UIControl/asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   
+   get the content asset
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                     <methods>
+                        <method name="asDisplayObject" fullname="com.dezza.ricepaper.ui.core:UIControl/asDisplayObject" accessLevel="public" result_type="flash.display:DisplayObject" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.display.Sprite" fullName="flash.display.Sprite" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <asImplements>
+                  <asAncestor>
+                     <classRef name="ISlider" fullName="com.dezza.ricepaper.ui.slider:ISlider" packageName="com.dezza.ricepaper.ui.slider" relativePath="ISlider.html"/>
+                  </asAncestor>
+               </asImplements>
+               <constructors>
+                  <constructor name="Slider" fullname="com.dezza.ricepaper.ui.slider:Slider/Slider" accessLevel="public" result_type="*" inheritDoc="false">
+                     <description><![CDATA[
+   construct Slider instance
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   construct Slider instance
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="*"/>
+                     <params>
+                        <param name="content" type="flash.display:MovieClip">
+                           <description><![CDATA[MovieClip asset
+   
+   ]]></description>
+                        </param>
+                        <param name="dragRect" type="flash.geom:Rectangle" default="null">
+                           <description><![CDATA[Rectangle containing slider bounds - note dimension opposite to axis will be ignored
+   
+   ]]></description>
+                        </param>
+                        <param name="buttonMode" type="Boolean" default="true">
+                           <description><![CDATA[Boolean indicating whether or not use buttonMode on the dragger
+   
+   ]]></description>
+                        </param>
+                        <param name="startingPercent" type="Number" default="0.25">
+                           <description><![CDATA[Number initial dragger position as a percentage between min and max
+   
+   ]]></description>
+                        </param>
+                        <param name="track" type="flash.display:Sprite" default="null">
+                           <description><![CDATA[MovieClip optional element to use as clickable track element that will reposition slider
+   
+   ]]></description>
+                        </param>
+                        <param name="axis" type="String" default="x">
+                           <description><![CDATA[String either 'x' or 'y' to use as the axis of dragging
+   ]]></description>
+                        </param>
+                     </params>
+                  </constructor>
+               </constructors>
+               <methods>
+                  <method name="setDragRect" fullname="com.dezza.ricepaper.ui.slider:Slider/setDragRect" accessLevel="public" result_type="void" isFinal="false" isOverride="true" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   set the bounds of the slider
+   
+   note dimensions opposite to axis will be ignored
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   set the bounds of the slider
+   
+   note dimensions opposite to axis will be ignored
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="rect" type="flash.geom:Rectangle">
+                           <description><![CDATA[Rectangle containing min and max slider postions
+   
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="updatePos" fullname="com.dezza.ricepaper.ui.slider:Slider/updatePos" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="_axis" fullname="com.dezza.ricepaper.ui.slider:Slider/protected:_axis" accessLevel="protected" type="String" isConst="false" isStatic="false">
+                     <versions/>
+                  </field>
+                  <field name="_percent" fullname="com.dezza.ricepaper.ui.slider:Slider/protected:_percent" accessLevel="protected" type="Number" isConst="false" isStatic="false">
+                     <versions/>
+                  </field>
+                  <field name="_track" fullname="com.dezza.ricepaper.ui.slider:Slider/protected:_track" accessLevel="protected" type="flash.display:Sprite" isConst="false" isStatic="false">
+                     <versions/>
+                  </field>
+                  <field name="axis" fullname="com.dezza.ricepaper.ui.slider:Slider/axis/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   get the axis
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get the axis
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="dragMax" fullname="com.dezza.ricepaper.ui.slider:Slider/dragMax/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+                  <field name="dragMin" fullname="com.dezza.ricepaper.ui.slider:Slider/dragMin/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+                  <field name="percent" fullname="com.dezza.ricepaper.ui.slider:Slider/percent/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   get the slider percentage
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get the slider percentage
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="ISlider" type="interface" fullname="com.dezza.ricepaper.ui.slider:ISlider" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.slider" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  Slider
+  Class description.
+    ]]></description>
+               <shortDescription><![CDATA[
+  Slider
+  Class description.]]></shortDescription>
+               <versions/>
+               <author>Derek McKenna</author>
+               <customs>
+                  <since><![CDATA[ 11 Aug 2008
+  ]]></since>
+               </customs>
+               <implementers>
+                  <classRef name="Slider" fullName="com.dezza.ricepaper.ui.slider:Slider" packageName="com.dezza.ricepaper.ui.slider" relativePath="../slider/Slider.html"/>
+               </implementers>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="IDragger" fullName="com.dezza.ricepaper.ui.dragger:IDragger" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/IDragger.html"/>
+                     <fields>
+                        <field name="isDragging" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:isDragging/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                     </fields>
+                     <methods>
+                        <method name="addDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:addDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                                 <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/IDraggerListener.html"/>
+                              </param>
+                           </params>
+                        </method>
+                        <method name="removeDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:removeDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                                 <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/IDraggerListener.html"/>
+                              </param>
+                           </params>
+                        </method>
+                        <method name="setDragRect" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:setDragRect" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="rect" type="flash.geom:Rectangle"/>
+                           </params>
+                        </method>
+                        <method name="startDragging" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:startDragging" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                        <method name="stopDragging" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:stopDragging" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
+                     <fields>
+                        <field name="asset" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get the content asset
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                     <methods>
+                        <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   make control available for GC
+   ]]></shortDescription>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="IDisplayObject" fullName="com.dezza.ricepaper.ui.core:IDisplayObject" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IDisplayObject.html"/>
+                     <fields>
+                        <field name="accessibilityProperties" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:accessibilityProperties/get" accessLevel="public" isConst="false" isStatic="false" type="flash.accessibility:AccessibilityProperties" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   Workaround to provide a DisplayObject interface
+   
+   <p>Vote for Adobe to improve AS3 by adding a DisplayObject interface here:<br/>
+   <a href='http://bugs.adobe.com/jira/browse/ASL-45' >http://bugs.adobe.com/jira/browse/ASL-45</a></p>
+   
+   <p>This allows us to work with implentations as assuming they are DisplayObjects.]]></shortDescription>
+                        </field>
+                        <field name="alpha" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:alpha/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="blendMode" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:blendMode/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="cacheAsBitmap" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:cacheAsBitmap/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="filters" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:filters/get" accessLevel="public" isConst="false" isStatic="false" type="Array" inheritDoc="false"/>
+                        <field name="height" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:height/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="loaderInfo" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:loaderInfo/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:LoaderInfo" inheritDoc="false"/>
+                        <field name="mask" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mask/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="mouseX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="mouseY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="name" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:name/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="opaqueBackground" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:opaqueBackground/get" accessLevel="public" isConst="false" isStatic="false" type="Object" inheritDoc="false"/>
+                        <field name="parent" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:parent/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObjectContainer" inheritDoc="false"/>
+                        <field name="root" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:root/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="rotation" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:rotation/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scale9Grid" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scale9Grid/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="scaleX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scaleY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scrollRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scrollRect/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="stage" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:stage/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:Stage" inheritDoc="false"/>
+                        <field name="transform" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:transform/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Transform" inheritDoc="false"/>
+                        <field name="visible" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:visible/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="width" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:width/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="x" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:x/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="y" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:y/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                     </fields>
+                     <methods>
+                        <method name="getBounds" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getBounds" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="getRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getRect" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="globalToLocal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:globalToLocal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                        <method name="hitTestObject" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestObject" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="obj" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="hitTestPoint" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestPoint" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="x" type="Number"/>
+                              <param name="y" type="Number"/>
+                              <param name="shapeFlag" type="Boolean" default="false"/>
+                           </params>
+                        </method>
+                        <method name="localToGlobal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:localToGlobal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.display.IBitmapDrawable" fullName="flash.display.IBitmapDrawable" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="IEnableable" fullName="com.dezza.ricepaper.ui.core:IEnableable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IEnableable.html"/>
+                     <fields>
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:IEnableable/com.dezza.ricepaper.ui.core:IEnableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get enabled
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+               </asAncestors>
+               <fields>
+                  <field name="axis" fullname="com.dezza.ricepaper.ui.slider:ISlider/com.dezza.ricepaper.ui.slider:ISlider:axis/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+                  <field name="percent" fullname="com.dezza.ricepaper.ui.slider:ISlider/com.dezza.ricepaper.ui.slider:ISlider:percent/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read-write">
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+         </classes>
+      </asPackage>
+      <asPackage name="com.dezza.ricepaper.ui.dragger">
+         <classes>
+            <asClass name="IDraggerListener" type="interface" fullname="com.dezza.ricepaper.ui.dragger:IDraggerListener" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.dragger" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  DraggerListener
+    <p>Classes wishing to listen to all Dragger events
+  via the Dragger.addDraggerListener method
+  should implement this</p>
+    ]]></description>
+               <shortDescription><![CDATA[
+  DraggerListener
+    <p>Classes wishing to listen to all Dragger events
+  via the Dragger.addDraggerListener method
+  should implement this</p>
+    ]]></shortDescription>
+               <versions/>
+               <author>Derek McKenna</author>
+               <customs>
+                  <since><![CDATA[Feb 15, 2009
+  ]]></since>
+               </customs>
+               <asAncestors/>
+               <methods>
+                  <method name="onDragChange" fullname="com.dezza.ricepaper.ui.dragger:IDraggerListener/com.dezza.ricepaper.ui.dragger:IDraggerListener:onDragChange" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   handle DraggerEvent.DRAG_CHANGE event
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   handle DraggerEvent.DRAG_CHANGE event
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="e" type="flash.events:Event">
+                           <description><![CDATA[DraggerEvent instance
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="onDragStart" fullname="com.dezza.ricepaper.ui.dragger:IDraggerListener/com.dezza.ricepaper.ui.dragger:IDraggerListener:onDragStart" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   handle DraggerEvent.DRAG_START event
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   handle DraggerEvent.DRAG_START event
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="e" type="flash.events:Event">
+                           <description><![CDATA[DraggerEvent instance
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="onDragStop" fullname="com.dezza.ricepaper.ui.dragger:IDraggerListener/com.dezza.ricepaper.ui.dragger:IDraggerListener:onDragStop" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   handle DraggerEvent.DRAG_STOP event
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   handle DraggerEvent.DRAG_STOP event
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="e" type="flash.events:Event">
+                           <description><![CDATA[DraggerEvent instance
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+               </methods>
+            </asClass>
+            <asClass name="Dragger" type="class" fullname="com.dezza.ricepaper.ui.dragger:Dragger" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.dragger" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  BasicDragger
+  
+  Abstracts dragging functionality and provides and event system for
+  the following events:
+  
+  dragging starts;
+  dragged asset changes;
+  dragging ends.
+    see <code>com.dezza.ricepaper.ui.dragger.DraggerEvent</code>
+    ]]></description>
+               <shortDescription><![CDATA[
+  BasicDragger
+  
+  Abstracts dragging functionality and provides and event system for
+  the following events:
+  
+  dragging starts;
+  dragged asset changes;
+  dragging ends.]]></shortDescription>
+               <versions/>
+               <author>Derek McKenna</author>
+               <customs>
+                  <since><![CDATA[Feb 15, 2009
+  ]]></since>
+               </customs>
+               <asDecendants>
+                  <classRef name="Slider" fullName="com.dezza.ricepaper.ui.slider:Slider" packageName="com.dezza.ricepaper.ui.slider" relativePath="../slider/Slider.html"/>
+               </asDecendants>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="UIControl" fullName="com.dezza.ricepaper.ui.core:UIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/UIControl.html"/>
+                     <fields>
+                        <field name="asset" fullname="com.dezza.ricepaper.ui.core:UIControl/asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   
+   get the content asset
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                     <methods>
+                        <method name="asDisplayObject" fullname="com.dezza.ricepaper.ui.core:UIControl/asDisplayObject" accessLevel="public" result_type="flash.display:DisplayObject" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.display.Sprite" fullName="flash.display.Sprite" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <asImplements>
+                  <asAncestor>
+                     <classRef name="IDragger" fullName="com.dezza.ricepaper.ui.dragger:IDragger" packageName="com.dezza.ricepaper.ui.dragger" relativePath="IDragger.html"/>
+                     <methods>
+                        <method name="addDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:addDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                                 <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/IDraggerListener.html"/>
+                              </param>
+                           </params>
+                        </method>
+                        <method name="removeDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:removeDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                                 <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/IDraggerListener.html"/>
+                              </param>
+                           </params>
+                        </method>
+                        <method name="setDragRect" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:setDragRect" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="rect" type="flash.geom:Rectangle"/>
+                           </params>
+                        </method>
+                        <method name="startDragging" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:startDragging" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                        <method name="stopDragging" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:stopDragging" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                     </methods>
+                  </asAncestor>
+               </asImplements>
+               <constructors>
+                  <constructor name="Dragger" fullname="com.dezza.ricepaper.ui.dragger:Dragger/Dragger" accessLevel="public" result_type="*" inheritDoc="false">
+                     <description><![CDATA[
+   Construct new Dragger instance
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Construct new Dragger instance
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="*"/>
+                     <params>
+                        <param name="asset" type="flash.display:MovieClip">
+                           <description><![CDATA[MovieClip instance containing visuals
+   
+   ]]></description>
+                        </param>
+                        <param name="dragRect" type="flash.geom:Rectangle" default="null">
+                           <description><![CDATA[bounds for dragging ops
+   
+   ]]></description>
+                        </param>
+                        <param name="buttonMode" type="Boolean" default="true">
+                           <description><![CDATA[Boolean true to use button cursor (default true)
+   ]]></description>
+                        </param>
+                     </params>
+                  </constructor>
+               </constructors>
+               <methods>
+                  <method name="addDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:Dragger/addDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   add a listener to all Dragger events
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   add a listener to all Dragger events
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                           <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="IDraggerListener.html"/>
+                           <description><![CDATA[<code>com.dezza.ricepaper.ui.dragger.DraggerListener</code> implementation
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="destroy" fullname="com.dezza.ricepaper.ui.dragger:Dragger/destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="true" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   
+   
+   make control available for GC
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   
+   make control available for GC
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+                  <method name="removeDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:Dragger/removeDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   remove a listener from all Dragger events
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   remove a listener from all Dragger events
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                           <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="IDraggerListener.html"/>
+                           <description><![CDATA[<code>com.dezza.ricepaper.ui.dragger.DraggerListener</code> implementation
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="setDragRect" fullname="com.dezza.ricepaper.ui.dragger:Dragger/setDragRect" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   update the dragRect bounds
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   update the dragRect bounds
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="rect" type="flash.geom:Rectangle">
+                           <description><![CDATA[<code>flash.geomRectangle</code> instance
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="isDragging" fullname="com.dezza.ricepaper.ui.dragger:Dragger/isDragging/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   ]]></description>
+                     <shortDescription><![CDATA[
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="enabled" fullname="com.dezza.ricepaper.ui.dragger:Dragger/enabled/set" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="write">
+                     <description><![CDATA[
+   
+   
+   set enabled
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   
+   set enabled
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <customs>
+                        <param><![CDATA[enabled Boolean
+   ]]></param>
+                     </customs>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="IDragger" type="interface" fullname="com.dezza.ricepaper.ui.dragger:IDragger" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.dragger" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  Dragger
+  Class Description.
+    ]]></description>
+               <shortDescription><![CDATA[
+  Dragger
+  Class Description.]]></shortDescription>
+               <versions/>
+               <author>Derek McKenna</author>
+               <customs>
+                  <since><![CDATA[Feb 15, 2009
+  ]]></since>
+               </customs>
+               <implementers>
+                  <classRef name="Dragger" fullName="com.dezza.ricepaper.ui.dragger:Dragger" packageName="com.dezza.ricepaper.ui.dragger" relativePath="../dragger/Dragger.html"/>
+               </implementers>
+               <asDecendants>
+                  <classRef name="ISlider" fullName="com.dezza.ricepaper.ui.slider:ISlider" packageName="com.dezza.ricepaper.ui.slider" relativePath="../slider/ISlider.html"/>
+               </asDecendants>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
+                     <fields>
+                        <field name="asset" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get the content asset
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                     <methods>
+                        <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   make control available for GC
+   ]]></shortDescription>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="IDisplayObject" fullName="com.dezza.ricepaper.ui.core:IDisplayObject" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IDisplayObject.html"/>
+                     <fields>
+                        <field name="accessibilityProperties" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:accessibilityProperties/get" accessLevel="public" isConst="false" isStatic="false" type="flash.accessibility:AccessibilityProperties" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   Workaround to provide a DisplayObject interface
+   
+   <p>Vote for Adobe to improve AS3 by adding a DisplayObject interface here:<br/>
+   <a href='http://bugs.adobe.com/jira/browse/ASL-45' >http://bugs.adobe.com/jira/browse/ASL-45</a></p>
+   
+   <p>This allows us to work with implentations as assuming they are DisplayObjects.]]></shortDescription>
+                        </field>
+                        <field name="alpha" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:alpha/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="blendMode" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:blendMode/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="cacheAsBitmap" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:cacheAsBitmap/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="filters" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:filters/get" accessLevel="public" isConst="false" isStatic="false" type="Array" inheritDoc="false"/>
+                        <field name="height" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:height/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="loaderInfo" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:loaderInfo/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:LoaderInfo" inheritDoc="false"/>
+                        <field name="mask" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mask/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="mouseX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="mouseY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="name" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:name/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="opaqueBackground" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:opaqueBackground/get" accessLevel="public" isConst="false" isStatic="false" type="Object" inheritDoc="false"/>
+                        <field name="parent" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:parent/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObjectContainer" inheritDoc="false"/>
+                        <field name="root" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:root/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="rotation" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:rotation/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scale9Grid" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scale9Grid/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="scaleX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scaleY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scrollRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scrollRect/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="stage" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:stage/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:Stage" inheritDoc="false"/>
+                        <field name="transform" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:transform/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Transform" inheritDoc="false"/>
+                        <field name="visible" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:visible/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="width" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:width/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="x" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:x/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="y" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:y/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                     </fields>
+                     <methods>
+                        <method name="getBounds" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getBounds" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="getRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getRect" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="globalToLocal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:globalToLocal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                        <method name="hitTestObject" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestObject" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="obj" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="hitTestPoint" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestPoint" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="x" type="Number"/>
+                              <param name="y" type="Number"/>
+                              <param name="shapeFlag" type="Boolean" default="false"/>
+                           </params>
+                        </method>
+                        <method name="localToGlobal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:localToGlobal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="flash.display.IBitmapDrawable" fullName="flash.display.IBitmapDrawable" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="IEnableable" fullName="com.dezza.ricepaper.ui.core:IEnableable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IEnableable.html"/>
+                     <fields>
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:IEnableable/com.dezza.ricepaper.ui.core:IEnableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   get enabled
+   
+   ]]></shortDescription>
+                        </field>
+                     </fields>
+                  </asAncestor>
+               </asAncestors>
+               <methods>
+                  <method name="addDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:addDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                           <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="IDraggerListener.html"/>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="removeDraggerListener" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:removeDraggerListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="listener" type="com.dezza.ricepaper.ui.dragger:IDraggerListener">
+                           <classRef name="IDraggerListener" fullName="com.dezza.ricepaper.ui.dragger:IDraggerListener" packageName="com.dezza.ricepaper.ui.dragger" relativePath="IDraggerListener.html"/>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="setDragRect" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:setDragRect" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="rect" type="flash.geom:Rectangle"/>
+                     </params>
+                  </method>
+                  <method name="startDragging" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:startDragging" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+                  <method name="stopDragging" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:stopDragging" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <versions/>
+                     <result type="void"/>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="isDragging" fullname="com.dezza.ricepaper.ui.dragger:IDragger/com.dezza.ricepaper.ui.dragger:IDragger:isDragging/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read">
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="DraggerEvent" type="class" fullname="com.dezza.ricepaper.ui.dragger:DraggerEvent" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.dragger" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek</author>
+               <asAncestors>
+                  <asAncestor>
+                     <classRef name="flash.events.Event" fullName="flash.events.Event" relativePath="none"/>
+                  </asAncestor>
+               </asAncestors>
+               <constructors>
+                  <constructor name="DraggerEvent" fullname="com.dezza.ricepaper.ui.dragger:DraggerEvent/DraggerEvent" accessLevel="public" result_type="*" inheritDoc="false">
+                     <description><![CDATA[
+   Construct new DraggerEvent instance
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Construct new DraggerEvent instance
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="*"/>
+                     <params>
+                        <param name="type" type="String"/>
+                        <param name="bubbles" type="Boolean" default="false"/>
+                        <param name="cancelable" type="Boolean" default="false"/>
+                        <param name="data" type="Object" default="null"/>
+                     </params>
+                  </constructor>
+               </constructors>
+               <methods>
+                  <method name="clone" fullname="com.dezza.ricepaper.ui.dragger:DraggerEvent/clone" accessLevel="public" result_type="flash.events:Event" isFinal="false" isOverride="true" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   ]]></description>
+                     <shortDescription><![CDATA[
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="flash.events:Event"/>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="DRAG_CHANGE" fullname="com.dezza.ricepaper.ui.dragger:DraggerEvent/DRAG_CHANGE" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="DraggerEvent.DRAG_CHANGE">
+                     <description><![CDATA[
+   Event type indicating dragger postion change
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Event type indicating dragger postion change
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="DRAG_START" fullname="com.dezza.ricepaper.ui.dragger:DraggerEvent/DRAG_START" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="DraggerEvent.DRAG_START">
+                     <description><![CDATA[
+   Event type indicating dragging has started
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Event type indicating dragging has started
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="DRAG_STOP" fullname="com.dezza.ricepaper.ui.dragger:DraggerEvent/DRAG_STOP" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="DraggerEvent.DRAG_STOP">
+                     <description><![CDATA[
+   Event type indication dragging has stopped
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Event type indication dragging has stopped
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="data" fullname="com.dezza.ricepaper.ui.dragger:DraggerEvent/data" accessLevel="public" type="Object" isConst="false" isStatic="false">
+                     <description><![CDATA[
+   event data payload
+   ]]></description>
+                     <shortDescription><![CDATA[
+   event data payload
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+         </classes>
+      </asPackage>
+      <asPackage name="com.dezza.ricepaper.ui.button">
+         <classes>
+            <asClass name="LabelButton" type="class" fullname="com.dezza.ricepaper.ui.button:LabelButton" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.button" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek
+  
+  Extends Button by adding a &lt;code&gt;TextField&lt;/code&gt; label property</author>
+               <asAncestors>
+                  <asAncestor>
                      <classRef name="Button" fullName="com.dezza.ricepaper.ui.button:Button" packageName="com.dezza.ricepaper.ui.button" relativePath="Button.html"/>
                      <fields>
-                        <field name="_mouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:_mouseState" accessLevel="protected" type="String" isConst="false" isStatic="false">
-                           <shortDescription><![CDATA[
-   current mouse state i.e.]]></shortDescription>
-                        </field>
-                        <field name="_mouseStateLocked" fullname="com.dezza.ricepaper.ui.button:Button/protected:_mouseStateLocked" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
-                           <shortDescription><![CDATA[
-   whether or not the mouse state is currently locked
-   ]]></shortDescription>
-                        </field>
-                        <field name="_unlockedMouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:_unlockedMouseState" accessLevel="protected" type="String" isConst="false" isStatic="false">
-                           <shortDescription><![CDATA[
-   mouse state to apply to mouse when unlocked
-   ]]></shortDescription>
-                        </field>
                         <field name="highlighted" fullname="com.dezza.ricepaper.ui.button:Button/highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
                            <shortDescription><![CDATA[
-   get the button's on/off state
+   get the button's highlighted (on/off) state
+   
    ]]></shortDescription>
                         </field>
                         <field name="mouseStateLocked" fullname="com.dezza.ricepaper.ui.button:Button/mouseStateLocked/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
@@ -80,7 +1511,15 @@
                         </field>
                      </fields>
                      <methods>
-                        <method name="addAutoHitArea" fullname="com.dezza.ricepaper.ui.button:Button/addAutoHitArea" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                        <method name="autoAddHitArea" fullname="com.dezza.ricepaper.ui.button:Button/autoAddHitArea" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   automatically create a hit area
+   
+   <p>usefull for text only or other assets that have irregular edges.</p>
+   
+   <p>Note: uses the bounds of the asset at the time called and doesn't
+   take into account any masks etc</p>
+   ]]></shortDescription>
                            <params>
                               <param name="debug" type="Boolean" default="false"/>
                            </params>
@@ -92,51 +1531,12 @@
    make control available for GC
    ]]></shortDescription>
                         </method>
-                        <method name="initMouse" fullname="com.dezza.ricepaper.ui.button:Button/protected:initMouse" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
-                        <method name="onRollOut" fullname="com.dezza.ricepaper.ui.button:Button/protected:onRollOut" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
-                           <params>
-                              <param name="event" type="flash.events:MouseEvent"/>
-                           </params>
-                        </method>
-                        <method name="onRollOver" fullname="com.dezza.ricepaper.ui.button:Button/protected:onRollOver" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
-                           <params>
-                              <param name="event" type="flash.events:MouseEvent"/>
-                           </params>
-                        </method>
-                        <method name="renderState" fullname="com.dezza.ricepaper.ui.button:Button/protected:renderState" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
-                        <method name="setMouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:setMouseState" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
-                           <shortDescription><![CDATA[
-   set the current mouse state
-   
-   mouseState can be either
-   
-   ButtonState.OFF representing mouse off button
-   
-   or 
-   
-   ButtonState.ON representing mouse on (or over) button
-   
-   ]]></shortDescription>
-                           <params>
-                              <param name="mouseState" type="String"/>
-                           </params>
-                        </method>
                      </methods>
                   </asAncestor>
                   <asAncestor>
                      <classRef name="UIControl" fullName="com.dezza.ricepaper.ui.core:UIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/UIControl.html"/>
                      <fields>
-                        <field name="_content" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_content" accessLevel="protected" type="flash.display:MovieClip" isConst="false" isStatic="false">
-                           <shortDescription><![CDATA[
-   content asset MovieClip 
-   ]]></shortDescription>
-                        </field>
-                        <field name="_enabled" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_enabled" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
-                           <shortDescription><![CDATA[
-   whether or not the control is currently enabled
-   ]]></shortDescription>
-                        </field>
-                        <field name="content" fullname="com.dezza.ricepaper.ui.core:UIControl/content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                        <field name="asset" fullname="com.dezza.ricepaper.ui.core:UIControl/asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
                            <shortDescription><![CDATA[
    
    get the content asset
@@ -144,6 +1544,9 @@
    ]]></shortDescription>
                         </field>
                      </fields>
+                     <methods>
+                        <method name="asDisplayObject" fullname="com.dezza.ricepaper.ui.core:UIControl/asDisplayObject" accessLevel="public" result_type="flash.display:DisplayObject" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                     </methods>
                   </asAncestor>
                   <asAncestor>
                      <classRef name="flash.display.Sprite" fullName="flash.display.Sprite" relativePath="none"/>
@@ -165,13 +1568,90 @@
                   </constructor>
                </constructors>
                <fields>
-                  <field name="_textField" fullname="com.dezza.ricepaper.ui.button:LabelButton/protected:_textField" accessLevel="protected" type="flash.text:TextField" isConst="false" isStatic="false">
-                     <versions/>
-                  </field>
                   <field name="text" fullname="com.dezza.ricepaper.ui.button:LabelButton/text/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false" only="read-write">
+                     <description><![CDATA[
+   
+   get label text
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   get label text
+   
+   ]]></shortDescription>
                      <versions/>
                   </field>
                   <field name="textField" fullname="com.dezza.ricepaper.ui.button:LabelButton/textField/get" accessLevel="public" isConst="false" isStatic="false" type="flash.text:TextField" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   
+   get textfield
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   
+   get textfield
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
+            </asClass>
+            <asClass name="ButtonState" type="class" fullname="com.dezza.ricepaper.ui.button:ButtonState" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.button" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek
+  
+  constants for button states 
+  
+  button assets should use these values as frame labels for a particular state</author>
+               <asAncestors/>
+               <fields>
+                  <field name="DISABLED" fullname="com.dezza.ricepaper.ui.button:ButtonState/DISABLED" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="disabled">
+                     <description><![CDATA[
+   Represents button state of 'disabled'
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Represents button state of 'disabled'
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="OFF" fullname="com.dezza.ricepaper.ui.button:ButtonState/OFF" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="off">
+                     <description><![CDATA[
+   Represents button state of 'off' (or mouse out)
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Represents button state of 'off' (or mouse out)
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="OFF_SELECTED" fullname="com.dezza.ricepaper.ui.button:ButtonState/OFF_SELECTED" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="offSelected">
+                     <description><![CDATA[
+   Represents button state of 'off' and 'selected'
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Represents button state of 'off' and 'selected'
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="ON" fullname="com.dezza.ricepaper.ui.button:ButtonState/ON" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="on">
+                     <description><![CDATA[
+   Represents button state of 'on' (or mouse over)
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Represents button state of 'on' (or mouse over)
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="ON_SELECTED" fullname="com.dezza.ricepaper.ui.button:ButtonState/ON_SELECTED" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="onSelected">
+                     <description><![CDATA[
+   Represents button state of 'on' and 'selected'
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Represents button state of 'on' and 'selected'
+   ]]></shortDescription>
                      <versions/>
                   </field>
                </fields>
@@ -193,7 +1673,7 @@
                   <asAncestor>
                      <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
                      <fields>
-                        <field name="content" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                        <field name="asset" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
                            <shortDescription><![CDATA[
    get the content asset
    
@@ -209,12 +1689,87 @@
                      </methods>
                   </asAncestor>
                   <asAncestor>
+                     <classRef name="IDisplayObject" fullName="com.dezza.ricepaper.ui.core:IDisplayObject" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IDisplayObject.html"/>
+                     <fields>
+                        <field name="accessibilityProperties" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:accessibilityProperties/get" accessLevel="public" isConst="false" isStatic="false" type="flash.accessibility:AccessibilityProperties" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   Workaround to provide a DisplayObject interface
+   
+   <p>Vote for Adobe to improve AS3 by adding a DisplayObject interface here:<br/>
+   <a href='http://bugs.adobe.com/jira/browse/ASL-45' >http://bugs.adobe.com/jira/browse/ASL-45</a></p>
+   
+   <p>This allows us to work with implentations as assuming they are DisplayObjects.]]></shortDescription>
+                        </field>
+                        <field name="alpha" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:alpha/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="blendMode" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:blendMode/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="cacheAsBitmap" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:cacheAsBitmap/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="filters" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:filters/get" accessLevel="public" isConst="false" isStatic="false" type="Array" inheritDoc="false"/>
+                        <field name="height" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:height/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="loaderInfo" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:loaderInfo/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:LoaderInfo" inheritDoc="false"/>
+                        <field name="mask" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mask/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="mouseX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="mouseY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="name" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:name/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="opaqueBackground" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:opaqueBackground/get" accessLevel="public" isConst="false" isStatic="false" type="Object" inheritDoc="false"/>
+                        <field name="parent" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:parent/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObjectContainer" inheritDoc="false"/>
+                        <field name="root" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:root/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="rotation" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:rotation/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scale9Grid" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scale9Grid/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="scaleX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scaleY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scrollRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scrollRect/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="stage" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:stage/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:Stage" inheritDoc="false"/>
+                        <field name="transform" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:transform/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Transform" inheritDoc="false"/>
+                        <field name="visible" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:visible/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="width" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:width/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="x" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:x/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="y" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:y/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                     </fields>
+                     <methods>
+                        <method name="getBounds" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getBounds" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="getRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getRect" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="globalToLocal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:globalToLocal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                        <method name="hitTestObject" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestObject" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="obj" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="hitTestPoint" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestPoint" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="x" type="Number"/>
+                              <param name="y" type="Number"/>
+                              <param name="shapeFlag" type="Boolean" default="false"/>
+                           </params>
+                        </method>
+                        <method name="localToGlobal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:localToGlobal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
                      <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
                   </asAncestor>
                   <asAncestor>
-                     <classRef name="Enableable" fullName="com.dezza.ricepaper.ui.core:Enableable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Enableable.html"/>
+                     <classRef name="flash.display.IBitmapDrawable" fullName="flash.display.IBitmapDrawable" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="IEnableable" fullName="com.dezza.ricepaper.ui.core:IEnableable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IEnableable.html"/>
                      <fields>
-                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:IEnableable/com.dezza.ricepaper.ui.core:IEnableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
                            <shortDescription><![CDATA[
    get enabled
    
@@ -223,9 +1778,9 @@
                      </fields>
                   </asAncestor>
                   <asAncestor>
-                     <classRef name="Highlightable" fullName="com.dezza.ricepaper.ui.core:Highlightable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Highlightable.html"/>
+                     <classRef name="IHighlightable" fullName="com.dezza.ricepaper.ui.core:IHighlightable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IHighlightable.html"/>
                      <fields>
-                        <field name="highlighted" fullname="com.dezza.ricepaper.ui.core:Highlightable/com.dezza.ricepaper.ui.core:Highlightable:highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                        <field name="highlighted" fullname="com.dezza.ricepaper.ui.core:IHighlightable/com.dezza.ricepaper.ui.core:IHighlightable:highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
                            <shortDescription><![CDATA[
    get highlighted
    
@@ -273,7 +1828,7 @@
                   <asAncestor>
                      <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
                      <fields>
-                        <field name="content" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                        <field name="asset" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
                            <shortDescription><![CDATA[
    get the content asset
    
@@ -289,12 +1844,87 @@
                      </methods>
                   </asAncestor>
                   <asAncestor>
+                     <classRef name="IDisplayObject" fullName="com.dezza.ricepaper.ui.core:IDisplayObject" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IDisplayObject.html"/>
+                     <fields>
+                        <field name="accessibilityProperties" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:accessibilityProperties/get" accessLevel="public" isConst="false" isStatic="false" type="flash.accessibility:AccessibilityProperties" inheritDoc="false">
+                           <shortDescription><![CDATA[
+   Workaround to provide a DisplayObject interface
+   
+   <p>Vote for Adobe to improve AS3 by adding a DisplayObject interface here:<br/>
+   <a href='http://bugs.adobe.com/jira/browse/ASL-45' >http://bugs.adobe.com/jira/browse/ASL-45</a></p>
+   
+   <p>This allows us to work with implentations as assuming they are DisplayObjects.]]></shortDescription>
+                        </field>
+                        <field name="alpha" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:alpha/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="blendMode" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:blendMode/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="cacheAsBitmap" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:cacheAsBitmap/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="filters" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:filters/get" accessLevel="public" isConst="false" isStatic="false" type="Array" inheritDoc="false"/>
+                        <field name="height" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:height/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="loaderInfo" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:loaderInfo/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:LoaderInfo" inheritDoc="false"/>
+                        <field name="mask" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mask/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="mouseX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="mouseY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:mouseY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="name" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:name/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false"/>
+                        <field name="opaqueBackground" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:opaqueBackground/get" accessLevel="public" isConst="false" isStatic="false" type="Object" inheritDoc="false"/>
+                        <field name="parent" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:parent/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObjectContainer" inheritDoc="false"/>
+                        <field name="root" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:root/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false"/>
+                        <field name="rotation" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:rotation/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scale9Grid" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scale9Grid/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="scaleX" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleX/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scaleY" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scaleY/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="scrollRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:scrollRect/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Rectangle" inheritDoc="false"/>
+                        <field name="stage" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:stage/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:Stage" inheritDoc="false"/>
+                        <field name="transform" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:transform/get" accessLevel="public" isConst="false" isStatic="false" type="flash.geom:Transform" inheritDoc="false"/>
+                        <field name="visible" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:visible/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false"/>
+                        <field name="width" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:width/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="x" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:x/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                        <field name="y" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:y/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false"/>
+                     </fields>
+                     <methods>
+                        <method name="getBounds" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getBounds" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="getRect" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:getRect" accessLevel="public" result_type="flash.geom:Rectangle" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="targetCoordinateSpace" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="globalToLocal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:globalToLocal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                        <method name="hitTestObject" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestObject" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="obj" type="flash.display:DisplayObject"/>
+                           </params>
+                        </method>
+                        <method name="hitTestPoint" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:hitTestPoint" accessLevel="public" result_type="Boolean" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="x" type="Number"/>
+                              <param name="y" type="Number"/>
+                              <param name="shapeFlag" type="Boolean" default="false"/>
+                           </params>
+                        </method>
+                        <method name="localToGlobal" fullname="com.dezza.ricepaper.ui.core:IDisplayObject/com.dezza.ricepaper.ui.core:IDisplayObject:localToGlobal" accessLevel="public" result_type="flash.geom:Point" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                           <params>
+                              <param name="point" type="flash.geom:Point"/>
+                           </params>
+                        </method>
+                     </methods>
+                  </asAncestor>
+                  <asAncestor>
                      <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
                   </asAncestor>
                   <asAncestor>
-                     <classRef name="Enableable" fullName="com.dezza.ricepaper.ui.core:Enableable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Enableable.html"/>
+                     <classRef name="flash.display.IBitmapDrawable" fullName="flash.display.IBitmapDrawable" relativePath="none"/>
+                  </asAncestor>
+                  <asAncestor>
+                     <classRef name="IEnableable" fullName="com.dezza.ricepaper.ui.core:IEnableable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IEnableable.html"/>
                      <fields>
-                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:IEnableable/com.dezza.ricepaper.ui.core:IEnableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
                            <shortDescription><![CDATA[
    get enabled
    
@@ -303,9 +1933,9 @@
                      </fields>
                   </asAncestor>
                   <asAncestor>
-                     <classRef name="Highlightable" fullName="com.dezza.ricepaper.ui.core:Highlightable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Highlightable.html"/>
+                     <classRef name="IHighlightable" fullName="com.dezza.ricepaper.ui.core:IHighlightable" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IHighlightable.html"/>
                      <fields>
-                        <field name="highlighted" fullname="com.dezza.ricepaper.ui.core:Highlightable/com.dezza.ricepaper.ui.core:Highlightable:highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
+                        <field name="highlighted" fullname="com.dezza.ricepaper.ui.core:IHighlightable/com.dezza.ricepaper.ui.core:IHighlightable:highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
                            <shortDescription><![CDATA[
    get highlighted
    
@@ -314,15 +1944,15 @@
                      </fields>
                   </asAncestor>
                   <asAncestor>
-                     <classRef name="Label" fullName="com.dezza.ricepaper.ui.core:Label" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/Label.html"/>
+                     <classRef name="ILabel" fullName="com.dezza.ricepaper.ui.core:ILabel" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/ILabel.html"/>
                      <fields>
-                        <field name="text" fullname="com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:text/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false">
+                        <field name="text" fullname="com.dezza.ricepaper.ui.core:ILabel/com.dezza.ricepaper.ui.core:ILabel:text/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false">
                            <shortDescription><![CDATA[
    get label text
    
    ]]></shortDescription>
                         </field>
-                        <field name="textField" fullname="com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:textField/get" accessLevel="public" isConst="false" isStatic="false" type="flash.text:TextField" inheritDoc="false">
+                        <field name="textField" fullname="com.dezza.ricepaper.ui.core:ILabel/com.dezza.ricepaper.ui.core:ILabel:textField/get" accessLevel="public" isConst="false" isStatic="false" type="flash.text:TextField" inheritDoc="false">
                            <shortDescription><![CDATA[
    get textfield
    
@@ -346,17 +1976,7 @@
                   <asAncestor>
                      <classRef name="UIControl" fullName="com.dezza.ricepaper.ui.core:UIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/UIControl.html"/>
                      <fields>
-                        <field name="_content" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_content" accessLevel="protected" type="flash.display:MovieClip" isConst="false" isStatic="false">
-                           <shortDescription><![CDATA[
-   content asset MovieClip 
-   ]]></shortDescription>
-                        </field>
-                        <field name="_enabled" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_enabled" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
-                           <shortDescription><![CDATA[
-   whether or not the control is currently enabled
-   ]]></shortDescription>
-                        </field>
-                        <field name="content" fullname="com.dezza.ricepaper.ui.core:UIControl/content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
+                        <field name="asset" fullname="com.dezza.ricepaper.ui.core:UIControl/asset/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false">
                            <shortDescription><![CDATA[
    
    get the content asset
@@ -364,6 +1984,9 @@
    ]]></shortDescription>
                         </field>
                      </fields>
+                     <methods>
+                        <method name="asDisplayObject" fullname="com.dezza.ricepaper.ui.core:UIControl/asDisplayObject" accessLevel="public" result_type="flash.display:DisplayObject" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false"/>
+                     </methods>
                   </asAncestor>
                   <asAncestor>
                      <classRef name="flash.display.Sprite" fullName="flash.display.Sprite" relativePath="none"/>
@@ -384,7 +2007,23 @@
                   </constructor>
                </constructors>
                <methods>
-                  <method name="addAutoHitArea" fullname="com.dezza.ricepaper.ui.button:Button/addAutoHitArea" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                  <method name="autoAddHitArea" fullname="com.dezza.ricepaper.ui.button:Button/autoAddHitArea" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   automatically create a hit area
+   
+   <p>usefull for text only or other assets that have irregular edges.</p>
+   
+   <p>Note: uses the bounds of the asset at the time called and doesn't
+   take into account any masks etc</p>
+   ]]></description>
+                     <shortDescription><![CDATA[
+   automatically create a hit area
+   
+   <p>usefull for text only or other assets that have irregular edges.</p>
+   
+   <p>Note: uses the bounds of the asset at the time called and doesn't
+   take into account any masks etc</p>
+   ]]></shortDescription>
                      <versions/>
                      <result type="void"/>
                      <params>
@@ -405,97 +2044,16 @@
                      <versions/>
                      <result type="void"/>
                   </method>
-                  <method name="initMouse" fullname="com.dezza.ricepaper.ui.button:Button/protected:initMouse" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
-                     <versions/>
-                     <result type="void"/>
-                  </method>
-                  <method name="onRollOut" fullname="com.dezza.ricepaper.ui.button:Button/protected:onRollOut" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
-                     <versions/>
-                     <result type="void"/>
-                     <params>
-                        <param name="event" type="flash.events:MouseEvent"/>
-                     </params>
-                  </method>
-                  <method name="onRollOver" fullname="com.dezza.ricepaper.ui.button:Button/protected:onRollOver" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
-                     <versions/>
-                     <result type="void"/>
-                     <params>
-                        <param name="event" type="flash.events:MouseEvent"/>
-                     </params>
-                  </method>
-                  <method name="renderState" fullname="com.dezza.ricepaper.ui.button:Button/protected:renderState" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
-                     <versions/>
-                     <result type="void"/>
-                  </method>
-                  <method name="setMouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:setMouseState" accessLevel="protected" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
-                     <description><![CDATA[
-   set the current mouse state
-   
-   mouseState can be either
-   
-   ButtonState.OFF representing mouse off button
-   
-   or 
-   
-   ButtonState.ON representing mouse on (or over) button
-   
-   ]]></description>
-                     <shortDescription><![CDATA[
-   set the current mouse state
-   
-   mouseState can be either
-   
-   ButtonState.OFF representing mouse off button
-   
-   or 
-   
-   ButtonState.ON representing mouse on (or over) button
-   
-   ]]></shortDescription>
-                     <versions/>
-                     <result type="void"/>
-                     <params>
-                        <param name="mouseState" type="String">
-                           <description><![CDATA[String representing mouse state
-   
-   ]]></description>
-                        </param>
-                     </params>
-                  </method>
                </methods>
                <fields>
-                  <field name="_mouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:_mouseState" accessLevel="protected" type="String" isConst="false" isStatic="false">
-                     <description><![CDATA[
-   current mouse state i.e. "off","on"
-   ]]></description>
-                     <shortDescription><![CDATA[
-   current mouse state i.e.]]></shortDescription>
-                     <versions/>
-                  </field>
-                  <field name="_mouseStateLocked" fullname="com.dezza.ricepaper.ui.button:Button/protected:_mouseStateLocked" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
-                     <description><![CDATA[
-   whether or not the mouse state is currently locked
-   ]]></description>
-                     <shortDescription><![CDATA[
-   whether or not the mouse state is currently locked
-   ]]></shortDescription>
-                     <versions/>
-                  </field>
-                  <field name="_unlockedMouseState" fullname="com.dezza.ricepaper.ui.button:Button/protected:_unlockedMouseState" accessLevel="protected" type="String" isConst="false" isStatic="false">
-                     <description><![CDATA[
-   mouse state to apply to mouse when unlocked
-   ]]></description>
-                     <shortDescription><![CDATA[
-   mouse state to apply to mouse when unlocked
-   ]]></shortDescription>
-                     <versions/>
-                  </field>
                   <field name="highlighted" fullname="com.dezza.ricepaper.ui.button:Button/highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
                      <description><![CDATA[
-   get the button's on/off state
+   get the button's highlighted (on/off) state
+   
    ]]></description>
                      <shortDescription><![CDATA[
-   get the button's on/off state
+   get the button's highlighted (on/off) state
+   
    ]]></shortDescription>
                      <versions/>
                   </field>
@@ -535,314 +2093,348 @@
             </asClass>
          </classes>
       </asPackage>
-      <asPackage name="com.dezza.ricepaper.ui.core">
+      <asPackage name="com.dezza.ricepaper.ui.mousewheel">
          <classes>
-            <asClass name="Highlightable" type="interface" fullname="com.dezza.ricepaper.ui.core:Highlightable" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+            <asClass name="MouseWheelListener" type="interface" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelListener" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.mousewheel" path="" relativePath="../" href="" taghref="" inheritDoc="false">
                <description><![CDATA[
   ]]></description>
                <shortDescription><![CDATA[
   ]]></shortDescription>
                <versions/>
-               <author>derek</author>
-               <asDecendants>
-                  <classRef name="IButton" fullName="com.dezza.ricepaper.ui.button:IButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/IButton.html"/>
-               </asDecendants>
+               <author>derek
+  
+  Classes wishing to listen to be added as listeners of MouseWheel mouse wheel events should implement this</author>
                <asAncestors/>
-               <fields>
-                  <field name="highlighted" fullname="com.dezza.ricepaper.ui.core:Highlightable/com.dezza.ricepaper.ui.core:Highlightable:highlighted/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
-                     <description><![CDATA[
-   get highlighted
-   
-   ]]></description>
-                     <shortDescription><![CDATA[
-   get highlighted
-   
-   ]]></shortDescription>
+               <methods>
+                  <method name="onMouseWheel" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelListener/com.dezza.ricepaper.ui.mousewheel:MouseWheelListener:onMouseWheel" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
                      <versions/>
-                  </field>
-               </fields>
+                     <result type="void"/>
+                     <params>
+                        <param name="e" type="com.dezza.ricepaper.ui.mousewheel:MouseWheelEvent">
+                           <classRef name="MouseWheelEvent" fullName="com.dezza.ricepaper.ui.mousewheel:MouseWheelEvent" packageName="com.dezza.ricepaper.ui.mousewheel" relativePath="MouseWheelEvent.html"/>
+                        </param>
+                     </params>
+                  </method>
+               </methods>
             </asClass>
-            <asClass name="UIControl" type="class" fullname="com.dezza.ricepaper.ui.core:UIControl" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+            <asClass name="MouseWheelJSBridge" type="class" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelJSBridge" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.mousewheel" path="" relativePath="../" href="" taghref="" inheritDoc="false">
                <description><![CDATA[
-  UIControl
-  Class Description.
-    ]]></description>
+  Class that wraps javascript code for providing cross platform MouseWheel support
+  ]]></description>
                <shortDescription><![CDATA[
-  UIControl
-  Class Description.]]></shortDescription>
+  Class that wraps javascript code for providing cross platform MouseWheel support
+  ]]></shortDescription>
                <versions/>
-               <author>Derek McKenna</author>
-               <customs>
-                  <since><![CDATA[Feb 15, 2009
-  ]]></since>
-               </customs>
-               <asDecendants>
-                  <classRef name="Button" fullName="com.dezza.ricepaper.ui.button:Button" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/Button.html"/>
-               </asDecendants>
+               <author/>
+               <asAncestors/>
+            </asClass>
+            <asClass name="MouseOverHelper" type="class" fullname="com.dezza.ricepaper.ui.mousewheel:MouseOverHelper" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.mousewheel" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+               <description><![CDATA[
+  ]]></description>
+               <shortDescription><![CDATA[
+  ]]></shortDescription>
+               <versions/>
+               <author>derek
+  
+  This is a helper class for the MouseWheel class to notifiy MouseWheel whether mouse is currently over a target display object
+  
+  Behaves in the way a rolled over sprite behaves i.e. can be 
+  obstructed by other display objects in front</author>
                <asAncestors>
                   <asAncestor>
                      <classRef name="flash.display.Sprite" fullName="flash.display.Sprite" relativePath="none"/>
                   </asAncestor>
                </asAncestors>
-               <asImplements>
-                  <asAncestor>
-                     <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="IUIControl.html"/>
-                     <methods>
-                        <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
-                           <shortDescription><![CDATA[
-   make control available for GC
-   ]]></shortDescription>
-                        </method>
-                     </methods>
-                  </asAncestor>
-               </asImplements>
                <constructors>
-                  <constructor name="UIControl" fullname="com.dezza.ricepaper.ui.core:UIControl/UIControl" accessLevel="public" result_type="*" inheritDoc="false">
+                  <constructor name="MouseOverHelper" fullname="com.dezza.ricepaper.ui.mousewheel:MouseOverHelper/MouseOverHelper" accessLevel="public" result_type="*" inheritDoc="false">
                      <description><![CDATA[
-   Constructor
-   
-   <p>if content is already attached to a parent the UIControl 
-   will attach itself in place and add the asset as it's child</p>
+   Create a MouseOverHelper instance
    
    ]]></description>
                      <shortDescription><![CDATA[
-   Constructor
-   
-   <p>if content is already attached to a parent the UIControl 
-   will attach itself in place and add the asset as it's child</p>
+   Create a MouseOverHelper instance
    
    ]]></shortDescription>
                      <versions/>
                      <result type="*"/>
                      <params>
-                        <param name="content" type="flash.display:MovieClip">
-                           <description><![CDATA[MovieClip 
+                        <param name="target" type="flash.display:DisplayObject" default="null">
+                           <description><![CDATA[DisplayObject
    ]]></description>
                         </param>
                      </params>
                   </constructor>
                </constructors>
                <methods>
-                  <method name="destroy" fullname="com.dezza.ricepaper.ui.core:UIControl/destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                  <method name="destroy" fullname="com.dezza.ricepaper.ui.mousewheel:MouseOverHelper/destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
                      <description><![CDATA[
-   
-   make control available for GC
+   prepare instance for GC
    ]]></description>
                      <shortDescription><![CDATA[
-   
-   make control available for GC
+   prepare instance for GC
    ]]></shortDescription>
                      <versions/>
                      <result type="void"/>
                   </method>
+                  <method name="toString" fullname="com.dezza.ricepaper.ui.mousewheel:MouseOverHelper/toString" accessLevel="public" result_type="String" isFinal="false" isOverride="true" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   get string representation of this instance
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   get string representation of this instance
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="String"><![CDATA[String
+   ]]></result>
+                  </method>
                </methods>
                <fields>
-                  <field name="_content" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_content" accessLevel="protected" type="flash.display:MovieClip" isConst="false" isStatic="false">
+                  <field name="autolockBrowserScroll" fullname="com.dezza.ricepaper.ui.mousewheel:MouseOverHelper/autolockBrowserScroll/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
                      <description><![CDATA[
-   content asset MovieClip 
-   ]]></description>
-                     <shortDescription><![CDATA[
-   content asset MovieClip 
-   ]]></shortDescription>
-                     <versions/>
-                  </field>
-                  <field name="_enabled" fullname="com.dezza.ricepaper.ui.core:UIControl/protected:_enabled" accessLevel="protected" type="Boolean" isConst="false" isStatic="false">
-                     <description><![CDATA[
-   whether or not the control is currently enabled
-   ]]></description>
-                     <shortDescription><![CDATA[
-   whether or not the control is currently enabled
-   ]]></shortDescription>
-                     <versions/>
-                  </field>
-                  <field name="content" fullname="com.dezza.ricepaper.ui.core:UIControl/content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false" only="read">
-                     <description><![CDATA[
-   
-   get the content asset
+   get the autoLockBrowserScroll setting
    
    ]]></description>
                      <shortDescription><![CDATA[
-   
-   get the content asset
+   get the autoLockBrowserScroll setting
    
    ]]></shortDescription>
                      <versions/>
                   </field>
-                  <field name="enabled" fullname="com.dezza.ricepaper.ui.core:UIControl/enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
+                  <field name="mouseIsOver" fullname="com.dezza.ricepaper.ui.mousewheel:MouseOverHelper/mouseIsOver/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read">
+                     <description><![CDATA[ 
+   returns true if the mouse is rolled over the target
+   ]]></description>
+                     <shortDescription><![CDATA[ 
+   returns true if the mouse is rolled over the target
+   ]]></shortDescription>
+                     <versions/>
+                     <customs>
+                        <param><![CDATA[e MouseEvent (with stage coords)
+   ]]></param>
+                     </customs>
+                  </field>
+                  <field name="mouseTarget" fullname="com.dezza.ricepaper.ui.mousewheel:MouseOverHelper/mouseTarget/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:DisplayObject" inheritDoc="false" only="read-write">
                      <description><![CDATA[
-   
-   get enabled
+   get the target mouse over object
    
    ]]></description>
                      <shortDescription><![CDATA[
-   
-   get enabled
+   get the target mouse over object
    
    ]]></shortDescription>
                      <versions/>
                   </field>
                </fields>
             </asClass>
-            <asClass name="Label" type="interface" fullname="com.dezza.ricepaper.ui.core:Label" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+            <asClass name="MouseWheel" type="class" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheel" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.mousewheel" path="" relativePath="../" href="" taghref="" inheritDoc="false">
                <description><![CDATA[
   ]]></description>
                <shortDescription><![CDATA[
   ]]></shortDescription>
                <versions/>
-               <author>derek</author>
-               <asDecendants>
-                  <classRef name="ILabelButton" fullName="com.dezza.ricepaper.ui.button:ILabelButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/ILabelButton.html"/>
-               </asDecendants>
-               <asAncestors/>
-               <fields>
-                  <field name="text" fullname="com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:text/get" accessLevel="public" isConst="false" isStatic="false" type="String" inheritDoc="false" only="read-write">
-                     <description><![CDATA[
-   get label text
-   
-   ]]></description>
-                     <shortDescription><![CDATA[
-   get label text
-   
-   ]]></shortDescription>
-                     <versions/>
-                  </field>
-                  <field name="textField" fullname="com.dezza.ricepaper.ui.core:Label/com.dezza.ricepaper.ui.core:Label:textField/get" accessLevel="public" isConst="false" isStatic="false" type="flash.text:TextField" inheritDoc="false" only="read">
-                     <description><![CDATA[
-   get textfield
-   
-   ]]></description>
-                     <shortDescription><![CDATA[
-   get textfield
-   
-   ]]></shortDescription>
-                     <versions/>
-                  </field>
-               </fields>
-            </asClass>
-            <asClass name="IUIControl" type="interface" fullname="com.dezza.ricepaper.ui.core:IUIControl" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
-               <description><![CDATA[
-  ]]></description>
-               <shortDescription><![CDATA[
-  ]]></shortDescription>
-               <versions/>
-               <author>derek</author>
-               <implementers>
-                  <classRef name="UIControl" fullName="com.dezza.ricepaper.ui.core:UIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/UIControl.html"/>
-               </implementers>
-               <asDecendants>
-                  <classRef name="IButton" fullName="com.dezza.ricepaper.ui.button:IButton" packageName="com.dezza.ricepaper.ui.button" relativePath="../button/IButton.html"/>
-               </asDecendants>
+               <author>derek
+  
+  Utility to provide cross platform (Mac OS X) mousewheel support (requires javascript / ExternalInterface)</author>
                <asAncestors>
                   <asAncestor>
-                     <classRef name="flash.events.IEventDispatcher" fullName="flash.events.IEventDispatcher" relativePath="none"/>
-                  </asAncestor>
-                  <asAncestor>
-                     <classRef name="Enableable" fullName="com.dezza.ricepaper.ui.core:Enableable" packageName="com.dezza.ricepaper.ui.core" relativePath="Enableable.html"/>
-                     <fields>
-                        <field name="enabled" fullname="com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false">
-                           <shortDescription><![CDATA[
-   get enabled
-   
-   ]]></shortDescription>
-                        </field>
-                     </fields>
+                     <classRef name="flash.events.EventDispatcher" fullName="flash.events.EventDispatcher" relativePath="none"/>
                   </asAncestor>
                </asAncestors>
                <methods>
-                  <method name="destroy" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                  <method name="addMouseWheelListener" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheel/addMouseWheelListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
                      <description><![CDATA[
-   make control available for GC
+   add a listener for MouseWheel events
+   
    ]]></description>
                      <shortDescription><![CDATA[
-   make control available for GC
+   add a listener for MouseWheel events
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="listener" type="com.dezza.ricepaper.ui.mousewheel:MouseWheelListener">
+                           <classRef name="MouseWheelListener" fullName="com.dezza.ricepaper.ui.mousewheel:MouseWheelListener" packageName="com.dezza.ricepaper.ui.mousewheel" relativePath="MouseWheelListener.html"/>
+                           <description><![CDATA[<code>com.dezza.ricepaper.ui.mousewheel.MouseWheelListener</code> implementation
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="destroy" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheel/destroy" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="true" inheritDoc="false">
+                     <description><![CDATA[
+   destroy the MouseWheel instance
+   ]]></description>
+                     <shortDescription><![CDATA[
+   destroy the MouseWheel instance
    ]]></shortDescription>
                      <versions/>
                      <result type="void"/>
                   </method>
+                  <method name="getInstance" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheel/getInstance" accessLevel="public" result_type="com.dezza.ricepaper.ui.mousewheel:MouseWheel" isFinal="false" isOverride="false" isStatic="true" inheritDoc="false">
+                     <description><![CDATA[
+   Get the MouseWheel instance
+   
+   note you must call init() and pass a valid stage instance before MouseWheel will start working
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Get the MouseWheel instance
+   
+   note you must call init() and pass a valid stage instance before MouseWheel will start working
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="com.dezza.ricepaper.ui.mousewheel:MouseWheel">
+                        <![CDATA[MouseWheel instance (Singleton)  
+   ]]>
+                        <classRef name="MouseWheel" fullName="com.dezza.ricepaper.ui.mousewheel:MouseWheel" packageName="com.dezza.ricepaper.ui.mousewheel" relativePath="../mousewheel/MouseWheel.html"/>
+                     </result>
+                  </method>
+                  <method name="init" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheel/init" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   initialise MouseWheel instance
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   initialise MouseWheel instance
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="stage" type="flash.display:DisplayObject" default="null">
+                           <description><![CDATA[DisplayObject (mouse positions will be calculated relative to this)
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="lockBrowserScroll" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheel/lockBrowserScroll" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   prevent MouseWheel scrolling from scrolling the containing web page as well
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   prevent MouseWheel scrolling from scrolling the containing web page as well
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="lock" type="Boolean">
+                           <description><![CDATA[Boolean true to lock, false to unlock
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
+                  <method name="removeMouseWheelListener" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheel/removeMouseWheelListener" accessLevel="public" result_type="void" isFinal="false" isOverride="false" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   remove a listener for MouseWheel events
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   remove a listener for MouseWheel events
+   
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="void"/>
+                     <params>
+                        <param name="listener" type="com.dezza.ricepaper.ui.mousewheel:MouseWheelListener">
+                           <classRef name="MouseWheelListener" fullName="com.dezza.ricepaper.ui.mousewheel:MouseWheelListener" packageName="com.dezza.ricepaper.ui.mousewheel" relativePath="MouseWheelListener.html"/>
+                           <description><![CDATA[<code>com.dezza.ricepaper.ui.mousewheel.MouseWheelListener</code> implementation
+   ]]></description>
+                        </param>
+                     </params>
+                  </method>
                </methods>
-               <fields>
-                  <field name="content" fullname="com.dezza.ricepaper.ui.core:IUIControl/com.dezza.ricepaper.ui.core:IUIControl:content/get" accessLevel="public" isConst="false" isStatic="false" type="flash.display:MovieClip" inheritDoc="false" only="read">
-                     <description><![CDATA[
-   get the content asset
-   
-   ]]></description>
-                     <shortDescription><![CDATA[
-   get the content asset
-   
-   ]]></shortDescription>
-                     <versions/>
-                  </field>
-               </fields>
             </asClass>
-            <asClass name="Enableable" type="interface" fullname="com.dezza.ricepaper.ui.core:Enableable" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
+            <asClass name="MouseWheelEvent" type="class" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelEvent" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.mousewheel" path="" relativePath="../" href="" taghref="" inheritDoc="false">
                <description><![CDATA[
   ]]></description>
                <shortDescription><![CDATA[
   ]]></shortDescription>
                <versions/>
                <author>derek</author>
-               <asDecendants>
-                  <classRef name="IUIControl" fullName="com.dezza.ricepaper.ui.core:IUIControl" packageName="com.dezza.ricepaper.ui.core" relativePath="../core/IUIControl.html"/>
-               </asDecendants>
-               <asAncestors/>
-               <fields>
-                  <field name="enabled" fullname="com.dezza.ricepaper.ui.core:Enableable/com.dezza.ricepaper.ui.core:Enableable:enabled/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
-                     <description><![CDATA[
-   get enabled
-   
-   ]]></description>
-                     <shortDescription><![CDATA[
-   get enabled
-   
-   ]]></shortDescription>
-                     <versions/>
-                  </field>
-               </fields>
-            </asClass>
-            <asClass name="Selectable" type="interface" fullname="com.dezza.ricepaper.ui.core:Selectable" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.ui.core" path="" relativePath="../" href="" taghref="" inheritDoc="false">
-               <description><![CDATA[
-  ]]></description>
-               <shortDescription><![CDATA[
-  ]]></shortDescription>
-               <versions/>
-               <author>derek</author>
-               <asAncestors/>
-               <fields>
-                  <field name="selected" fullname="com.dezza.ricepaper.ui.core:Selectable/com.dezza.ricepaper.ui.core:Selectable:selected/get" accessLevel="public" isConst="false" isStatic="false" type="Boolean" inheritDoc="false" only="read-write">
-                     <description><![CDATA[
-   get selected
-   
-   ]]></description>
-                     <shortDescription><![CDATA[
-   get selected
-   
-   ]]></shortDescription>
-                     <versions/>
-                  </field>
-               </fields>
-            </asClass>
-         </classes>
-      </asPackage>
-      <asPackage name="com.dezza.ricepaper.examples">
-         <classes>
-            <asClass name="RicePaperUIMain" type="class" fullname="com.dezza.ricepaper.examples:RicePaperUIMain" accessLevel="public" isFinal="false" isDynamic="false" packageName="com.dezza.ricepaper.examples" path="" relativePath="../" href="" taghref="" inheritDoc="false">
-               <description><![CDATA[
-  ]]></description>
-               <shortDescription><![CDATA[
-  ]]></shortDescription>
-               <versions/>
-               <author>dezza</author>
                <asAncestors>
                   <asAncestor>
-                     <classRef name="flash.display.MovieClip" fullName="flash.display.MovieClip" relativePath="none"/>
+                     <classRef name="flash.events.Event" fullName="flash.events.Event" relativePath="none"/>
                   </asAncestor>
                </asAncestors>
                <constructors>
-                  <constructor name="RicePaperUIMain" fullname="com.dezza.ricepaper.examples:RicePaperUIMain/RicePaperUIMain" accessLevel="public" result_type="*" inheritDoc="false">
+                  <constructor name="MouseWheelEvent" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelEvent/MouseWheelEvent" accessLevel="public" result_type="*" inheritDoc="false">
+                     <description><![CDATA[
+   Construct a new MouseWheelEvent instance
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Construct a new MouseWheelEvent instance
+   ]]></shortDescription>
                      <versions/>
                      <result type="*"/>
+                     <params>
+                        <param name="type" type="String"/>
+                        <param name="x" type="Number"/>
+                        <param name="y" type="Number"/>
+                        <param name="delta" type="Number"/>
+                        <param name="bubbles" type="Boolean" default="false"/>
+                        <param name="cancelable" type="Boolean" default="false"/>
+                     </params>
                   </constructor>
                </constructors>
+               <methods>
+                  <method name="clone" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelEvent/clone" accessLevel="public" result_type="flash.events:Event" isFinal="false" isOverride="true" isStatic="false" inheritDoc="false">
+                     <description><![CDATA[
+   ]]></description>
+                     <shortDescription><![CDATA[
+   ]]></shortDescription>
+                     <versions/>
+                     <result type="flash.events:Event"/>
+                  </method>
+               </methods>
+               <fields>
+                  <field name="MOUSE_WHEEL" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelEvent/MOUSE_WHEEL" accessLevel="public" type="String" isConst="true" isStatic="true" defaultValue="MouseWheelEvent.MOUSE_WHEEL">
+                     <description><![CDATA[
+   Event type representing MouseWheel scroll
+   ]]></description>
+                     <shortDescription><![CDATA[
+   Event type representing MouseWheel scroll
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="delta" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelEvent/delta/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   delta
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   delta
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="x" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelEvent/x/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   mouse X position
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   mouse X position
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+                  <field name="y" fullname="com.dezza.ricepaper.ui.mousewheel:MouseWheelEvent/y/get" accessLevel="public" isConst="false" isStatic="false" type="Number" inheritDoc="false" only="read">
+                     <description><![CDATA[
+   mouse Y position
+   
+   ]]></description>
+                     <shortDescription><![CDATA[
+   mouse Y position
+   
+   ]]></shortDescription>
+                     <versions/>
+                  </field>
+               </fields>
             </asClass>
          </classes>
       </asPackage>

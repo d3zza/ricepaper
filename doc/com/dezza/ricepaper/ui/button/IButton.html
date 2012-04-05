@@ -35,7 +35,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.dezza.ricepaper.ui.button</a></td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IButton extends <a href="../core/IUIControl.html">IUIControl</a>, <a href="none">flash.events.IEventDispatcher</a>, <a href="../core/Enableable.html">Enableable</a>, <a href="../core/Highlightable.html">Highlightable</a></td>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IButton extends <a href="../core/IUIControl.html">IUIControl</a>, <a href="../core/IDisplayObject.html">IDisplayObject</a>, <a href="none">flash.events.IEventDispatcher</a>, <a href="none">flash.display.IBitmapDrawable</a>, <a href="../core/IEnableable.html">IEnableable</a>, <a href="../core/IHighlightable.html">IHighlightable</a></td>
 </tr>
 <tr>
 <td class="classHeaderTableLabel">Subinterfaces</td><td><a href="../button/ILabelButton.html">ILabelButton</a></td>
@@ -65,25 +65,63 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
 </tr>
 <tr class="hideInheritedProperty">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IUIControl.html#content">content</a> : MovieClip<div class="summaryTableDescription">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#accessibilityProperties">accessibilityProperties</a> : AccessibilityProperties<div class="summaryTableDescription">
+   Workaround to provide a DisplayObject interface
+   
+   <p>Vote for Adobe to improve AS3 by adding a DisplayObject interface here:<br/>
+   <a href='http://bugs.adobe.com/jira/browse/ASL-45' >http://bugs.adobe.com/jira/browse/ASL-45</a></p>
+   
+   <p>This allows us to work with implentations as assuming they are DisplayObjects.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#alpha">alpha</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IUIControl.html#asset">asset</a> : MovieClip<div class="summaryTableDescription">
    get the content asset
    
    </div>
 </td><td class="summaryTableOwnerCol"><a href="../core/IUIControl.html">IUIControl</a></td>
 </tr>
 <tr class="hideInheritedProperty">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/Enableable.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#blendMode">blendMode</a> : String<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#cacheAsBitmap">cacheAsBitmap</a> : Boolean<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IEnableable.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription">
    get enabled
    
    </div>
-</td><td class="summaryTableOwnerCol"><a href="../core/Enableable.html">Enableable</a></td>
+</td><td class="summaryTableOwnerCol"><a href="../core/IEnableable.html">IEnableable</a></td>
 </tr>
 <tr class="hideInheritedProperty">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/Highlightable.html#highlighted">highlighted</a> : Boolean<div class="summaryTableDescription">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#filters">filters</a> : Array<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#height">height</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IHighlightable.html#highlighted">highlighted</a> : Boolean<div class="summaryTableDescription">
    get highlighted
    
    </div>
-</td><td class="summaryTableOwnerCol"><a href="../core/Highlightable.html">Highlightable</a></td>
+</td><td class="summaryTableOwnerCol"><a href="../core/IHighlightable.html">IHighlightable</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#loaderInfo">loaderInfo</a> : LoaderInfo<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#mask">mask</a> : DisplayObject<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#mouseStateLocked">mouseStateLocked</a> : Boolean<div class="summaryTableDescription">
@@ -91,6 +129,74 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
    
    </div>
 </td><td class="summaryTableOwnerCol">IButton</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#mouseX">mouseX</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#mouseY">mouseY</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#name">name</a> : String<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#opaqueBackground">opaqueBackground</a> : Object<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#parent">parent</a> : DisplayObjectContainer<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#root">root</a> : DisplayObject<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#rotation">rotation</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#scale9Grid">scale9Grid</a> : Rectangle<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#scaleX">scaleX</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#scaleY">scaleY</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#scrollRect">scrollRect</a> : Rectangle<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#stage">stage</a> : Stage<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#transform">transform</a> : Transform<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#visible">visible</a> : Boolean<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#width">width</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#x">x</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IDisplayObject.html#y">y</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
 </tr>
 </table>
 </div>
@@ -117,6 +223,48 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
    make control available for GC
    </div>
 </td><td class="summaryTableOwnerCol"><a href="../core/IUIControl.html">IUIControl</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IDisplayObject.html#getBounds()">getBounds</a>(targetCoordinateSpace:DisplayObject):Rectangle</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IDisplayObject.html#getRect()">getRect</a>(targetCoordinateSpace:DisplayObject):Rectangle</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IDisplayObject.html#globalToLocal()">globalToLocal</a>(point:Point):Point</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IDisplayObject.html#hitTestObject()">hitTestObject</a>(obj:DisplayObject):Boolean</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IDisplayObject.html#hitTestPoint()">hitTestPoint</a>(x:Number, y:Number, shapeFlag:Boolean = false):Boolean</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IDisplayObject.html#localToGlobal()">localToGlobal</a>(point:Point):Point</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IDisplayObject.html">IDisplayObject</a></td>
 </tr>
 </table>
 </div>
@@ -149,8 +297,8 @@ showHideInherited();
 <hr>
 <br>
 <p></p>
-<center class="copyright">RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/04/2012 09:57 AM</center>
+<center class="copyright">RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/05/2012 05:36 PM</center>
 </div>
 </body>
 </html>
-<!--RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/04/2012 09:57 AM-->
+<!--RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/05/2012 05:36 PM-->

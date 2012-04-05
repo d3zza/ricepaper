@@ -30,10 +30,6 @@ package com.dezza.ricepaper.ui.button
 
 			asset = new MockButtonAsset();
 
-			asset.x = 97;
-
-			asset.y = 56;
-
 			parent.addChild(asset);
 
 			button = new Button(asset);
@@ -45,21 +41,10 @@ package com.dezza.ricepaper.ui.button
 		{
 			assertNotNull("instance not created", button);
 
-			assertEquals("button has incorrect x posn", 97, button.x);
-
-			assertEquals("button has incorrect y posn", 56, button.y);
-
 			assertEquals("button not attached to asset's parent", parent, button.parent);
 
 			assertTrue("button not enabled after creation", button.enabled);
-		}
-
-
-		[Test]
-		public function content() : void
-		{
-			assertNotNull("content not attached correctly", asset, button.getChildAt(0));
-
+			
 			assertEquals("content on incorrect frame", ButtonState.OFF, asset.frame);
 		}
 

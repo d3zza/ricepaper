@@ -9,9 +9,14 @@ package com.dezza.ricepaper.ui.button
 
 	/**
 	 * @author derek
+	 * 
+	 * Extends Button by adding a <code>TextField</code> label property 
 	 */
 	public class LabelButton extends Button implements ILabelButton
 	{
+		/**
+		 * @private
+		 */
 		protected var _textField : TextField;
 
 		public function LabelButton(content : MovieClip, textField : TextField)
@@ -22,6 +27,9 @@ package com.dezza.ricepaper.ui.button
 		}
 
 
+		/**
+		 * @inheritDoc
+		 */
 		public function get text() : String
 		{
 			if ( _textField )
@@ -33,6 +41,9 @@ package com.dezza.ricepaper.ui.button
 		}
 
 
+		/**
+		 * @inheritDoc
+		 */
 		public function set text(text : String) : void
 		{
 			if ( _textField )
@@ -42,6 +53,9 @@ package com.dezza.ricepaper.ui.button
 		}
 
 
+		/**
+		 * @inheritDoc
+		 */
 		public function get textField() : TextField
 		{
 			return _textField;

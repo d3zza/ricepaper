@@ -57,7 +57,7 @@ package ui
 			btnAsset.rotation = 45;
 			
 			irregBtn = new Button( btnAsset );
-			irregBtn.addAutoHitArea( true );
+			irregBtn.autoAddHitArea( true );
 		
 			addChild( irregBtn );
 		}

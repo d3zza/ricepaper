@@ -7,7 +7,24 @@ package com.dezza.ricepaper.ui.core
 
 	/**
 	 * UIControl
-	 * Class Description.
+	 * 
+	 * Abstract Superclass for UIControls
+	 * 
+	 * <p>UIControls are intended to be AS3 UI components that contain
+	 * a visual asset and some code to control the interaction</p>
+	 * 
+	 * <p>assets can either be already attached to some parent, which 
+	 * may be convenient if creating layouts in the Flash IDE, or can
+	 * be supplied as a new unattached instance.</p>
+	 * 
+	 * <p>The UIControl is a display object too, so it will attach the 
+	 * asset content and then (if the child was already attached)
+	 * add itself in place of the asset.</p>
+	 * 
+	 * <p>This gives us the best of both worlds; visual assets that are
+	 * free of any code references, but code assets that are part of the
+	 * display list and can access stage properties, display list events
+	 * etc.</p>
 	 *
 	 * @author Derek McKenna
 	 * @version 1.0
@@ -16,12 +33,12 @@ package com.dezza.ricepaper.ui.core
 	public class UIControl extends Sprite implements IUIControl
 	{
 		/**
-		 * content asset MovieClip 
+		 * @private
 		 */
 		protected var _content : MovieClip;
 
 		/**
-		 * whether or not the control is currently enabled
+		 * @private
 		 */
 		private var _enabled : Boolean;
 
@@ -72,7 +89,7 @@ package com.dezza.ricepaper.ui.core
 		 * 
 		 * // TODO not really sure this should be public
 		 */
-		public function get content() : MovieClip
+		public function get asset() : MovieClip
 		{
 			return _content;
 		}

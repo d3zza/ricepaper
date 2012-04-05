@@ -1,16 +1,14 @@
 package com.dezza.ricepaper.ui.core
 {
 
-	import com.dezza.ricepaper.ui.button.ButtonState;
-	import com.dezza.ricepaper.ui.mock.MockButtonAsset;
-
+	import com.dezza.ricepaper.UIContainer;
 	import org.flexunit.asserts.assertEquals;
 	import org.flexunit.asserts.assertFalse;
 	import org.flexunit.asserts.assertNotNull;
-	import org.flexunit.asserts.assertTrue;
+	import org.fluint.uiImpersonation.UIImpersonator;
 
 	import flash.display.DisplayObjectContainer;
-	import flash.display.Sprite;
+	import flash.display.MovieClip;
 
 	/**
 	 * @author derek
@@ -19,17 +17,19 @@ package com.dezza.ricepaper.ui.core
 	{
 		private var parent : DisplayObjectContainer;
 
-		private var asset : MockButtonAsset;
+		private var asset : MovieClip;
 
 		private var control : UIControl;
 
 		[Before]
 		public function runBeforeEachTest() : void
 		{
-			parent = new Sprite();
+			asset = new MovieClip();
+			
+			UIContainer.container.addChild(asset);
 
-			asset = new MockButtonAsset();
-
+			parent = asset.parent;
+			
 			asset.x = 97;
 
 			asset.y = 56;
@@ -45,22 +45,19 @@ package com.dezza.ricepaper.ui.core
 		{
 			assertNotNull("instance not created", control);
 
-			assertEquals("button has incorrect x posn", 97, control.x);
+			assertEquals("control has incorrect x posn", 97, control.x);
 
-			assertEquals("button has incorrect y posn", 56, control.y);
+			assertEquals("control has incorrect y posn", 56, control.y);
 
-			assertEquals("button not attached to asset's parent", parent, control.parent);
+			assertEquals("control not attached to asset's parent", parent, control.parent);
 
-			assertTrue("button not enabled after creation", control.enabled);
 		}
 
 
 		[Test]
 		public function content() : void
 		{
-			assertNotNull("content not attached correctly", asset, control.getChildAt(0));
-
-			assertEquals("content on incorrect frame", ButtonState.OFF, asset.frame);
+			assertNotNull("asset not attached correctly", asset, control.getChildAt(0));
 		}
 
 
@@ -69,9 +66,8 @@ package com.dezza.ricepaper.ui.core
 		{
 			control.enabled = false;
 
-			assertFalse("button return false state", control.enabled);
+			assertFalse("should return false state", control.enabled);
 
-			assertEquals("content on incorrect frame", ButtonState.DISABLED, asset.frame);
 		}
 
 	}

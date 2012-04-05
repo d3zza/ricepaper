@@ -39,19 +39,22 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Pa
 <th>&nbsp;</th><th width="30%">Interface</th><th width="70%">Description</th>
 </tr>
 <tr class="prow1">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="Enableable.html">Enableable</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IDisplayObject.html">IDisplayObject</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
 </tr>
 <tr class="prow0">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="Highlightable.html">Highlightable</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IEnableable.html">IEnableable</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
 </tr>
 <tr class="prow1">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IHighlightable.html">IHighlightable</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
+</tr>
+<tr class="prow0">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="ILabel.html">ILabel</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
+</tr>
+<tr class="prow1">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="ISelectable.html">ISelectable</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
+</tr>
+<tr class="prow0">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IUIControl.html">IUIControl</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
-</tr>
-<tr class="prow0">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="Label.html">Label</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
-</tr>
-<tr class="prow1">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="Selectable.html">Selectable</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
 </tr>
 </table>
 <a name="classSummary"></a>
@@ -63,15 +66,33 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Pa
 <tr class="prow1">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="UIControl.html">UIControl</a></td><td class="summaryTableLastCol">
   UIControl
-  Class Description.</td>
+  
+  Abstract Superclass for UIControls
+  
+  <p>UIControls are intended to be AS3 UI components that contain
+  a visual asset and some code to control the interaction</p>
+  
+  <p>assets can either be already attached to some parent, which 
+  may be convenient if creating layouts in the Flash IDE, or can
+  be supplied as a new unattached instance.</p>
+  
+  <p>The UIControl is a display object too, so it will attach the 
+  asset content and then (if the child was already attached)
+  add itself in place of the asset.</p>
+  
+  <p>This gives us the best of both worlds; visual assets that are
+  free of any code references, but code assets that are part of the
+  display list and can access stage properties, display list events
+  etc.</p>
+    </td>
 </tr>
 </table>
 <p></p>
 <div>
 <p></p>
-<center class="copyright">RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/04/2012 09:57 AM</center>
+<center class="copyright">RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/05/2012 05:36 PM</center>
 </div>
 </div>
 </body>
 </html>
-<!--RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/04/2012 09:57 AM-->
+<!--RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/05/2012 05:36 PM-->

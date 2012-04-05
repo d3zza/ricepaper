@@ -14,17 +14,17 @@ package com.dezza.ricepaper.ui.button
 	public class Button extends UIControl implements IButton
 	{
 		/**
-		 * current mouse state i.e. "off","on"
+		 * @private
 		 */
 		protected var _mouseState : String;
 
 		/**
-		 * whether or not the mouse state is currently locked
+		 * @private
 		 */
 		protected var _mouseStateLocked : Boolean;
 
 		/**
-		 * mouse state to apply to mouse when unlocked
+		 * @private
 		 */
 		protected var _unlockedMouseState : String;
 
@@ -76,7 +76,9 @@ package com.dezza.ricepaper.ui.button
 
 
 		/**
-		 * get the button's on/off state
+		 * get the button's highlighted (on/off) state
+		 * 
+		 * @return Boolean true if button is on
 		 */
 		public function get highlighted() : Boolean
 		{
@@ -85,19 +87,28 @@ package com.dezza.ricepaper.ui.button
 
 
 		/**
-		 * set the button's on/off state
+		 * set the button's highlighted (on/off) state manually
+		 * 
+		 * @param highlighted Boolean true to set button to on
 		 */
 		public function set highlighted(highlighted : Boolean) : void
 		{
 			setMouseState(highlighted ? ButtonState.ON : ButtonState.OFF);
 		}
 
-
-		public function addAutoHitArea( debug:Boolean = false ) : void
+		/**
+		 * automatically create a hit area
+		 * 
+		 * <p>usefull for text only or other assets that have irregular edges.</p>
+		 * 
+		 * <p>Note: uses the bounds of the asset at the time called and doesn't
+		 * take into account any masks etc</p>
+		 */
+		public function autoAddHitArea(debug : Boolean = false) : void
 		{
 			var hit : Sprite = new Sprite();
 			addChild(hit);
-			var contentRect : Rectangle = content.getBounds(this);
+			var contentRect : Rectangle = asset.getBounds(this);
 			with( hit.graphics )
 			{
 				beginFill(0x32FFFF, 0.3);
@@ -120,7 +131,9 @@ package com.dezza.ricepaper.ui.button
 			super.destroy();
 		}
 
-
+		/**
+		 * @private
+		 */
 		protected function initMouse() : void
 		{
 			addEventListener(MouseEvent.ROLL_OVER, onRollOver);
@@ -134,6 +147,8 @@ package com.dezza.ricepaper.ui.button
 
 
 		/**
+		 * @private
+		 * 
 		 * set the current mouse state
 		 * 
 		 * mouseState can be either
@@ -163,18 +178,27 @@ package com.dezza.ricepaper.ui.button
 		}
 
 
+		/**
+		 * @private
+		 */
 		protected function renderState() : void
 		{
-			content.gotoAndStop(enabled ? _mouseState : ButtonState.DISABLED);
+			asset.gotoAndStop(enabled ? _mouseState : ButtonState.DISABLED);
 		}
 
 
+		/**
+		 * @private
+		 */
 		protected function onRollOver(event : MouseEvent) : void
 		{
 			setMouseState(ButtonState.ON);
 		}
 
 
+		/**
+		 * @private
+		 */
 		protected function onRollOut(event : MouseEvent) : void
 		{
 			setMouseState(ButtonState.OFF);

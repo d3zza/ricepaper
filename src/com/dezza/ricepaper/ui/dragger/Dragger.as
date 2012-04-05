@@ -1,7 +1,6 @@
 package com.dezza.ricepaper.ui.dragger
 {
 
-	import flash.display.DisplayObject;
 	import com.dezza.ricepaper.ui.core.UIControl;
 
 	import flash.display.MovieClip;
@@ -11,7 +10,15 @@ package com.dezza.ricepaper.ui.dragger
 
 	/**
 	 * BasicDragger
-	 * Class Description.
+	 * 
+	 * Abstracts dragging functionality and provides and event system for
+	 * the following events:
+	 * 
+	 * dragging starts;
+	 * dragged asset changes;
+	 * dragging ends.
+	 *
+	 *@see <code>com.dezza.ricepaper.ui.dragger.DraggerEvent</code>
 	 *
 	 * @author Derek McKenna
 	 * @version 1.0
@@ -19,50 +26,118 @@ package com.dezza.ricepaper.ui.dragger
 	 */
 	public class Dragger extends UIControl implements IDragger
 	{
+		/**
+		 * @private
+		 */
 		protected var _dragging : Boolean;
 
+		/**
+		 * @private
+		 */
 		protected var _dragRect : Rectangle;
 
+		/**
+		 * @private
+		 */
 		protected var _buttonMode : Boolean;
 
-		public function Dragger(content : MovieClip, dragRect : Rectangle = null, buttonMode : Boolean = true)
+		/**
+		 * @private
+		 */
+		protected var _lastX : Number;
+
+		/**
+		 * @private
+		 */
+		protected var _lastY : Number;
+
+		/**
+		 * Construct new Dragger instance
+		 * 
+		 * @param asset MovieClip instance containing visuals
+		 * 
+		 * @param dragRect bounds for dragging ops
+		 * 
+		 * @param buttonMode Boolean true to use button cursor (default true)
+		 */
+		public function Dragger(asset : MovieClip, dragRect : Rectangle = null, buttonMode : Boolean = true)
 		{
-			super(content);
-			
+			super(asset);
+
 			_dragRect = dragRect ? dragRect : new Rectangle() ;
-			
+
 			_buttonMode = buttonMode;
-			
+
 			enabled = true;
-			
+
 			init();
 		}
 
 
+		/**
+		 * update the dragRect bounds
+		 * 
+		 * @param rect <code>flash.geomRectangle</code> instance
+		 */
 		public function setDragRect(rect : Rectangle) : void
 		{
 			_dragRect = rect;
 		}
 
 
-		override public function destroy() : void
-		{
-			removeEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
-
-			if ( stage )
-			{
-				stage.removeEventListener(MouseEvent.MOUSE_UP, _onMouseUp);
-				stage.removeEventListener(Event.ENTER_FRAME, onEnterFrme);
-			}
-		}
-
-
+		/**
+		 * @return Boolean true if a drag operation is currently in progress
+		 */
 		public function get isDragging() : Boolean
 		{
 			return _dragging;
 		}
 
 
+		/**
+		 * add a listener to all Dragger events
+		 * 
+		 * @param listener <code>com.dezza.ricepaper.ui.dragger.DraggerListener</code> implementation
+		 */
+		public function addDraggerListener(listener : IDraggerListener) : void
+		{
+			removeDraggerListener(listener);
+
+			addEventListener(DraggerEvent.DRAG_START, listener.onDragStart);
+			addEventListener(DraggerEvent.DRAG_STOP, listener.onDragStop);
+			addEventListener(DraggerEvent.DRAG_CHANGE, listener.onDragChange);
+		}
+
+
+		/**
+		 * remove a listener from all Dragger events
+		 * 
+		 * @param listener <code>com.dezza.ricepaper.ui.dragger.DraggerListener</code> implementation
+		 */
+		public function removeDraggerListener(listener : IDraggerListener) : void
+		{
+			removeEventListener(DraggerEvent.DRAG_START, listener.onDragStart);
+			removeEventListener(DraggerEvent.DRAG_STOP, listener.onDragStop);
+			removeEventListener(DraggerEvent.DRAG_CHANGE, listener.onDragChange);
+		}
+
+
+		/**
+		 * @inheritDoc
+		 */
+		override public function set enabled(b : Boolean) : void
+		{
+			if ( !b && _dragging ) stopDragging();
+
+			if ( _buttonMode ) buttonMode = b;
+
+			super.enabled = b;
+		}
+
+
+		/**
+		 * @private
+		 */
 		public function startDragging() : void
 		{
 			if ( !enabled || _dragging ) return;
@@ -81,6 +156,9 @@ package com.dezza.ricepaper.ui.dragger
 		}
 
 
+		/**
+		 * @private
+		 */
 		public function stopDragging() : void
 		{
 			if ( !enabled ) return;
@@ -100,34 +178,27 @@ package com.dezza.ricepaper.ui.dragger
 		}
 
 
-		public function addDraggerListener(listener : DraggerListener) : void
+		/**
+		 * @inheritDoc
+		 */
+		override public function destroy() : void
 		{
-			removeDraggerListener(listener);
+			removeEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
 
-			addEventListener(DraggerEvent.DRAG_START, listener.onDragStart);
-			addEventListener(DraggerEvent.DRAG_STOP, listener.onDragStop);
-			addEventListener(DraggerEvent.DRAG_CHANGE, listener.onDragChange);
+			// TODO handle removal of component from stage while dragging
+			if ( stage )
+			{
+				stage.removeEventListener(MouseEvent.MOUSE_UP, _onMouseUp);
+				stage.removeEventListener(Event.ENTER_FRAME, onEnterFrme);
+			}
+
+			super.destroy();
 		}
 
 
-		public function removeDraggerListener(listener : DraggerListener) : void
-		{
-			removeEventListener(DraggerEvent.DRAG_START, listener.onDragStart);
-			removeEventListener(DraggerEvent.DRAG_STOP, listener.onDragStop);
-			removeEventListener(DraggerEvent.DRAG_CHANGE, listener.onDragChange);
-		}
-
-
-		override public function set enabled(b : Boolean) : void
-		{
-			if ( !b && _dragging ) stopDragging();
-
-			if ( _buttonMode ) buttonMode = b;
-
-			super.enabled = b;
-		}
-
-
+		/**
+		 * @private
+		 */
 		protected function init() : void
 		{
 			addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
@@ -135,9 +206,7 @@ package com.dezza.ricepaper.ui.dragger
 
 
 		/**
-		 * handler for dragger mouse down event - i.e. start dragging operation
-		 * 
-		 * @param e MouseEvent
+		 * @private
 		 */
 		protected function onMouseDown(e : MouseEvent = null) : void
 		{
@@ -146,9 +215,7 @@ package com.dezza.ricepaper.ui.dragger
 
 
 		/**
-		 * handle mouse up event ( i.e. anywhere on stage ) to stop dragging operation
-		 * 
-		 * @param e MouseEvent
+		 * @private
 		 */
 		protected function _onMouseUp(e : MouseEvent) : void
 		{
@@ -156,9 +223,29 @@ package com.dezza.ricepaper.ui.dragger
 		}
 
 
-		public function onEnterFrme(e : Event = null) : void
+		/**
+		 * @private
+		 */
+		protected function onEnterFrme(e : Event = null) : void
 		{
+			if( x != _lastX || y != _lastY )
+			{
+				dispatchChangeEvent();
+			}
+		}
+
+
+		/**
+		 * @private
+		 */
+		protected function dispatchChangeEvent() : void
+		{
+			if( x === _lastX && y === _lastY ) return;
+			
 			dispatchEvent(new DraggerEvent(DraggerEvent.DRAG_CHANGE, true, false));
+			
+			_lastX = x;
+			_lastY = y;
 		}
 	}
 }

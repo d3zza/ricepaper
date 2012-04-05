@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../../../print.css" type="text/css" media="print">
-<meta content="UIControl,com.dezza.ricepaper.ui.core.UIControl,_content,_enabled,content,enabled,destroy" name="keywords">
+<meta content="UIControl,com.dezza.ricepaper.ui.core.UIControl,asset,enabled,asDisplayObject,destroy" name="keywords">
 <title>com.dezza.ricepaper.ui.core.UIControl</title>
 </head>
 <body>
@@ -44,12 +44,29 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Implements</td><td><a href="IUIControl.html">IUIControl</a></td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Subclasses</td><td><a href="../button/Button.html">Button</a></td>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../button/Button.html">Button</a>, <a href="../dragger/Dragger.html">Dragger</a></td>
 </tr>
 </table>
 <p></p>
   UIControl
-  Class Description.
+  
+  Abstract Superclass for UIControls
+  
+  <p>UIControls are intended to be AS3 UI components that contain
+  a visual asset and some code to control the interaction</p>
+  
+  <p>assets can either be already attached to some parent, which 
+  may be convenient if creating layouts in the Flash IDE, or can
+  be supplied as a new unattached instance.</p>
+  
+  <p>The UIControl is a display object too, so it will attach the 
+  asset content and then (if the child was already attached)
+  add itself in place of the asset.</p>
+  
+  <p>This gives us the best of both worlds; visual assets that are
+  free of any code references, but code assets that are part of the
+  display list and can access stage properties, display list events
+  etc.</p>
     <p></p>
 <br>
 <hr>
@@ -62,7 +79,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#content">content</a> : MovieClip<div class="summaryTableDescription">[read-only]
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#asset">asset</a> : MovieClip<div class="summaryTableDescription">[read-only]
    
    get the content asset
    
@@ -74,27 +91,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
    
    get enabled
    
-   </div>
-</td><td class="summaryTableOwnerCol">UIControl</td>
-</tr>
-</table>
-</div>
-<a name="protectedPropertySummary"></a>
-<div class="summarySection">
-<div class="summaryTableTitle">Protected Properties</div>
-<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
-<tr>
-<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
-</tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_content">_content</a> : MovieClip<div class="summaryTableDescription">
-   content asset MovieClip 
-   </div>
-</td><td class="summaryTableOwnerCol">UIControl</td>
-</tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_enabled">_enabled</a> : Boolean<div class="summaryTableDescription">
-   whether or not the control is currently enabled
    </div>
 </td><td class="summaryTableOwnerCol">UIControl</td>
 </tr>
@@ -123,6 +119,13 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
+<a class="signatureLink" href="#asDisplayObject()">asDisplayObject</a>():DisplayObject</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">UIControl</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
 <a class="signatureLink" href="#destroy()">destroy</a>():void</div>
 <div class="summaryTableDescription">
    
@@ -139,42 +142,22 @@ showHideInherited();
 <div class="MainContent">
 <a name="propertyDetail"></a>
 <div class="detailSectionHeader">Property detail</div>
-<a name="_content"></a>
+<a name="asset"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
-<td class="detailHeaderName">_content</td><td class="detailHeaderType">property</td>
+<td class="detailHeaderName">asset</td><td class="detailHeaderType">property</td>
 </tr>
 </table>
 <div class="detailBody">
-<code>protected var _content:MovieClip</code><p>
-   content asset MovieClip 
-   </p></div>
-<a name="content"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">content</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>content:MovieClip</code>&nbsp;&nbsp;[read-only]<p>
+<code>asset:MovieClip</code>&nbsp;&nbsp;[read-only]<p>
    
    get the content asset
    
    </p><span class="label">Implementation</span>
 <br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get content():MovieClip</code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get asset():MovieClip</code>
 <br>
 </div>
-<a name="_enabled"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">_enabled</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>protected var _enabled:Boolean</code><p>
-   whether or not the control is currently enabled
-   </p></div>
 <a name="enabled"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -218,10 +201,26 @@ showHideInherited();
 </div>
 <a name="methodDetail"></a>
 <div class="detailSectionHeader">Method detail</div>
+<a name="asDisplayObject()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">asDisplayObject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function asDisplayObject():DisplayObject</code>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code></td>
+</tr>
+</table>
+</div>
 <a name="destroy()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
-<td class="detailHeaderName">destroy</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+<td class="detailHeaderName">destroy</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
 </tr>
 </table>
 <div class="detailBody">
@@ -234,8 +233,8 @@ showHideInherited();
 <hr>
 <br>
 <p></p>
-<center class="copyright">RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/04/2012 09:57 AM</center>
+<center class="copyright">RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/05/2012 05:36 PM</center>
 </div>
 </body>
 </html>
-<!--RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/04/2012 09:57 AM-->
+<!--RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/05/2012 05:36 PM-->

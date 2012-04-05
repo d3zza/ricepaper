@@ -3,7 +3,7 @@ package com.dezza.ricepaper.ui.core
 	/**
 	 * @author derek
 	 */
-	public interface Selectable
+	public interface ISelectable
 	{
 
 		/**

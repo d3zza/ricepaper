@@ -40,7 +40,25 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("UÂ
 <tr>
 <td width="20"></td><td>
   UIControl
-  Class Description.</td>
+  
+  Abstract Superclass for UIControls
+  
+  <p>UIControls are intended to be AS3 UI components that contain
+  a visual asset and some code to control the interaction</p>
+  
+  <p>assets can either be already attached to some parent, which 
+  may be convenient if creating layouts in the Flash IDE, or can
+  be supplied as a new unattached instance.</p>
+  
+  <p>The UIControl is a display object too, so it will attach the 
+  asset content and then (if the child was already attached)
+  add itself in place of the asset.</p>
+  
+  <p>This gives us the best of both worlds; visual assets that are
+  free of any code references, but code assets that are part of the
+  display list and can access stage properties, display list events
+  etc.</p>
+    </td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('com/dezza/ricepaper/ui/core/class-list.html');" href="com/dezza/ricepaper/ui/core/UIControl.html#UIControl()">UIControl</a>(content) &mdash; Constructor in class com.dezza.ricepaper.ui.core.<a onclick="javascript:loadClassListFrame('com/dezza/ricepaper/ui/core/class-list.html');" href="com/dezza/ricepaper/ui/core/UIControl.html">UIControl</a></td>
@@ -55,12 +73,10 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("UÂ
    </td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('com/dezza/ricepaper/ui/button/class-list.html');" href="com/dezza/ricepaper/ui/button/Button.html#_unlockedMouseState">_unlockedMouseState</a> &mdash; Property in class com.dezza.ricepaper.ui.button.<a onclick="javascript:loadClassListFrame('com/dezza/ricepaper/ui/button/class-list.html');" href="com/dezza/ricepaper/ui/button/Button.html">Button</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('com/dezza/ricepaper/ui/slider/class-list.html');" href="com/dezza/ricepaper/ui/slider/Slider.html#updatePos()">updatePos</a>() &mdash; Method in class com.dezza.ricepaper.ui.slider.<a onclick="javascript:loadClassListFrame('com/dezza/ricepaper/ui/slider/class-list.html');" href="com/dezza/ricepaper/ui/slider/Slider.html">Slider</a></td>
 </tr>
 <tr>
-<td width="20"></td><td>
-   mouse state to apply to mouse when unlocked
-   </td>
+<td width="20"></td><td></td>
 </tr>
 <tr>
 <td style="padding-bottom:20px" colspan="2"></td>
@@ -70,8 +86,8 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("UÂ
 </tr>
 </table>
 <p></p>
-<center class="copyright">RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/04/2012 09:57 AM</center>
+<center class="copyright">RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/05/2012 05:36 PM</center>
 </div>
 </body>
 </html>
-<!--RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/04/2012 09:57 AM-->
+<!--RicePaper - http://www.dezza.com/ricepaper/ - Documentation generated at: 04/05/2012 05:36 PM-->
