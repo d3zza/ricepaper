@@ -2,6 +2,7 @@ package
 {
 
 
+	import ui.button.RepeaterButtonPlayground;
 	import ui.slider.SliderPlayground;
 	import ui.dragger.DraggerPlayground;
 	import ui.button.ButtonPlayground;
@@ -15,6 +16,8 @@ package
 	
 	//public class PlaygroundContainer extends DraggerPlayground {}
 	
-	public class PlaygroundContainer extends SliderPlayground {}
+	//public class PlaygroundContainer extends SliderPlayground {}
+	
+	public class PlaygroundContainer extends RepeaterButtonPlayground {}
 	
 }
