@@ -8,6 +8,9 @@ package com.dezza.ricepaper.ui.button
 
 	/**
 	 * @author derek
+	 * 
+	 * RepeaterButton extends Button to provide capability of sending multiple
+	 * events ( RepeaterButtonEvent.BUTTON_DOWN ) while mouse is held down
 	 */
 	public class RepeaterButton extends Button
 	{
