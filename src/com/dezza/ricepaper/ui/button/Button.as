@@ -183,7 +183,7 @@ package com.dezza.ricepaper.ui.button
 		 */
 		protected function renderState() : void
 		{
-			asset.gotoAndStop(enabled ? _mouseState : ButtonState.DISABLED);
+			(asset as MovieClip).gotoAndStop(enabled ? _mouseState : ButtonState.DISABLED);
 		}
 
 

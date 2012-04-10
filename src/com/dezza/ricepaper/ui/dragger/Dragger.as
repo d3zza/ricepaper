@@ -1,9 +1,11 @@
 package com.dezza.ricepaper.ui.dragger
 {
 
+	import com.dezza.ricepaper.ui.core.IEnableable;
+	import com.dezza.ricepaper.ui.button.IButton;
 	import com.dezza.ricepaper.ui.core.UIControl;
 
-	import flash.display.MovieClip;
+	import flash.display.DisplayObject;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
@@ -60,7 +62,7 @@ package com.dezza.ricepaper.ui.dragger
 		 * 
 		 * @param buttonMode Boolean true to use button cursor (default true)
 		 */
-		public function Dragger(asset : MovieClip, dragRect : Rectangle = null, buttonMode : Boolean = true)
+		public function Dragger(asset : DisplayObject, dragRect : Rectangle = null, buttonMode : Boolean = true)
 		{
 			super(asset);
 
@@ -131,6 +133,11 @@ package com.dezza.ricepaper.ui.dragger
 
 			if ( _buttonMode ) buttonMode = b;
 
+			if( asset is IEnableable )
+			{
+				(asset as IEnableable).enabled = b;
+			}
+			
 			super.enabled = b;
 		}
 
@@ -146,9 +153,14 @@ package com.dezza.ricepaper.ui.dragger
 
 			_dragging = true;
 
+			if( _asset is IButton )
+			{
+				(_asset as IButton).mouseStateLocked = true;
+			}
+			
 			startDrag(true, _dragRect);
 
-			stage.addEventListener(MouseEvent.MOUSE_UP, _onMouseUp, false, 0, true);
+			stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp, false, 0, true);
 
 			stage.addEventListener(Event.ENTER_FRAME, onEnterFrme, false, 0, true);
 
@@ -165,9 +177,14 @@ package com.dezza.ricepaper.ui.dragger
 
 			_dragging = false;
 
+			if( _asset is IButton )
+			{
+				(_asset as IButton).mouseStateLocked = false;
+			}
+			
 			if ( stage )
 			{
-				stage.removeEventListener(MouseEvent.MOUSE_UP, _onMouseUp);
+				stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 
 				stage.removeEventListener(Event.ENTER_FRAME, onEnterFrme);
 
@@ -185,10 +202,15 @@ package com.dezza.ricepaper.ui.dragger
 		{
 			removeEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
 
-			// TODO handle removal of component from stage while dragging
+			if( _dragging )
+			{
+				stopDragging();
+			}
+			
 			if ( stage )
 			{
-				stage.removeEventListener(MouseEvent.MOUSE_UP, _onMouseUp);
+				stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+				
 				stage.removeEventListener(Event.ENTER_FRAME, onEnterFrme);
 			}
 
@@ -217,7 +239,7 @@ package com.dezza.ricepaper.ui.dragger
 		/**
 		 * @private
 		 */
-		protected function _onMouseUp(e : MouseEvent) : void
+		protected function onMouseUp(e : MouseEvent) : void
 		{
 			stopDragging();
 		}

@@ -1,7 +1,7 @@
 package com.dezza.ricepaper.ui.core
 {
 
-	import flash.display.MovieClip;
+	import flash.display.DisplayObject;
 
 	/**
 	 * @author derek
@@ -13,7 +13,7 @@ package com.dezza.ricepaper.ui.core
 		 * 
 		 * @return MovieClip
 		 */
-		function get asset() : MovieClip
+		function get asset() : DisplayObject
 
 
 		/**

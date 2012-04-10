@@ -2,6 +2,9 @@ package com.dezza.ricepaper.ui.dragger
 {
 
 	import com.dezza.ricepaper.UIContainer;
+	import com.dezza.ricepaper.ui.button.Button;
+	import com.dezza.ricepaper.ui.button.ButtonState;
+	import com.dezza.ricepaper.ui.mock.MockButtonAsset;
 	import com.dezza.ricepaper.ui.mock.MockDraggerListener;
 
 	import org.flexunit.asserts.assertEquals;
@@ -25,18 +28,22 @@ package com.dezza.ricepaper.ui.dragger
 		
 		private var asset : MovieClip;
 
+		private var btn : Button;
+		
 		private var dragger : Dragger;
 
 		[Before]
 		public function runBeforeEachTest() : void
 		{
-			asset = new MovieClip();
+			asset = new MockButtonAsset();
 
 			UIContainer.container.addChild( asset );
-
-			parent = asset.parent;
 			
-			dragger = new Dragger(asset);
+			btn = new Button( asset );
+
+			parent = btn.parent;
+			
+			dragger = new Dragger( btn );
 		}
 
 
@@ -195,7 +202,18 @@ package com.dezza.ricepaper.ui.dragger
 			fail("DraggerEvent.DRAG_CHANGE not dispatched");
 		}
 
-
+		[Test]
+		public function disable( ):void
+		{
+			dragger.enabled = false;
+			
+			dragger.dispatchEvent(new MouseEvent(MouseEvent.MOUSE_DOWN));
+			
+			assertFalse("dragging should not start when disabled", dragger.isDragging );
+			
+			assertEquals("content on incorrect frame", ButtonState.DISABLED, asset.frame);
+			
+		}
 
 	}
 }

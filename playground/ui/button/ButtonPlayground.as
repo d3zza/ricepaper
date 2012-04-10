@@ -1,4 +1,4 @@
-package ui
+package ui.button
 {
 
 	import flash.utils.setTimeout;
@@ -10,7 +10,7 @@ package ui
 	/**
 	 * @author derek
 	 */
-	public class UIButtonPlayground extends MovieClip
+	public class ButtonPlayground extends MovieClip
 	{
 		private var leftBtn : Button;
 
@@ -24,7 +24,7 @@ package ui
 
 		private var irregBtn : Button;
 		
-		public function UIButtonPlayground()
+		public function ButtonPlayground()
 		{
 			leftBtn = new Button(new PG_UIButtonAsset());
 			leftBtn.x = 100;

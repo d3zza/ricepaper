@@ -2,6 +2,9 @@ package com.dezza.ricepaper.ui.slider
 {
 
 	import com.dezza.ricepaper.UIContainer;
+	import com.dezza.ricepaper.ui.button.Button;
+	import com.dezza.ricepaper.ui.button.ButtonState;
+	import com.dezza.ricepaper.ui.mock.MockButtonAsset;
 
 	import org.flexunit.asserts.assertEquals;
 	import org.flexunit.asserts.assertFalse;
@@ -10,6 +13,7 @@ package com.dezza.ricepaper.ui.slider
 
 	import flash.display.DisplayObjectContainer;
 	import flash.display.MovieClip;
+	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
 
 	/**
@@ -19,9 +23,13 @@ package com.dezza.ricepaper.ui.slider
 	{
 		private var parent : DisplayObjectContainer;
 		
-		private var asset : MovieClip;
+		private var draggerAsset : MockButtonAsset;
 		
-		private var track : MovieClip;
+		private var trackAsset : MockButtonAsset;
+		
+		private var trackBtn : Button;
+		
+		private var draggerBtn : Button;
 
 		private var slider : Slider;
 		
@@ -30,19 +38,23 @@ package com.dezza.ricepaper.ui.slider
 		[Before]
 		public function runBeforeEachTest() : void
 		{
-			asset = new MovieClip();
+			draggerAsset = new MockButtonAsset();
 			
-			track = new MovieClip();
+			trackAsset = new MockButtonAsset();
 			
-			UIContainer.container.addChild( asset );
+			UIContainer.container.addChild( trackAsset );
 			
-			UIContainer.container.addChild( track );
+			UIContainer.container.addChild( draggerAsset );
 
-			parent = asset.parent;
+			trackBtn = new Button( trackAsset );
+			
+			draggerBtn = new Button( draggerAsset );
+			
+			parent = draggerBtn.parent;
 			
 			sliderRect = new Rectangle( -50, 0, 100, 0 );
 			
-			slider = new Slider(asset, sliderRect, true, 0.25, track );
+			slider = new Slider( draggerBtn, sliderRect, true, 0.25, trackBtn );
 		}
 
 
@@ -79,6 +91,55 @@ package com.dezza.ricepaper.ui.slider
 		public function startingPosition():void
 		{
 			assertEquals("slider asset has wrong starting position", -25, slider.x );
+		}
+		
+		[Test]
+		public function dragMin():void
+		{
+			assertEquals("incorrect value", -50, slider.dragMin );
+		}
+		
+		[Test]
+		public function dragMax():void
+		{
+			assertEquals("icorrect value", 50, slider.dragMax );
+		}
+		
+		[Test]
+		public function setDragRect():void
+		{
+			slider.setDragRect( new Rectangle( 0, 0, 400, 0 ) );
+			
+			assertEquals("icorrect value for dragMin", 0, slider.dragMin );
+			
+			assertEquals("icorrect value for dragMax", 400, slider.dragMax );
+			
+			assertEquals("slider in wrong position", 100, slider.x );
+		}
+		
+		
+		[Test]
+		public function trackClick():void
+		{
+			trackBtn.dispatchEvent( new MouseEvent(MouseEvent.MOUSE_DOWN));
+			
+			assertTrue("track click did not start dragging", slider.isDragging );
+			
+		}
+		
+		[Test]
+		public function disable( ):void
+		{
+			slider.enabled = false;
+			
+			slider.dispatchEvent(new MouseEvent(MouseEvent.MOUSE_DOWN));
+			
+			assertFalse("dragging should not start when disabled", slider.isDragging );
+			
+			assertEquals("content on incorrect frame", ButtonState.DISABLED, draggerAsset.frame);
+			
+			assertEquals("content on incorrect frame", ButtonState.DISABLED, trackAsset.frame);
+			
 		}
 	}
 }

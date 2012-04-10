@@ -35,7 +35,7 @@ package com.dezza.ricepaper.ui.core
 		/**
 		 * @private
 		 */
-		protected var _content : MovieClip;
+		protected var _asset : DisplayObject;
 
 		/**
 		 * @private
@@ -50,7 +50,7 @@ package com.dezza.ricepaper.ui.core
 		 * 
 		 * @param content MovieClip 
 		 */
-		public function UIControl(content : MovieClip)
+		public function UIControl(content : DisplayObject)
 		{
 			if (content)
 			{
@@ -69,7 +69,7 @@ package com.dezza.ricepaper.ui.core
 
 				addChild(content);
 
-				_content = content;
+				_asset = content;
 			}
 			else
 			{
@@ -89,9 +89,9 @@ package com.dezza.ricepaper.ui.core
 		 * 
 		 * // TODO not really sure this should be public
 		 */
-		public function get asset() : MovieClip
+		public function get asset() : DisplayObject
 		{
-			return _content;
+			return _asset;
 		}
 
 
@@ -118,11 +118,11 @@ package com.dezza.ricepaper.ui.core
 		 */
 		public function destroy() : void
 		{
-			if ( _content.parent == this )
+			if ( _asset.parent == this )
 			{
-				removeChild(_content);
+				removeChild(_asset);
 			}
-			_content = null;
+			_asset = null;
 		}
 	}
 }

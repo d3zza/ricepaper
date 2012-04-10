@@ -1,0 +1,70 @@
+package com.dezza.ricepaper.ui.button
+{
+
+	import com.dezza.ricepaper.ui.core.ISelectable;
+
+	import flash.display.MovieClip;
+
+	/**
+	 * @author derek
+	 */
+	public class SelectableButton extends Button implements ISelectable
+	{
+		/**
+		 * @private
+		 */
+		protected var _selected : Boolean;
+
+		public function SelectableButton(content : MovieClip)
+		{
+			super(content);
+		}
+
+
+		/**
+		 * set button to 'selected' state
+		 * 
+		 * @param b <code>Boolean</code> indicating whether button is selected
+		 */
+		public function set selected(b : Boolean) : void
+		{
+			_selected = b;
+			renderState();
+		}
+
+
+		/**
+		 * get whether button is selected
+		 * 
+		 * @param <code>Boolean</code> true if button is selected
+		 */
+		public function get selected() : Boolean
+		{
+			return _selected;
+		}
+
+
+		/**
+		 * @private
+		 */
+		override protected function renderState() : void
+		{
+			var frame : String;
+
+			if ( !enabled )
+			{
+				frame = ButtonState.DISABLED;
+			}
+			else if ( _selected )
+			{
+				frame = _mouseState == ButtonState.ON ? ButtonState.ON_SELECTED : ButtonState.OFF_SELECTED;
+			}
+			else
+			{
+				frame = _mouseState;
+			}
+
+			(asset as MovieClip).gotoAndStop(frame);
+		}
+	}
+}

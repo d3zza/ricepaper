@@ -1,14 +1,17 @@
 package com.dezza.ricepaper.ui.slider
 {
 
+	import com.dezza.ricepaper.ui.core.IEnableable;
 	import com.dezza.ricepaper.ui.dragger.Dragger;
 
-	import flash.display.MovieClip;
+	import flash.display.DisplayObject;
 	import flash.display.Sprite;
+	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
 
 	/**
 	 * @author derek
+	 * 
 	 */
 	public class Slider extends Dragger implements ISlider
 	{
@@ -33,7 +36,7 @@ package com.dezza.ricepaper.ui.slider
 		 * 
 		 * @param axis String either 'x' or 'y' to use as the axis of dragging
 		 */
-		public function Slider(content : MovieClip, dragRect : Rectangle = null, buttonMode : Boolean = true, startingPercent : Number = 0.25, track : Sprite = null, axis : String = "x")
+		public function Slider(content : DisplayObject, dragRect : Rectangle = null, buttonMode : Boolean = true, startingPercent : Number = 0.25, track : Sprite = null, axis : String = "x")
 		{
 			super(content, dragRect, buttonMode);
 
@@ -41,12 +44,12 @@ package com.dezza.ricepaper.ui.slider
 
 			percent = startingPercent;
 
-			// if ( track ) _setTrack(track);
+			if ( track ) setTrack(track);
 		}
 
 
 		/**
-		 * get the axis
+		 * get the axis that the slider slides along
 		 * 
 		 * @return String instance "x" or "y"
 		 */
@@ -57,15 +60,13 @@ package com.dezza.ricepaper.ui.slider
 
 
 		/**
-		 * get the slider percentage
+		 * get the slider position as a percentage between dragMin and dragMax
 		 * 
 		 * @return Number between 0 and 1
 		 */
 		public function get percent() : Number
 		{
 			return ( ( this[_axis] - dragMin) / (dragMax - dragMin) * 10000) / 10000;
-
-//			return _percent;
 		}
 
 
@@ -91,34 +92,59 @@ package com.dezza.ricepaper.ui.slider
 
 
 		/**
-		 * set the bounds of the slider
-		 * 
-		 * note dimensions opposite to axis will be ignored
-		 * 
-		 * @param rect Rectangle containing min and max slider postions
-		 * 
+		 * @inheritDoc
 		 */
 		override public function setDragRect(rect : Rectangle) : void
 		{
 			_dragRect = rect;
+			
+			updatePos();
 		}
 
 
+		/**
+		 * @inheritDoc
+		 */
+		override public function set enabled(b : Boolean) : void
+		{
+			super.enabled = b;
+
+			if ( _track && _track is IEnableable )
+			{
+				(_track as IEnableable).enabled = b;
+			}
+		}
+
+
+		/**
+		 * get the minimum dragger postion
+		 * 
+		 * @return Number minimum position in pixels
+		 */
 		public function get dragMin() : Number
 		{
 			return _axis == "x" ? _dragRect.left : _dragRect.top;
 		}
 
 
+		/**
+		 * get the maximum dragger position
+		 * 
+		 * @return Number maximum position in pixels
+		 */
 		public function get dragMax() : Number
 		{
 			return _axis == "x" ? _dragRect.right : _dragRect.bottom;
 		}
 
 
-		public function updatePos() : void
+		/**
+		 * @inheritDoc
+		 */
+		override public function destroy() : void
 		{
-			this[_axis] = dragMin + (dragMax - dragMin) * _percent;
+			releaseTrack();
+			super.destroy();
 		}
 
 
@@ -134,7 +160,54 @@ package com.dezza.ricepaper.ui.slider
 
 			_axis = axis;
 		}
-		
+
+
+		protected function setTrack(sprite : Sprite) : void
+		{
+			if ( !sprite ) return;
+			
+			_track = sprite;
+			
+			_track.addEventListener(MouseEvent.MOUSE_DOWN, onTrackMouseDown);
+			
+			if ( _track is IEnableable )
+			{
+				(_track as IEnableable).enabled = enabled;
+			}
+		}
+
+
+		protected function releaseTrack() : void
+		{
+			if (_track) 
+			{
+				_track.removeEventListener(MouseEvent.MOUSE_DOWN, onTrackMouseDown);
+				_track = null;
+			}
+		}
+
+
+		/**
+		 * @private
+		 */
+		protected function onTrackMouseDown(e : MouseEvent) : void
+		{
+			if ( !enabled ) return;
+			if ( parent )
+			{
+				percent = ( ( _axis == "x" ? parent.mouseX : parent.mouseY ) - dragMin) / (dragMax - dragMin);
+				startDragging();
+			}
+		}
+
+
+		/**
+		 * @private
+		 */
+		protected function updatePos() : void
+		{
+			this[_axis] = dragMin + (dragMax - dragMin) * _percent;
+		}
 		
 		// protected function _onDragUpdate() : void
 		// {
@@ -162,19 +235,7 @@ package com.dezza.ricepaper.ui.slider
 		// _releaseTrack();
 		// _track = null;
 		// }
-		//				
-		// protected function _setTrack( sprite : Sprite ) : void
-		// {
-		// if( !sprite ) throw new ArgumentError( this + ".setTrackBar() fails with invalid arg" );
-		// if( _track ) _releaseTrack( );
-		// _track = sprite;
-		// _track.addEventListener( MouseEvent.MOUSE_DOWN, _onTrackMouseDown );
-		// }
-		//
-		// protected function _releaseTrack() : void
-		// {
-		// if(_track) _track.removeEventListener( MouseEvent.MOUSE_DOWN, _onTrackMouseDown );
-		// }
+
 
 
 		// /**
