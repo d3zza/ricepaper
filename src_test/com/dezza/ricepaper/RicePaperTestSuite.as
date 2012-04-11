@@ -1,6 +1,7 @@
 package com.dezza.ricepaper
 {
 
+	import com.dezza.ricepaper.ui.scrollbar.ScrollableContentBaseTests;
 	import com.dezza.ricepaper.ui.button.RepeaterButtonTests;
 	import com.dezza.ricepaper.ui.button.ButtonTests;
 	import com.dezza.ricepaper.ui.button.LabelButtonTests;
@@ -29,5 +30,7 @@ package com.dezza.ricepaper
 		public var draggerTests : DraggerTests;
 
 		public var sliderTests : SliderTests;
+		
+		public var scrollableContentBaseTests : ScrollableContentBaseTests;
 	}
 }

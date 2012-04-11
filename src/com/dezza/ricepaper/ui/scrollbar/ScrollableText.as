@@ -1,4 +1,5 @@
-package com.dezza.ui.scrollbar {
+package com.dezza.ricepaper.ui.scrollbar
+{
 
 	import flash.display.DisplayObject;
 	import flash.events.Event;
@@ -145,6 +146,56 @@ package com.dezza.ui.scrollbar {
 		
 		public function getContent():DisplayObject {
 			return _content;	
+		}
+
+
+		public function get content() : DisplayObject
+		{
+			return null;
+		}
+
+
+		public function get maskWidth() : Number
+		{
+			return 0;
+		}
+
+
+		public function set maskWidth(width : Number) : void
+		{
+		}
+
+
+		public function get maskHeight() : Number
+		{
+			return 0;
+		}
+
+
+		public function set maskHeight(height : Number) : void
+		{
+		}
+
+
+		public function get contentWidth() : Number
+		{
+			return 0;
+		}
+
+
+		public function set contentWidth(width : Number) : void
+		{
+		}
+
+
+		public function get contentHeight() : Number
+		{
+			return 0;
+		}
+
+
+		public function set contentHeight(height : Number) : void
+		{
 		}
 	}
 }

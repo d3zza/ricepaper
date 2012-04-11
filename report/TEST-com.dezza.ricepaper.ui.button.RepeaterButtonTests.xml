@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <testsuite name="com.dezza.ricepaper.ui.button.RepeaterButtonTests" tests="7" failures="0" errors="0" skipped="0" time="0.0">
-  <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="repeatEventDelay" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="repeatEventDisabled" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="constructr" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="repeatDelay" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="repeatEventDelay" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="repeatInterval" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="repeatEventInterval" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="initEventDispatch" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="repeatEventDisabled" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.button::RepeaterButtonTests" name="repeatEventInterval" time="0.000" status="success"/>
 </testsuite>

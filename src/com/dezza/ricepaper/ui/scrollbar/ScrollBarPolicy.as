@@ -1,4 +1,5 @@
-package com.dezza.ui.scrollbar {
+package com.dezza.ricepaper.ui.scrollbar
+{
 
 	/**
 	 * @author dezza

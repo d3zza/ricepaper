@@ -1,12 +1,12 @@
-package com.dezza.ui.scrollbar {
+package com.dezza.ricepaper.ui.scrollbar
+{
 
-	import com.carlcalderon.arthropod.Debug;
-	import com.dezza.ui.button.RepeaterButton;
-	import com.dezza.ui.button.RepeaterButtonEvent;
-	import com.dezza.ui.mousewheel.MouseOverHelper;
-	import com.dezza.ui.mousewheel.MouseWheel;
-	import com.dezza.ui.mousewheel.MouseWheelEvent;
-	import com.dezza.ui.mousewheel.MouseWheelListener;
+	import com.dezza.ricepaper.ui.button.RepeaterButton;
+	import com.dezza.ricepaper.ui.button.RepeaterButtonEvent;
+	import com.dezza.ricepaper.ui.mousewheel.MouseOverHelper;
+	import com.dezza.ricepaper.ui.mousewheel.MouseWheel;
+	import com.dezza.ricepaper.ui.mousewheel.MouseWheelEvent;
+	import com.dezza.ricepaper.ui.mousewheel.MouseWheelListener;
 
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -168,7 +168,6 @@ package com.dezza.ui.scrollbar {
 		}
 
 		protected function onUpBtnDown( e:Event ):void{
-			Debug.log(this+".onUpBtnDown()");
 			_dragger[ _axis ] -= _btnDownScrollIncrement;
 			keepDraggerWithinLimits();
 			notifyChanged();
@@ -243,7 +242,7 @@ package com.dezza.ui.scrollbar {
 				mouseOverHelper.autolockBrowserScroll = true;
 			}
 			
-			mouseOverHelper.mouseTarget = content.getContent();
+			mouseOverHelper.mouseTarget = content.content;
 		}
 		
 		// TODO interface
@@ -337,7 +336,6 @@ package com.dezza.ui.scrollbar {
 		
 		// TODO try private
 		public function notifyChanged():void {
-			Debug.log(this+".notifyChanged()");
 			dispatchEvent(new Event( Event.CHANGE ) );
 		}
 		
@@ -601,8 +599,8 @@ package com.dezza.ui.scrollbar {
 			_availableTrackMin = _track[ _axis ];
 			_availableTrackMax = _track[ _axis ] + _track[ dimension ];
 			
-			//postionUpBtn();
-			//postionDownBtn();
+			postionUpBtn();
+			postionDownBtn();
 			
 			_availableTrackLength = _availableTrackMax - _availableTrackMin;
 			// TODO will need to do an update

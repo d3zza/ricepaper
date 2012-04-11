@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<testsuite name="com.dezza.ricepaper.ui.scrollbar.ScrollableContentBaseTests" tests="8" failures="1" errors="0" skipped="0" time="0.0">
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="defaultMaskSize" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskHeight" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentWidth" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="defaultContentSize" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="invalidConstructr" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskWidth" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentHeight" time="0.000" status="failure">
+    <failure message="incorrect value - expected:&lt;454.1&gt; but was:&lt;2000&gt;" type="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests.contentHeight"><![CDATA[]]></failure>
+  </testcase>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="constructr" time="0.000" status="success"/>
+</testsuite>
