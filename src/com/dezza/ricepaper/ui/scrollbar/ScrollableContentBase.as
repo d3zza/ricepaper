@@ -53,20 +53,23 @@ package com.dezza.ricepaper.ui.scrollbar
 
 		public function getVisibleContentPercent(axis : String = "y") : Number
 		{
-			// TODO: Auto-generated method stub
-			return 0;
+			return getMaskLength(axis) / getContentLength(axis);
 		}
 
 
 		public function getPositionPercent(axis : String = "y") : Number
 		{
-			// TODO: Auto-generated method stub
-			return 0;
+			return (getMaxPosition(axis) - getContentPosition(axis)) / (getMaxPosition(axis) - getMinPosition(axis));
 		}
 
 
 		public function setPositionPercent(n : Number, axis : String = "y") : void
 		{
+			var lastPosition : Number = getContentPosition(axis);
+			
+			setContentPosition( ( getMaxPosition(axis) - getMinPosition(axis) ) * n);
+			
+			if ( getContentPosition( axis ) != lastPosition ) notifyChanged();
 		}
 
 
@@ -174,5 +177,68 @@ package com.dezza.ricepaper.ui.scrollbar
 		{
 			return mouseY / maskHeight;
 		}
+
+
+		/**
+		 * @private
+		 */
+		protected function getContentLength(axis : String = "y") : Number
+		{
+			return axis == "y" ? contentHeight : contentWidth;
+		}
+
+
+		/**
+		 * @private
+		 */
+		protected function getMaskLength(axis : String = "y") : Number
+		{
+			return axis == "y" ? maskHeight : maskWidth;
+		}
+
+
+		/**
+		 * @private
+		 */
+		protected function getContentPosition(axis : String = "y") : Number
+		{
+			return asset[ axis ];
+		}
+
+
+		/**
+		 * @private
+		 */
+		protected function setContentPosition(position : Number, axis : String = "y") : Number
+		{
+			return asset[ axis ] = position;
+		}
+
+
+		/**
+		 * @private
+		 */
+		protected function getMinPosition(axis : String = "y") : Number
+		{
+			return getMaskLength(axis) - getContentLength(axis) ;
+		}
+
+
+		/**
+		 * @private
+		 */
+		protected function getMaxPosition(axis : String = "y") : Number
+		{
+			return 0;
+		}
+
+
+//		/**
+//		 * @private
+//		 */
+//		protected function getScrollRange(axis : String = "y") : Number
+//		{
+//			return getMaxPosition(axis) - getMinPosition(axis);
+//		}
 	}
 }
