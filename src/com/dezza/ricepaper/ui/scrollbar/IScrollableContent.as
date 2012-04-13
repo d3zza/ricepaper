@@ -15,76 +15,6 @@ package com.dezza.ricepaper.ui.scrollbar
 	public interface IScrollableContent extends IScrollBarListener
 	{
 		/**
-		 * notify listeners that position and/or size of the scrollable content has changed
-		 */
-		function notifyChanged() : void;
-
-
-		/**
-		 * get the percentage (0-1) of content visible for the passed in axis
-		 * 
-		 * i.e. what percentage of content is visible in the masked area in the specified axis
-		 * 
-		 * should never return 0
-		 * 
-		 * @param axis 'x' or 'y' 
-		 * 
-		 * @return precentage of visible content
-		 */
-		function getVisibleContentPercent(axis : String = "y") : Number;
-
-
-		/**
-		 * get the content's position as a percentage (0-1) of total scroll for the passed in axis
-		 * 
-		 * i.e. how 'scrolled' the content is
-		 * 
-		 * @param axis 'y' or 'x'
-		 * 
-		 * @return the 'scrolledness' as a percentage (0-1)
-		 * 
-		 * Note that 'scrolled' value works opposite to position value, i.e.
-		 * when content is at max position it's scroll percentage is at 0
-		 * and when content is at min position it's it's scroll percentage is 1
-		 */
-		function getPositionPercent(axis : String = "y") : Number;
-
-
-		/**
-		 * set the content's position as a percentage (0-1) of total scroll for the passed in axis
-		 * 
-		 * @param n percentage amount
-		 * 
-		 * @param axis to set position for 'x' or 'y'
-		 * 
-		 * @see getPositionPercent()
-		 */
-		function setPositionPercent( percent : Number, axis : String = "y") : void;
-
-
-		/**
-		 * get whether scrolling is required for the passed in axis
-		 * 
-		 * true if the content is bigger than the masked area, false if not
-		 * 
-		 * @param axis the axis to test 'x' or 'y'
-		 * 
-		 * @return true if scrolling required
-		 */
-		function isScrollingRequired(axis : String = "y") : Boolean;
-
-
-		/**
-		 * find out if the mouse is over the scroll window 
-		 * 
-		 * this is necessary for scrollbars using mousewheel 
-		 * 
-		 * return true if the mouse is over the scroll window
-		 */
-		function getMouseOverWindow() : Boolean;
-
-
-		/**
 		 * get the content to be masked
 		 */
 		function get content() : DisplayObject;
@@ -120,8 +50,8 @@ package com.dezza.ricepaper.ui.scrollbar
 		 * @param Number height in pix
 		 */
 		function set maskHeight(height : Number) : void;
-		
-		
+
+
 		/**
 		 * get width of the content
 		 * 
@@ -162,5 +92,233 @@ package com.dezza.ricepaper.ui.scrollbar
 		 * @param Number height in pix
 		 */
 		function set contentHeight(height : Number) : void;
+
+
+		/**
+		 * get the percentage (0-1) of content visible in the x direction
+		 * 
+		 * should never return 0
+		 * 
+		 * @return precentage of visible content (0-1)
+		 */
+		function get visibleContentPercentX() : Number;
+
+
+		/**
+		 * get the percentage (0-1) of content visible in the y direction
+		 * 
+		 * should never return 0
+		 * 
+		 * @return precentage of visible content (0-1)
+		 */
+		function get visibleContentPercentY() : Number;
+
+
+		/**
+		 * get the (masked) content's x position
+		 * 
+		 * @return x position in pixels
+		 */
+		function get contentX() : Number;
+
+
+		/**
+		 * set the (masked) content's x position
+		 * 
+		 * @param x position in pixels
+		 */
+		function set contentX(x : Number) : void;
+
+
+		/**
+		 * get the (masked) content's y position
+		 * 
+		 * @return y position in pixels
+		 */
+		function get contentY() : Number;
+
+
+		/**
+		 * set the (masked) content's x position
+		 * 
+		 * @param x position in pixels
+		 */
+		function set contentY(y : Number) : void;
+
+
+		/**
+		 * get the content's position as a percentage (0-1) of possible scroll for the x axis
+		 * 
+		 * i.e. how 'scrolled' the content is
+		 * 
+		 * 0 means not scrolled at all
+		 * 1 means fully scrolled (content moved as far left as possible) 
+		 * 
+		 * @return the 'scrolledness' as a percentage (0-1)
+		 * 
+		 * Note that 'scrolled' value works opposite to position value, i.e.
+		 * when content is at max position it's scroll percentage is at 0
+		 * and when content is at min position it's it's scroll percentage is 1
+		 */
+		function get scrolledPercentX() : Number;
+
+
+		/**
+		 * set the content's position as a percentage (0-1) of possible scroll for the x axis
+		 * 
+		 * i.e. how 'scrolled' the content is
+		 * 
+		 * 0 means not scrolled at all
+		 * 1 means fully scrolled (content moved as far left as possible) 
+		 * 
+		 * @return the 'scrolledness' as a percentage (0-1)
+		 * 
+		 * Note that 'scrolled' value works opposite to position value, i.e.
+		 * when content is at max position it's scroll percentage is at 0
+		 * and when content is at min position it's it's scroll percentage is 1
+		 */
+		function set scrolledPercentX(percent : Number) : void;
+
+
+		/**
+		 * get the content's position as a percentage (0-1) of possible scroll for the x axis
+		 * 
+		 * i.e. how 'scrolled' the content is
+		 * 
+		 * 0 means not scrolled at all
+		 * 1 means fully scrolled (content moved as far left as possible) 
+		 * 
+		 * @return the 'scrolledness' as a percentage (0-1)
+		 * 
+		 * Note that 'scrolled' value works opposite to position value, i.e.
+		 * when content is at max position it's scroll percentage is at 0
+		 * and when content is at min position it's it's scroll percentage is 1
+		 */
+		function get scrolledPercentY() : Number;
+
+
+		/**
+		 * set the content's position as a percentage (0-1) of possible scroll for the x axis
+		 * 
+		 * i.e. how 'scrolled' the content is
+		 * 
+		 * 0 means not scrolled at all
+		 * 1 means fully scrolled (content moved as far left as possible) 
+		 * 
+		 * @return the 'scrolledness' as a percentage (0-1)
+		 * 
+		 * Note that 'scrolled' value works opposite to position value, i.e.
+		 * when content is at max position it's scroll percentage is at 0
+		 * and when content is at min position it's it's scroll percentage is 1
+		 */
+		function set scrolledPercentY(percent : Number) : void;
+
+
+		/**
+		 * get whether scrolling is required in the x direction
+		 * 
+		 * true if the content is wider than the masked area, false if not
+		 * 
+		 * @return true if scrolling required
+		 */
+		function get isScrollingRequiredX() : Boolean;
+
+
+		/**
+		 * get whether scrolling is required in the y direction
+		 * 
+		 * true if the content is taller than the masked area, false if not
+		 * 
+		 * @return true if scrolling required
+		 */
+		function get isScrollingRequiredY() : Boolean;
+
+
+		/**
+		 * get the content x position when 'scrolledness' is 0
+		 * 
+		 * this is normally the maximum x position since content moves in opposite direction to scroll
+		 * 
+		 * @return Number content x position in pixels when scroll is 0
+		 */
+		function get minScrollContentX() : Number;
+
+		/**
+		 * set the content x position when 'scrolledness' is 0
+		 * 
+		 * this is normally the maximum x position since content moves in opposite direction to scroll
+		 * 
+		 * @param Number content x position in pixels when scroll is 0
+		 */
+		function set minScrollContentX(x : Number) : void;
+
+
+		/**
+		 * get the content x position when 'scrolledness' is 1
+		 * 
+		 * this is normally the minimum x position since content moves in opposite direction to scroll
+		 * 
+		 * @return Number content x position in pixels when scroll is 1
+		 */
+		function get maxScrollContentX() : Number;
+
+
+		/**
+		 * set the content x position when 'scrolledness' is 1
+		 * 
+		 * this is normally the minimum x position since content moves in opposite direction to scroll
+		 * 
+		 * @param Number content x position in pixels when scroll is 1
+		 */
+		function set maxScrollContentX(x : Number) : void;
+
+
+		/**
+		 * get the content y position when 'scrolledness' is 0
+		 * 
+		 * this is normally the maximum y position since content moves in opposite direction to scroll
+		 * 
+		 * @return Number content y position in pixels when scroll is 0
+		 */
+		function get minScrollContentY() : Number;
+
+		/**
+		 * set the content y position when 'scrolledness' is 0
+		 * 
+		 * this is normally the maximum y position since content moves in opposite direction to scroll
+		 * 
+		 * @param Number content y position in pixels when scroll is 0
+		 */
+		function set minScrollContentY(y : Number) : void;
+
+
+		/**
+		 * get the content y position when 'scrolledness' is 1
+		 * 
+		 * this is normally the minimum y position since content moves in opposite direction to scroll
+		 * 
+		 * @return Number content y position in pixels when scroll is 1
+		 */
+		function get maxScrollContentY() : Number;
+
+
+		/**
+		 * set the content y position when 'scrolledness' is 1
+		 * 
+		 * this is normally the minimum y position since content moves in opposite direction to scroll
+		 * 
+		 * @param Number content y position in pixels when scroll is 1
+		 */
+		function set maxScrollContentY(y : Number) : void;
+		
+		
+		/**
+		 * find out if the mouse is over the scroll window 
+		 * 
+		 * this is necessary for scrollbars using mousewheel 
+		 * 
+		 * return true if the mouse is over the scroll window
+		 */
+		function getMouseOverWindow() : Boolean;
 	}
 }
