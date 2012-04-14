@@ -17,11 +17,13 @@ package com.dezza.ricepaper.ui.scrollbar
 	 */
 	public class ScrollableContentBaseTests
 	{
+
 		private var content : Sprite;
 
 		private var scrollableContent : IScrollableContent;
 
 		private var listener : MockScrollableContentListener;
+
 
 		[Before]
 		public function runBeforeEachTest() : void
@@ -101,12 +103,6 @@ package com.dezza.ricepaper.ui.scrollbar
 			scrollableContent.maskWidth = 33;
 
 			assertEquals("incorrect value for maskWidth", 33, scrollableContent.maskWidth);
-			
-			assertEquals("event not recieved", 1, listener.sizeChangeEventsRecieved );
-			
-			scrollableContent.maskWidth = 33;
-			
-			assertEquals("redundant event dispatch", 1, listener.sizeChangeEventsRecieved );
 		}
 
 
@@ -116,12 +112,6 @@ package com.dezza.ricepaper.ui.scrollbar
 			scrollableContent.maskHeight = 56;
 
 			assertEquals("incorrect value for maskWidth", 56, scrollableContent.maskHeight);
-			
-			assertEquals("event not recieved", 1, listener.sizeChangeEventsRecieved );
-			
-			scrollableContent.maskHeight = 56;
-			
-			assertEquals("redundant event dispatch", 1, listener.sizeChangeEventsRecieved );
 		}
 
 
@@ -131,12 +121,6 @@ package com.dezza.ricepaper.ui.scrollbar
 			scrollableContent.contentWidth = 1512.37;
 
 			assertEquals("incorrect value", 1512.37, scrollableContent.contentWidth);
-			
-			assertEquals("event not recieved", 1, listener.sizeChangeEventsRecieved );
-			
-			scrollableContent.contentWidth = 1512.37;
-			
-			assertEquals("redundant event dispatch", 1, listener.sizeChangeEventsRecieved );
 		}
 
 
@@ -146,12 +130,6 @@ package com.dezza.ricepaper.ui.scrollbar
 			scrollableContent.contentHeight = 454.1;
 
 			assertEquals("incorrect value", 454.1, scrollableContent.contentHeight);
-			
-			assertEquals("event not recieved", 1, listener.sizeChangeEventsRecieved );
-			
-			scrollableContent.contentHeight = 454.1;
-			
-			assertEquals("redundant event dispatch", 1, listener.sizeChangeEventsRecieved );
 		}
 
 
@@ -187,14 +165,8 @@ package com.dezza.ricepaper.ui.scrollbar
 		public function setContentX() : void
 		{
 			scrollableContent.contentX = -100;
-			
+
 			assertEquals("incorrect value", -100, scrollableContent.contentX);
-			
-			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved );
-			
-			scrollableContent.contentX = -100;
-			
-			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved );
 		}
 
 
@@ -202,14 +174,8 @@ package com.dezza.ricepaper.ui.scrollbar
 		public function setContentY() : void
 		{
 			scrollableContent.contentY = -50;
-			
+
 			assertEquals("incorrect value", -50, scrollableContent.contentY);
-			
-			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved );
-			
-			assertEquals("incorrect value", -50, scrollableContent.contentY);
-			
-			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved );
 		}
 
 
@@ -245,6 +211,7 @@ package com.dezza.ricepaper.ui.scrollbar
 		public function setScrolledPercentX0() : void
 		{
 			scrollableContent.scrolledPercentX = 0;
+
 			assertEquals("incorrect value", scrollableContent.minScrollContentX, scrollableContent.contentX);
 		}
 
@@ -253,6 +220,7 @@ package com.dezza.ricepaper.ui.scrollbar
 		public function setScrolledPercentY0() : void
 		{
 			scrollableContent.scrolledPercentY = 0;
+
 			assertEquals("incorrect value", scrollableContent.minScrollContentY, scrollableContent.contentY);
 		}
 
@@ -261,7 +229,14 @@ package com.dezza.ricepaper.ui.scrollbar
 		public function setScrolledPercentX1() : void
 		{
 			scrollableContent.scrolledPercentX = 1;
+
 			assertEquals("incorrect value", scrollableContent.maxScrollContentX, scrollableContent.contentX);
+
+			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved);
+
+			scrollableContent.scrolledPercentX = 1;
+
+			assertEquals("redundant event dispatch", 1, listener.positionChangeEventsRecieved);
 		}
 
 
@@ -269,7 +244,14 @@ package com.dezza.ricepaper.ui.scrollbar
 		public function setScrolledPercentY1() : void
 		{
 			scrollableContent.scrolledPercentY = 1;
+
 			assertEquals("incorrect value", scrollableContent.maxScrollContentY, scrollableContent.contentY);
+
+			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved);
+
+			scrollableContent.scrolledPercentY = 1;
+
+			assertEquals("redundant event dispatch", 1, listener.positionChangeEventsRecieved);
 		}
 
 
@@ -282,6 +264,14 @@ package com.dezza.ricepaper.ui.scrollbar
 
 
 		[Test]
+		public function setScrolledPercentY() : void
+		{
+			scrollableContent.scrolledPercentY = 0.25;
+			assertEquals("incorrect value", 0.25 * -1500, scrollableContent.contentY);
+		}
+
+
+		[Test]
 		public function getScrolledPercentX() : void
 		{
 			scrollableContent.contentX = -900 * 0.33;
@@ -290,10 +280,10 @@ package com.dezza.ricepaper.ui.scrollbar
 
 
 		[Test]
-		public function setScrolledPercentY() : void
+		public function getScrolledPercentY() : void
 		{
-			scrollableContent.scrolledPercentY = 0.25;
-			assertEquals("incorrect value", 0.25 * -1500, scrollableContent.contentY);
+			scrollableContent.contentY = -1500 * 0.33;
+			assertEquals("incorrect value", 0.33, scrollableContent.scrolledPercentY);
 		}
 
 
@@ -358,6 +348,110 @@ package com.dezza.ricepaper.ui.scrollbar
 			assertEquals("incorrect value", -2000, scrollableContent.maxScrollContentY);
 
 			assertEquals("incorrect value", scrollableContent.maxScrollContentY, scrollableContent.contentY);
+		}
+
+
+		[Test]
+		public function maskWidthEventDispatch() : void
+		{
+			scrollableContent.maskWidth = 75;
+
+			assertEquals("event not recieved", 1, listener.sizeChangeEventsRecieved);
+
+			scrollableContent.maskWidth = 75;
+
+			assertEquals("redundant event dispatch", 1, listener.sizeChangeEventsRecieved);
+		}
+
+
+		[Test]
+		public function maskHeightEventDispatch() : void
+		{
+			scrollableContent.maskHeight = 56;
+
+			assertEquals("event not recieved", 1, listener.sizeChangeEventsRecieved);
+
+			scrollableContent.maskHeight = 56;
+
+			assertEquals("redundant event dispatch", 1, listener.sizeChangeEventsRecieved);
+		}
+
+
+		[Test]
+		public function contentWidthEventDispatch() : void
+		{
+			scrollableContent.contentWidth = 1512.37;
+
+			assertEquals("event not recieved", 1, listener.sizeChangeEventsRecieved);
+
+			scrollableContent.contentWidth = 1512.37;
+
+			assertEquals("redundant event dispatch", 1, listener.sizeChangeEventsRecieved);
+		}
+
+
+		[Test]
+		public function contentHeightEventDispatch() : void
+		{
+			scrollableContent.contentHeight = 454.1;
+
+			assertEquals("event not recieved", 1, listener.sizeChangeEventsRecieved);
+
+			scrollableContent.contentHeight = 454.1;
+
+			assertEquals("redundant event dispatch", 1, listener.sizeChangeEventsRecieved);
+		}
+
+
+		[Test]
+		public function contentXEventDispatch() : void
+		{
+			scrollableContent.contentX = -100;
+
+			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved);
+
+			scrollableContent.contentX = -100;
+
+			assertEquals("redundant event dispatch", 1, listener.positionChangeEventsRecieved);
+		}
+
+
+		[Test]
+		public function contentYEventDispatch() : void
+		{
+			scrollableContent.contentY = -50;
+
+			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved);
+
+			assertEquals("incorrect value", -50, scrollableContent.contentY);
+
+			assertEquals("redundant event dispatch", 1, listener.positionChangeEventsRecieved);
+		}
+
+
+		[Test]
+		public function scrolledPercentXEventDispatch() : void
+		{
+			scrollableContent.scrolledPercentX = 0.33;
+
+			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved);
+
+			scrollableContent.scrolledPercentX = 0.33;
+
+			assertEquals("redundant event dispatch", 1, listener.positionChangeEventsRecieved);
+		}
+
+
+		[Test]
+		public function scrolledPercentYEventDispatch() : void
+		{
+			scrollableContent.scrolledPercentY = 0.33;
+
+			assertEquals("event not recieved", 1, listener.positionChangeEventsRecieved);
+
+			scrollableContent.scrolledPercentY = 0.33;
+
+			assertEquals("redundant event dispatch", 1, listener.positionChangeEventsRecieved);
 		}
 	}
 }
