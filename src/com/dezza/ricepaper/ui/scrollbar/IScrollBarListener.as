@@ -1,6 +1,5 @@
 package com.dezza.ricepaper.ui.scrollbar
 {
-	import flash.events.Event;
 
 	/**
 	 * @author dezza
@@ -8,10 +7,10 @@ package com.dezza.ricepaper.ui.scrollbar
 	public interface IScrollBarListener {
 		
 		/**
-		 * handle change in scrollbar
+		 * handle change in scrollbar 'scrolled' percent
 		 * 
-		 * @param e Event
+		 * @param e ScrollbarEvent
 		 */
-		function onScrollBarChanged( e:Event = null ):void;
+		function onScrollBarScrollChange( e:ScrollbarEvent = null ):void;
 	}
 }

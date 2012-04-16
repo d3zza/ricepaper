@@ -50,26 +50,26 @@ package com.dezza.ricepaper.ui.core
 		 * 
 		 * @param content MovieClip 
 		 */
-		public function UIControl(content : DisplayObject)
+		public function UIControl(asset : DisplayObject)
 		{
-			if (content)
+			if (asset)
 			{
-				x = content.x;
-				y = content.y;
-				rotation = content.rotation;
+				x = asset.x;
+				y = asset.y;
+				rotation = asset.rotation;
 
-				content.x = 0;
-				content.y = 0;
-				content.rotation = 0;
+				asset.x = 0;
+				asset.y = 0;
+				asset.rotation = 0;
 
-				if (content.parent)
+				if (asset.parent)
 				{
-					content.parent.addChildAt(this, content.parent.getChildIndex(content));
+					asset.parent.addChildAt(this, asset.parent.getChildIndex(asset));
 				}
 
-				addChild(content);
+				addChild(asset);
 
-				_asset = content;
+				_asset = asset;
 			}
 			else
 			{

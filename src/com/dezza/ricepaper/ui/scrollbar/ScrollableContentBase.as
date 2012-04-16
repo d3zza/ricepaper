@@ -4,7 +4,6 @@ package com.dezza.ricepaper.ui.scrollbar
 	import com.dezza.ricepaper.ui.core.UIControl;
 
 	import flash.display.DisplayObject;
-	import flash.events.Event;
 
 	/**
 	 * @author derek
@@ -62,9 +61,22 @@ package com.dezza.ricepaper.ui.scrollbar
 			initScrollParams();
 		}
 
-
-		public function onScrollBarChanged(e : Event = null) : void
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function onScrollBarScrollChange(e : ScrollbarEvent = null) : void
 		{
+			var scrollBar : IScrollBar = e.target as IScrollBar;
+
+			if ( scrollBar.axis == 'x' )
+			{
+				scrolledPercentX = scrollBar.scrolledPercent;
+			}
+			else if ( scrollBar.axis == 'y' )
+			{
+				scrolledPercentY = scrollBar.scrolledPercent;
+			}
 		}
 
 

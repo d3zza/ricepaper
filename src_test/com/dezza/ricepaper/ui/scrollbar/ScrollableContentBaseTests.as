@@ -1,6 +1,7 @@
 package com.dezza.ricepaper.ui.scrollbar
 {
 
+	import com.dezza.ricepaper.ui.mock.MockScrollBar;
 	import com.dezza.ricepaper.ui.mock.MockScrollableContentListener;
 
 	import flash.display.DisplayObject;
@@ -63,6 +64,8 @@ package com.dezza.ricepaper.ui.scrollbar
 		public function constructr() : void
 		{
 			assertNotNull("failed to create instance", scrollableContent);
+			
+			assertEquals("incorrect value for asset", content, scrollableContent.asset);
 
 			assertEquals("new instance has wrong x position", 300, (scrollableContent as ScrollableContentBase).x);
 
@@ -452,6 +455,12 @@ package com.dezza.ricepaper.ui.scrollbar
 			scrollableContent.scrolledPercentY = 0.33;
 
 			assertEquals("redundant event dispatch", 1, listener.positionChangeEventsRecieved);
+		}
+		
+		[Test]
+		public function scrollBarListener():void
+		{
+			var mockScrollBar:MockScrollBar = new MockScrollBar( "y" );
 		}
 	}
 }

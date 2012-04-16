@@ -8,7 +8,7 @@ package com.dezza.ricepaper.ui.scrollbar
 	 */
 	public class ScrollableContentEvent extends Event
 	{
-		public static const POSITION_CHANGE : String = "POSITION_CHANGE_Y";
+		public static const POSITION_CHANGE : String = "POSITION_CHANGE";
 
 		public static const SIZE_CHANGE : String = "SIZE_CHANGE";
 

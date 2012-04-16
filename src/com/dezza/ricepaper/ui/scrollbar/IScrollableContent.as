@@ -1,7 +1,7 @@
 package com.dezza.ricepaper.ui.scrollbar
 {
 
-	import flash.display.DisplayObject;
+	import com.dezza.ricepaper.ui.core.IUIControl;
 
 	/**
 	 * @author derek
@@ -12,14 +12,8 @@ package com.dezza.ricepaper.ui.scrollbar
 	 * A relationship can established with an IScrollBar implentation via the 
 	 * scrollbar's setContent() method
 	 */
-	public interface IScrollableContent extends IScrollBarListener
+	public interface IScrollableContent extends IUIControl, IScrollBarListener
 	{
-		/**
-		 * get the content to be masked
-		 */
-		function get content() : DisplayObject;
-
-
 		/**
 		 * get width of the masked area
 		 * 
@@ -243,6 +237,7 @@ package com.dezza.ricepaper.ui.scrollbar
 		 */
 		function get minScrollContentX() : Number;
 
+
 		/**
 		 * set the content x position when 'scrolledness' is 0
 		 * 
@@ -282,6 +277,7 @@ package com.dezza.ricepaper.ui.scrollbar
 		 */
 		function get minScrollContentY() : Number;
 
+
 		/**
 		 * set the content y position when 'scrolledness' is 0
 		 * 
@@ -310,8 +306,8 @@ package com.dezza.ricepaper.ui.scrollbar
 		 * @param Number content y position in pixels when scroll is 1
 		 */
 		function set maxScrollContentY(y : Number) : void;
-		
-		
+
+
 		/**
 		 * find out if the mouse is over the scroll window 
 		 * 

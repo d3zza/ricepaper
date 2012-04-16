@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <testsuite name="com.dezza.ricepaper.ui.button.SelectableButtonTests" tests="8" failures="0" errors="0" skipped="0" time="0.0">
+  <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="disable" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="onRollOutDeselected" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="constructr" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="disable" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="select" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="onRollOverSelected" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="onRollOutSelected" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="onRollOverSelected" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="onRollOverMouseStateLocked" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::SelectableButtonTests" name="onRollOverDeselected" time="0.000" status="success"/>
 </testsuite>
