@@ -10,16 +10,24 @@ package com.dezza.ricepaper.ui.scrollbar
 	 */
 	public class ScrollBar extends UIControl implements IScrollBar
 	{
-		public function ScrollBar( asset:DisplayObject, axis : String = "y", btnAlignment : String = null)
+
+		/**
+		 * @private
+		 */
+		private var _axis : String;
+
+
+		public function ScrollBar(asset : IScrollBarAsset, axis : String = "y", btnAlignment : String = null)
 		{
-			super( asset );
+			super(asset.container);
+
+			_axis = axis;
 		}
 
 
 		public function get axis() : String
 		{
-			// TODO: Auto-generated method stub
-			return null;
+			return _axis;
 		}
 
 
