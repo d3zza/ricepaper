@@ -19,6 +19,11 @@ package com.dezza.ricepaper.ui.scrollbar
 		 * @private
 		 */
 		private var _dragger : IDragger;
+		
+		/**
+		 * @private
+		 */
+		private var _track : IDragger;
 
 		/**
 		 * @private
