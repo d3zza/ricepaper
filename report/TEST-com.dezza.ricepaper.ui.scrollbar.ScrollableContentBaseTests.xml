@@ -1,44 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<testsuite name="com.dezza.ricepaper.ui.scrollbar.ScrollableContentBaseTests" tests="40" failures="0" errors="0" skipped="0" time="0.0">
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskWidthEventDispatch" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskWidth" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getDefaultMinScrollContentY" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getScrolledPercentY" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentXEventDispatch" time="0.000" status="success"/>
+<testsuite name="com.dezza.ricepaper.ui.scrollbar.ScrollableContentBaseTests" tests="42" failures="0" errors="0" skipped="0" time="0.0">
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setMaxScrollContentX" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="initContentY" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getVisibleContentPercentX" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setGetScrolledPercentX" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getDefaultMaxScrollContentX" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getVisibleContentPercentY" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setGetScrolledPercentY" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getDefaultMaxScrollContentY" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="scrolledPercentXEventDispatch" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setMaxScrollContentY" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="scrolledPercentYEventDispatch" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentY0" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getDefaultMaxScrollContentX" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="initContentX" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setMaxScrollContentX" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setMinScrollContentX" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentX0" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentY" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getScrolledPercentX" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setMinScrollContentX" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getScrolledPercentY" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentXEventDispatch" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setMinScrollContentY" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setGetScrolledPercentX" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentY1" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="constructr" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskHeightEventDispatch" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getDefaultMinScrollContentX" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="initContentY" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getVisibleContentPercentY" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="scrollBarListenerX" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentX" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="scrollBarListenerY" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setContentX" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskSize" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setContentY" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getDefaultMaxScrollContentY" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentWidth" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentX1" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentWidthEventDispatch" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setGetScrolledPercentY" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskHeight" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentY1" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentYEventDispatch" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentHeight" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentHeightEventDispatch" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="invalidConstructr" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getVisibleContentPercentX" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="scrolledPercentXEventDispatch" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskHeight" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setContentY" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskWidth" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="initContentX" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentSize" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentWidth" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getScrolledPercentX" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getDefaultMinScrollContentX" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="constructr" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="getDefaultMinScrollContentY" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="invalidConstructr" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentX0" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentHeightEventDispatch" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentX1" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskWidthEventDispatch" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentHeight" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="contentWidthEventDispatch" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="setScrolledPercentY0" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollableContentBaseTests" name="maskHeightEventDispatch" time="0.000" status="success"/>
 </testsuite>

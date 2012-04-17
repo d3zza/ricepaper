@@ -1,6 +1,8 @@
 package com.dezza.ricepaper.ui.scrollbar
 {
 
+	import com.dezza.ricepaper.ui.mock.MockSpriteAsset;
+	import com.dezza.ricepaper.ui.mock.MockScrollBarAsset;
 	import com.dezza.ricepaper.ui.mock.MockScrollBar;
 	import com.dezza.ricepaper.ui.mock.MockScrollableContentListener;
 
@@ -29,10 +31,7 @@ package com.dezza.ricepaper.ui.scrollbar
 		[Before]
 		public function runBeforeEachTest() : void
 		{
-			content = new Sprite();
-			content.graphics.beginFill(0);
-			content.graphics.drawRect(0, 0, 1000, 2000);
-			content.graphics.endFill();
+			content = new MockSpriteAsset( 1000, 2000 );
 			content.x = 300;
 			content.y = 100;
 
@@ -458,9 +457,32 @@ package com.dezza.ricepaper.ui.scrollbar
 		}
 		
 		[Test]
-		public function scrollBarListener():void
+		public function scrollBarListenerY():void
 		{
-			var mockScrollBar:MockScrollBar = new MockScrollBar( "y" );
+			var mockScrollBarAsset : MockScrollBarAsset = new MockScrollBarAsset();
+			
+			var mockScrollBar:MockScrollBar = new MockScrollBar( mockScrollBarAsset, "y" );
+			
+			mockScrollBar.addScrollBarListener( scrollableContent );
+			
+			mockScrollBar.scrolledPercent = 0.33;
+			
+			assertEquals("scrollBar scroll change didn't trigger content scroll change", 0.33, scrollableContent.scrolledPercentY );
+		}
+		
+		
+		[Test]
+		public function scrollBarListenerX():void
+		{
+			var mockScrollBarAsset : MockScrollBarAsset = new MockScrollBarAsset();
+			
+			var mockScrollBar:MockScrollBar = new MockScrollBar( mockScrollBarAsset, "x" );
+			
+			mockScrollBar.addScrollBarListener( scrollableContent );
+			
+			mockScrollBar.scrolledPercent = 0.63;
+			
+			assertEquals("scrollBar scroll change didn't trigger content scroll change", 0.63, scrollableContent.scrolledPercentX );
 		}
 	}
 }

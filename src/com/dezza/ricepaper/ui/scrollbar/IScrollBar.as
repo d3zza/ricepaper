@@ -40,5 +40,15 @@ package com.dezza.ricepaper.ui.scrollbar
 		 * @param Number (0-1) scroll percentage 
 		 */
 		function set scrolledPercent(percent : Number) : void;
+
+		/**
+		 * add ScrollBar listener
+		 */
+		function addScrollBarListener(listener : IScrollBarListener) : void;
+
+		/**
+		 * remove ScrollBar listener
+		 */
+		function removeScrollBarListener(listener : IScrollBarListener) : void;
 	}
 }

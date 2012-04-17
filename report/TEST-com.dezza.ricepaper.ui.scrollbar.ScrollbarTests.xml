@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<testsuite name="com.dezza.ricepaper.ui.scrollbar.ScrollbarTests" tests="4" failures="1" errors="0" skipped="0" time="0.0">
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollbarTests" name="constructr" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollbarTests" name="defaultScrolledPercent" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollbarTests" name="setGetScrolledPercent" time="0.000" status="failure">
+    <failure message="incorrect value - expected:&lt;0.37&gt; but was:&lt;0&gt;" type="com.dezza.ricepaper.ui.scrollbar::ScrollbarTests.setGetScrolledPercent"><![CDATA[]]></failure>
+  </testcase>
+  <testcase classname="com.dezza.ricepaper.ui.scrollbar::ScrollbarTests" name="defaultAxis" time="0.000" status="success"/>
+</testsuite>

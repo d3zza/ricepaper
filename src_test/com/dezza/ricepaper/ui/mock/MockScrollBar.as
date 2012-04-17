@@ -1,56 +1,39 @@
 package com.dezza.ricepaper.ui.mock
 {
 
-	import com.dezza.ricepaper.ui.scrollbar.ScrollbarEvent;
 	import com.dezza.ricepaper.ui.scrollbar.IScrollBar;
-
-	import flash.events.EventDispatcher;
+	import com.dezza.ricepaper.ui.scrollbar.IScrollBarAsset;
+	import com.dezza.ricepaper.ui.scrollbar.ScrollBar;
+	import com.dezza.ricepaper.ui.scrollbar.ScrollbarEvent;
 
 	/**
 	 * @author derek
 	 */
-	public class MockScrollBar extends EventDispatcher implements IScrollBar
+	public class MockScrollBar extends ScrollBar implements IScrollBar
 	{
 		private var _scrollPercent : Number = 0;
 
 		private var _axis : String;
 
-		public function MockScrollBar(axis : String = "y")
+		public function MockScrollBar(asset : IScrollBarAsset, axis : String = "y", btnAlignment : String = null)
 		{
-			super();
+			super( asset, axis, btnAlignment );
 
 			_axis = axis;
 		}
 
 
-		public function get axis() : String
-		{
-			return _axis;
-		}
-
-
-		public function get scrolledPercent() : Number
+		override public function get scrolledPercent() : Number
 		{
 			return _scrollPercent;
 		}
 
 
-		public function set scrolledPercent(percent : Number) : void
+		override public function set scrolledPercent(percent : Number) : void
 		{
 			_scrollPercent = percent;
 			
 			dispatchEvent( new ScrollbarEvent(ScrollbarEvent.SCROLL_CHANGE));
-		}
-
-
-		public function get enabled() : Boolean
-		{
-			return true;
-		}
-
-
-		public function set enabled(enabled : Boolean) : void
-		{
 		}
 	}
 }
