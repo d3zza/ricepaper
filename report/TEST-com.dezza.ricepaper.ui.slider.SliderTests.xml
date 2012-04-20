@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <testsuite name="com.dezza.ricepaper.ui.slider.SliderTests" tests="9" failures="0" errors="0" skipped="0" time="0.0">
-  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="setDragRect" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="constructr" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="startingPercent" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="startingPosition" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="disable" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="defaultAxis" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="dragMin" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="setDragRect" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="dragMax" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="trackClick" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="dragMin" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="defaultAxis" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="startingPercent" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="constructr" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.slider::SliderTests" name="startingPosition" time="0.000" status="success"/>
 </testsuite>

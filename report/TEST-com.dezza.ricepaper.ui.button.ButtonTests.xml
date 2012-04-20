@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <testsuite name="com.dezza.ricepaper.ui.button.ButtonTests" tests="7" failures="0" errors="0" skipped="0" time="0.0">
-  <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="constructr" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="disable" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOver" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOutDisabled" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOverMouseStateLocked" time="0.000" status="success"/>
-  <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOut" time="0.000" status="success"/>
   <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOverDisabled" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="disable" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="constructr" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOut" time="0.000" status="success"/>
+  <testcase classname="com.dezza.ricepaper.ui.button::ButtonTests" name="onRollOverMouseStateLocked" time="0.000" status="success"/>
 </testsuite>

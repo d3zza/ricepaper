@@ -1,8 +1,9 @@
 package com.dezza.ricepaper.ui.scrollbar
 {
 
-	import com.dezza.ricepaper.ui.dragger.Dragger;
+	import com.dezza.ricepaper.ui.button.RepeaterButton;
 	import com.dezza.ricepaper.ui.core.UIControl;
+	import com.dezza.ricepaper.ui.dragger.Dragger;
 	import com.dezza.ricepaper.ui.dragger.IDragger;
 
 	/**
@@ -23,14 +24,29 @@ package com.dezza.ricepaper.ui.scrollbar
 		/**
 		 * @private
 		 */
-		private var _track : IDragger;
+		private var _track : RepeaterButton;
+		
+		/**
+		 * @private
+		 */
+		private var _upBtn : RepeaterButton;
+		
+		/**
+		 * @private
+		 */
+		private var _downBtn : RepeaterButton;
 
 		/**
 		 * @private
 		 */
 		private var _btnAlignment : String;
+		
+		/**
+		 * @private
+		 */
+		private var _renderer : IScrollBarRender;
 
-		public function ScrollBar(asset : IScrollBarAsset, axis : String = "y", btnAlignment : String = null)
+		public function ScrollBar(asset : IScrollBarAsset, axis : String = "y", scrollbarRenderer:IScrollBarRender = null )
 		{
 			super(asset.container);
 
@@ -108,11 +124,24 @@ package com.dezza.ricepaper.ui.scrollbar
 
 		protected function initTrack(asset : IScrollBarAsset) : void
 		{
+			if( asset.trackAsset )
+			{
+				_track = new RepeaterButton( asset.trackAsset );
+			}
 		}
 
 
 		protected function initScrollBtns(asset : IScrollBarAsset) : void
 		{
+			if( asset.upBtnAsset )
+			{
+				_upBtn = new RepeaterButton( asset.upBtnAsset );
+			}
+			
+			if( asset.downBtnAsset )
+			{
+				_downBtn = new RepeaterButton( asset.downBtnAsset );
+			}
 		}
 		// /**
 		// * @private
