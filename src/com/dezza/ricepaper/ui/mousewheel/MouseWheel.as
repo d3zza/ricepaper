@@ -13,6 +13,7 @@ package com.dezza.ricepaper.ui.mousewheel
 	 */
 	public class MouseWheel extends EventDispatcher
 	{
+
 		/**
 		 * @private
 		 */
@@ -22,6 +23,7 @@ package com.dezza.ricepaper.ui.mousewheel
 		 * @private
 		 */
 		private var _stage : DisplayObject;
+
 
 		/**
 		 * Get the MouseWheel instance

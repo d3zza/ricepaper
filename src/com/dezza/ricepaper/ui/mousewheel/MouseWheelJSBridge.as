@@ -2,35 +2,42 @@ package com.dezza.ricepaper.ui.mousewheel
 {
 
 	import flash.external.ExternalInterface;
-	
-	
+
 	/**
 	 * Class that wraps javascript code for providing cross platform MouseWheel support
 	 */
-	public class MouseWheelJSBridge {
-		
+	public class MouseWheelJSBridge
+	{
+
 		/**
 		 * @private
 		 */
-		public static const NS:String = "MWAS";
-		
+		public static const NS : String = "MWAS";
+
+
 		/**
 		 * @private
 		 */
-		public function MouseWheelJSBridge() {
-			try {
-				if( ExternalInterface.available ) {
-					ExternalInterface.call( script_js );					
-					ExternalInterface.call( "MWAS.setSWFObjectID", ExternalInterface.objectID );
+		public function MouseWheelJSBridge()
+		{
+			try
+			{
+				if ( ExternalInterface.available )
+				{
+					ExternalInterface.call(script_js);
+					ExternalInterface.call("MWAS.setSWFObjectID", ExternalInterface.objectID);
 				}
-			} catch( error:Error ) {}
+			}
+			catch( error : Error )
+			{
+			}
 		}
-		
+
+
 		/**
 		 * @private
 		 */
-		private const script_js:XML =
-			<script>
+		private const script_js : XML = <script>
 				<![CDATA[
 					function() {
 						
@@ -86,6 +93,5 @@ package com.dezza.ricepaper.ui.mousewheel
 					}
 				]]>
 			</script>;
-		
 	}
 }

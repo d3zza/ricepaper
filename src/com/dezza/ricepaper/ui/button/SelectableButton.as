@@ -3,6 +3,7 @@ package com.dezza.ricepaper.ui.button
 
 	import com.dezza.ricepaper.ui.core.ISelectable;
 
+
 	import flash.display.MovieClip;
 
 	/**
@@ -10,14 +11,16 @@ package com.dezza.ricepaper.ui.button
 	 */
 	public class SelectableButton extends Button implements ISelectable
 	{
+
 		/**
 		 * @private
 		 */
 		protected var _selected : Boolean;
 
-		public function SelectableButton(content : MovieClip)
+
+		public function SelectableButton(content : MovieClip, mouseChildren : Boolean = false)
 		{
-			super(content);
+			super(content, mouseChildren);
 		}
 
 
@@ -49,22 +52,18 @@ package com.dezza.ricepaper.ui.button
 		 */
 		override protected function renderState() : void
 		{
-			var frame : String;
-
 			if ( !enabled )
 			{
-				frame = ButtonState.DISABLED;
+				_stateRenderer.render(ButtonState.DISABLED);
 			}
 			else if ( _selected )
 			{
-				frame = _mouseState == ButtonState.ON ? ButtonState.ON_SELECTED : ButtonState.OFF_SELECTED;
+				_stateRenderer.render(_mouseState == ButtonState.ON ? ButtonState.ON_SELECTED : ButtonState.OFF_SELECTED);
 			}
 			else
 			{
-				frame = _mouseState;
+				_stateRenderer.render(_mouseState);
 			}
-
-			(asset as MovieClip).gotoAndStop(frame);
 		}
 	}
 }

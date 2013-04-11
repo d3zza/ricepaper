@@ -2,6 +2,7 @@ package com.dezza.ricepaper.ui.core
 {
 
 	import flash.text.TextField;
+
 	/**
 	 * @author derek
 	 */
@@ -30,6 +31,5 @@ package com.dezza.ricepaper.ui.core
 		 * @return TextField
 		 */
 		function get textField() : TextField;
-		
 	}
 }

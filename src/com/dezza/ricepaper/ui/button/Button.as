@@ -2,6 +2,8 @@ package com.dezza.ricepaper.ui.button
 {
 
 	import com.dezza.ricepaper.ui.core.UIControl;
+	import com.dezza.ricepaper.ui.movieclip.LabelledStateRenderer;
+
 
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
@@ -13,6 +15,7 @@ package com.dezza.ricepaper.ui.button
 	 */
 	public class Button extends UIControl implements IButton
 	{
+
 		/**
 		 * @private
 		 */
@@ -28,13 +31,12 @@ package com.dezza.ricepaper.ui.button
 		 */
 		protected var _unlockedMouseState : String;
 
-		public function Button(content : MovieClip)
+
+		public function Button(content : MovieClip, mouseChildren : Boolean = false)
 		{
 			super(content);
 
-			setMouseState(ButtonState.OFF);
-
-			initMouse();
+			initMouse(mouseChildren);
 		}
 
 
@@ -96,6 +98,7 @@ package com.dezza.ricepaper.ui.button
 			setMouseState(highlighted ? ButtonState.ON : ButtonState.OFF);
 		}
 
+
 		/**
 		 * automatically create a hit area
 		 * 
@@ -108,7 +111,7 @@ package com.dezza.ricepaper.ui.button
 		{
 			var hit : Sprite = new Sprite();
 			addChild(hit);
-			var contentRect : Rectangle = asset.getBounds(this);
+			var contentRect : Rectangle = getBounds(this);
 			with( hit.graphics )
 			{
 				beginFill(0x32FFFF, 0.3);
@@ -128,19 +131,22 @@ package com.dezza.ricepaper.ui.button
 			removeEventListener(MouseEvent.ROLL_OVER, onRollOver);
 			removeEventListener(MouseEvent.ROLL_OUT, onRollOut);
 
+			if ( _stateRenderer ) _stateRenderer.dispose();
+
 			super.destroy();
 		}
+
 
 		/**
 		 * @private
 		 */
-		protected function initMouse() : void
+		protected function initMouse(mouseChildren : Boolean) : void
 		{
 			addEventListener(MouseEvent.ROLL_OVER, onRollOver);
 			addEventListener(MouseEvent.ROLL_OUT, onRollOut);
 
 			buttonMode = true;
-			mouseChildren = false;
+			this.mouseChildren = mouseChildren;
 
 			enabled = true;
 		}
@@ -183,7 +189,7 @@ package com.dezza.ricepaper.ui.button
 		 */
 		protected function renderState() : void
 		{
-			(asset as MovieClip).gotoAndStop(enabled ? _mouseState : ButtonState.DISABLED);
+			_stateRenderer.render(enabled ? _mouseState : ButtonState.DISABLED);
 		}
 
 
@@ -201,6 +207,19 @@ package com.dezza.ricepaper.ui.button
 		 */
 		protected function onRollOut(event : MouseEvent) : void
 		{
+			setMouseState(ButtonState.OFF);
+		}
+
+
+		override protected function initStates() : void
+		{
+			super.initStates();
+
+			if ( asset is MovieClip && (asset as MovieClip).totalFrames > 1 )
+			{
+				_stateRenderer = new LabelledStateRenderer((asset as MovieClip), ButtonState.STATES);
+			}
+
 			setMouseState(ButtonState.OFF);
 		}
 	}

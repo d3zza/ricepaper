@@ -6,12 +6,13 @@ package com.dezza.ricepaper.ui.core
 	/**
 	 * @author derek
 	 */
-	public interface IUIControl extends IDisplayObject, IEnableable
+	public interface IUIControl extends IEnableable
 	{
+
 		/**
-		 * get the content asset
+		 * get display asset
 		 * 
-		 * @return MovieClip
+		 * @return DisplayObject
 		 */
 		function get asset() : DisplayObject
 

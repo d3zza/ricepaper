@@ -8,6 +8,7 @@ package com.dezza.ricepaper.ui.mousewheel
 	 */
 	public class MouseWheelEvent extends Event
 	{
+
 		/**
 		 * Event type representing MouseWheel scroll
 		 */
@@ -27,6 +28,7 @@ package com.dezza.ricepaper.ui.mousewheel
 		 * @private
 		 */
 		private var _delta : Number;
+
 
 		/**
 		 * Construct a new MouseWheelEvent instance

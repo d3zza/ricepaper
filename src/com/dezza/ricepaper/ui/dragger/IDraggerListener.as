@@ -16,6 +16,7 @@ package com.dezza.ricepaper.ui.dragger
 	 */
 	public interface IDraggerListener
 	{
+
 		/**
 		 * handle DraggerEvent.DRAG_CHANGE event
 		 * 

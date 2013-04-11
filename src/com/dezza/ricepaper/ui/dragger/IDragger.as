@@ -1,9 +1,11 @@
-package com.dezza.ricepaper.ui.dragger 
+package com.dezza.ricepaper.ui.dragger
 {
 
 	import com.dezza.ricepaper.ui.core.IUIControl;
 
+
 	import flash.geom.Rectangle;
+
 	/**
 	 * Dragger
 	 * Class Description.
@@ -14,17 +16,22 @@ package com.dezza.ricepaper.ui.dragger
 	 */
 	public interface IDragger extends IUIControl
 	{
-		function setDragRect( rect : Rectangle ) : void;
 
-		function addDraggerListener( listener : IDraggerListener ) : void;
+		function setDragRect(rect : Rectangle) : void;
 
-		function removeDraggerListener( listener : IDraggerListener ) : void;
 
-		function startDragging( ) : void;
+		function addDraggerListener(listener : IDraggerListener) : void;
 
-		function stopDragging( ) : void;
-		
+
+		function removeDraggerListener(listener : IDraggerListener) : void;
+
+
+		function startDragging() : void;
+
+
+		function stopDragging() : void;
+
+
 		function get isDragging() : Boolean;
-		
 	}
 }

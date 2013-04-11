@@ -15,6 +15,7 @@ package com.dezza.ricepaper.ui.mousewheel
 	 */
 	public class MouseOverHelper extends Sprite
 	{
+
 		/**
 		 * @private
 		 */
@@ -29,6 +30,7 @@ package com.dezza.ricepaper.ui.mousewheel
 		 * @private
 		 */
 		private var _lockBrowserScroll : Boolean = false;
+
 
 		/**
 		 * Create a MouseOverHelper instance
@@ -117,7 +119,7 @@ package com.dezza.ricepaper.ui.mousewheel
 			return _lockBrowserScroll;
 		}
 
-		
+
 		/**
 		 * prepare instance for GC
 		 */
@@ -126,6 +128,7 @@ package com.dezza.ricepaper.ui.mousewheel
 			removeMouseListeners();
 			_target = null;
 		}
+
 
 		/**
 		 * get string representation of this instance

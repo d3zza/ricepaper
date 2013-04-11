@@ -9,6 +9,7 @@ package com.dezza.ricepaper.ui.button
 	 */
 	public class ButtonState
 	{
+
 		/**
 		 * Represents button state of 'on' (or mouse over)
 		 */
@@ -33,5 +34,10 @@ package com.dezza.ricepaper.ui.button
 		 * Represents button state of 'disabled'
 		 */
 		public static const DISABLED : String = "disabled";
+
+		/**
+		 * Array of all states 
+		 */
+		public static const STATES : Array = [ON, OFF, ON_SELECTED, OFF_SELECTED, DISABLED];
 	}
 }

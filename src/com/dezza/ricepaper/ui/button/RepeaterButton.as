@@ -14,6 +14,7 @@ package com.dezza.ricepaper.ui.button
 	 */
 	public class RepeaterButton extends Button
 	{
+
 		/**
 		 * whether or not autoRepeat is enabled
 		 */
@@ -39,14 +40,15 @@ package com.dezza.ricepaper.ui.button
 		 */
 		protected var _repeatCount : uint = 0;
 
+
 		/**
 		 * Construct new RepeaterButton instance
 		 * 
 		 * @param asset MovieClip asset
 		 */
-		public function RepeaterButton(asset : MovieClip)
+		public function RepeaterButton(asset : MovieClip, mouseChildren : Boolean = false)
 		{
-			super(asset);
+			super(asset, mouseChildren);
 		}
 
 
@@ -148,24 +150,25 @@ package com.dezza.ricepaper.ui.button
 		override public function destroy() : void
 		{
 			repeatEnabled = false;
-			
+
 			releaseAutoRepeatTimer();
-			
+
 			super.destroy();
 		}
+
 
 		/**
 		 * @private
 		 */
-		override protected function initMouse() : void
+		override protected function initMouse(mouseChildren : Boolean) : void
 		{
 			addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown, false, 0, true);
-			
+
 			addEventListener(MouseEvent.MOUSE_UP, onMouseUp, false, 0, true);
 
 			repeatEnabled = true;
 
-			super.initMouse();
+			super.initMouse(mouseChildren);
 		}
 
 

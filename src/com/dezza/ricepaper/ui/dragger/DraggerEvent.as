@@ -8,6 +8,7 @@ package com.dezza.ricepaper.ui.dragger
 	 */
 	public class DraggerEvent extends Event
 	{
+
 		/**
 		 * Event type indicating dragging has started
 		 */
@@ -28,6 +29,7 @@ package com.dezza.ricepaper.ui.dragger
 		 */
 		public var data : Object;
 
+
 		/**
 		 * Construct new DraggerEvent instance
 		 */
@@ -37,6 +39,7 @@ package com.dezza.ricepaper.ui.dragger
 
 			this.data = data;
 		}
+
 
 		/**
 		 * @inheritDoc

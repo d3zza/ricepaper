@@ -4,6 +4,7 @@ package com.dezza.ricepaper.ui.slider
 	import com.dezza.ricepaper.ui.core.IEnableable;
 	import com.dezza.ricepaper.ui.dragger.Dragger;
 
+
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
@@ -15,11 +16,13 @@ package com.dezza.ricepaper.ui.slider
 	 */
 	public class Slider extends Dragger implements ISlider
 	{
+
 		protected var _axis : String;
 
 		protected var _track : Sprite;
 
 		protected var _percent : Number;
+
 
 		/**
 		 * construct Slider instance
@@ -97,7 +100,7 @@ package com.dezza.ricepaper.ui.slider
 		override public function setDragRect(rect : Rectangle) : void
 		{
 			_dragRect = rect;
-			
+
 			updatePos();
 		}
 
@@ -165,11 +168,11 @@ package com.dezza.ricepaper.ui.slider
 		protected function setTrack(sprite : Sprite) : void
 		{
 			if ( !sprite ) return;
-			
+
 			_track = sprite;
-			
+
 			_track.addEventListener(MouseEvent.MOUSE_DOWN, onTrackMouseDown);
-			
+
 			if ( _track is IEnableable )
 			{
 				(_track as IEnableable).enabled = enabled;
@@ -179,7 +182,7 @@ package com.dezza.ricepaper.ui.slider
 
 		protected function releaseTrack() : void
 		{
-			if (_track) 
+			if (_track)
 			{
 				_track.removeEventListener(MouseEvent.MOUSE_DOWN, onTrackMouseDown);
 				_track = null;
@@ -208,7 +211,6 @@ package com.dezza.ricepaper.ui.slider
 		{
 			this[_axis] = dragMin + (dragMax - dragMin) * _percent;
 		}
-		
 		// protected function _onDragUpdate() : void
 		// {
 		// var n : Number = Math.round((_dragger[_axis] - _dragMin) / (_dragMax - _dragMin) * 10000) / 10000;

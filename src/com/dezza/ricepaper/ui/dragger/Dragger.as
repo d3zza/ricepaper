@@ -5,6 +5,7 @@ package com.dezza.ricepaper.ui.dragger
 	import com.dezza.ricepaper.ui.button.IButton;
 	import com.dezza.ricepaper.ui.core.UIControl;
 
+
 	import flash.display.DisplayObject;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -28,6 +29,7 @@ package com.dezza.ricepaper.ui.dragger
 	 */
 	public class Dragger extends UIControl implements IDragger
 	{
+
 		/**
 		 * @private
 		 */
@@ -52,6 +54,7 @@ package com.dezza.ricepaper.ui.dragger
 		 * @private
 		 */
 		protected var _lastY : Number;
+
 
 		/**
 		 * Construct new Dragger instance
@@ -133,11 +136,11 @@ package com.dezza.ricepaper.ui.dragger
 
 			if ( _buttonMode ) buttonMode = b;
 
-			if( asset is IEnableable )
+			if ( asset is IEnableable )
 			{
 				(asset as IEnableable).enabled = b;
 			}
-			
+
 			super.enabled = b;
 		}
 
@@ -153,11 +156,11 @@ package com.dezza.ricepaper.ui.dragger
 
 			_dragging = true;
 
-			if( _asset is IButton )
+			if ( _asset is IButton )
 			{
 				(_asset as IButton).mouseStateLocked = true;
 			}
-			
+
 			startDrag(true, _dragRect);
 
 			stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp, false, 0, true);
@@ -177,11 +180,11 @@ package com.dezza.ricepaper.ui.dragger
 
 			_dragging = false;
 
-			if( _asset is IButton )
+			if ( _asset is IButton )
 			{
 				(_asset as IButton).mouseStateLocked = false;
 			}
-			
+
 			if ( stage )
 			{
 				stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
@@ -202,15 +205,15 @@ package com.dezza.ricepaper.ui.dragger
 		{
 			removeEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
 
-			if( _dragging )
+			if ( _dragging )
 			{
 				stopDragging();
 			}
-			
+
 			if ( stage )
 			{
 				stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
-				
+
 				stage.removeEventListener(Event.ENTER_FRAME, onEnterFrme);
 			}
 
@@ -250,7 +253,7 @@ package com.dezza.ricepaper.ui.dragger
 		 */
 		protected function onEnterFrme(e : Event = null) : void
 		{
-			if( x != _lastX || y != _lastY )
+			if ( x != _lastX || y != _lastY )
 			{
 				dispatchChangeEvent();
 			}
@@ -262,10 +265,10 @@ package com.dezza.ricepaper.ui.dragger
 		 */
 		protected function dispatchChangeEvent() : void
 		{
-			if( x === _lastX && y === _lastY ) return;
-			
+			if ( x === _lastX && y === _lastY ) return;
+
 			dispatchEvent(new DraggerEvent(DraggerEvent.DRAG_CHANGE, true, false));
-			
+
 			_lastX = x;
 			_lastY = y;
 		}

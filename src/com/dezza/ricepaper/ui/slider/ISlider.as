@@ -12,6 +12,7 @@ package com.dezza.ricepaper.ui.slider
 	 */
 	public interface ISlider extends IDragger
 	{
+
 		function set percent(percent : Number) : void;
 
 

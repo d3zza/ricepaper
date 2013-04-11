@@ -1,8 +1,10 @@
 package com.dezza.ricepaper.ui.core
 {
 
+	import com.dezza.ricepaper.ui.movieclip.NullStateRenderer;
+
+
 	import flash.display.DisplayObject;
-	import flash.display.MovieClip;
 	import flash.display.Sprite;
 
 	/**
@@ -32,6 +34,7 @@ package com.dezza.ricepaper.ui.core
 	 */
 	public class UIControl extends Sprite implements IUIControl
 	{
+
 		/**
 		 * @private
 		 */
@@ -41,6 +44,12 @@ package com.dezza.ricepaper.ui.core
 		 * @private
 		 */
 		private var _enabled : Boolean;
+
+		/**
+		 * delegate rendering of state to IRenderer instance
+		 */
+		protected var _stateRenderer : IRenderer;
+
 
 		/**
 		 * Constructor
@@ -73,14 +82,10 @@ package com.dezza.ricepaper.ui.core
 			}
 			else
 			{
-				throw new ArgumentError("UIButton content is undefined");
+				throw new ArgumentError("UIControl content is null");
 			}
-		}
 
-
-		public function asDisplayObject() : DisplayObject
-		{
-			return this;
+			initStates();
 		}
 
 
@@ -123,6 +128,24 @@ package com.dezza.ricepaper.ui.core
 				removeChild(_asset);
 			}
 			_asset = null;
+		}
+
+
+		protected function initStates() : void
+		{
+			_stateRenderer = new NullStateRenderer();
+		}
+
+
+		public function get stateRenderer() : IRenderer
+		{
+			return _stateRenderer;
+		}
+
+
+		public function set stateRenderer(stateRenderer : IRenderer) : void
+		{
+			_stateRenderer = stateRenderer;
 		}
 	}
 }

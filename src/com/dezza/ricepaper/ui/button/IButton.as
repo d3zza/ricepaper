@@ -9,6 +9,7 @@ package com.dezza.ricepaper.ui.button
 	 */
 	public interface IButton extends IUIControl , IHighlightable
 	{
+
 		/**
 		 * get whether or not the mouse state is currently locked
 		 * 
